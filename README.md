@@ -1,0 +1,2 @@
+# ModifyAllKindSpec
+AllKindJSONGenerator
