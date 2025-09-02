@@ -1,0 +1,4753 @@
+{
+  "metadata": {
+    "sourceFile": "/Users/mkesharwani/Desktop/Workspace3/maps-automation-framework/Python_Test_Tool/Input_Excel_Sheet/test.xlsx",
+    "processedAt": "2025-08-04T10:12:57Z",
+    "mainSheet": "IBToCanonicalV1(T)",
+    "totalMappings": 115,
+    "lookupSheets": [
+      "CL_TransactionStatusCode",
+      "CL_TransactionStatusReasonCode",
+      "CL_ShipmentEventType",
+      "CL_WeightType",
+      "CL_WeightUnitType",
+      "CL_VolumeType",
+      "CL_LocationCode",
+      "CL_EquipmentStatusCode",
+      "CL_b2bTransactionIdentifierType",
+      "CL_ProcessingFunctionTypeCode",
+      "CL_CompanyIdentifierType",
+      "CL_TransactionReferenceType",
+      "CL_QuantityType",
+      "X12_EnvelopePartyType",
+      "CL_UnitOfMeasureEnum",
+      "CL_dateType",
+      "CL_CompanyLocationIDType"
+    ],
+    "warnings": [
+      "Skipped row 25: likely 'Do not map' or blank",
+      "Skipped row 34: likely 'Do not map' or blank",
+      "Skipped row 43: likely 'Do not map' or blank",
+      "Skipped row 52: likely 'Do not map' or blank",
+      "Skipped row 63: likely 'Do not map' or blank",
+      "Skipped row 64: likely 'Do not map' or blank",
+      "Skipped row 67: likely 'Do not map' or blank",
+      "Skipped row 68: likely 'Do not map' or blank",
+      "Skipped row 70: likely 'Do not map' or blank",
+      "Skipped row 71: likely 'Do not map' or blank",
+      "Skipped row 72: likely 'Do not map' or blank",
+      "Skipped row 83: likely 'Do not map' or blank",
+      "Skipped row 86: likely 'Do not map' or blank",
+      "Skipped row 97: likely 'Do not map' or blank",
+      "Skipped row 107: likely 'Do not map' or blank",
+      "Skipped row 110: likely 'Do not map' or blank",
+      "Skipped row 111: likely 'Do not map' or blank",
+      "Skipped row 112: likely 'Do not map' or blank",
+      "Skipped row 118: likely 'Do not map' or blank"
+    ]
+  },
+  "mappingSpecifications": {
+    "CONSTANT[8ad4ce50-f5e5-4697-95a4-9dbcd6e94d06]": {
+      "Output Path": "/data",
+      "Output Element": "/id",
+      "Output Occurs": "1…1",
+      "Output Format": "string",
+      "Output Length": "0/*",
+      "Output Sample": "8ad4ce50-f5e5-4697-95a4-9dbcd6e94d06",
+      "Output Fullpath": "/data/id",
+      "Mapping Types": "unknown",
+      "Mapping Notes/Rules": "Hard code \"8ad4ce50-f5e5-4697-95a4-9dbcd6e94d06\" to Target"
+    },
+    "CONSTANT[multienterprise-process-connect:canonicalOceanShipmentStatus]": {
+      "Output Path": "/data",
+      "Output Element": "/schemaId",
+      "Output Occurs": "1…1",
+      "Output Format": "string",
+      "Output Length": "0/*",
+      "Output Sample": "multienterprise-process-connect:canonicalOceanShipmentStatus",
+      "Output Fullpath": "/data/schemaId",
+      "Mapping Types": "unknown",
+      "Mapping Notes/Rules": "Hard code \"multienterprise-process-connect:canonicalOceanShipmentStatus\" to Target"
+    },
+    "CONSTANT[canonicalOceanShipmentStatus]": {
+      "Output Path": "/data",
+      "Output Element": "/objectType",
+      "Output Occurs": "1…1",
+      "Output Format": "string",
+      "Output Length": "1/*",
+      "Output Sample": "canonicalOceanShipmentStatus",
+      "Output Fullpath": "/data/objectType",
+      "Mapping Types": "unknown",
+      "Mapping Notes/Rules": "Hard code \"canonicalOceanShipmentStatus\" to Target"
+    },
+    "CONSTANT[1]": {
+      "Output Path": "/data",
+      "Output Element": "/schemaVersion",
+      "Output Occurs": "1…1",
+      "Output Format": "numeric",
+      "Output Length": "0/*",
+      "Output Sample": "1",
+      "Output Fullpath": "/data/schemaVersion",
+      "Mapping Types": "unknown",
+      "Mapping Notes/Rules": "Hard code \"1\" to Target"
+    },
+    "ISA": {
+      "Source Occurs": "1…1",
+      "Mapping Types": "conditional, transformation",
+      "Mapping Notes/Rules": "The ISA envelope is a fixed length segment with delimiters. Even if a value is not available for any optional field it is padded out to its full length with spaces. ISA is the only fixed length segment in the X12 interchange."
+    },
+    "CONSTANT[MPC_OCEAN_SHIPMENT_STATUS]": {
+      "Source Required": "X",
+      "Output Path": "/data/controlFileHeader",
+      "Output Element": "/b2bTransactionTypeName",
+      "Output Occurs": "1…1",
+      "Output Format": "string",
+      "Output Length": "1/*",
+      "Output Required": "X",
+      "Output Sample": "MPC_OCEAN_SHIPMENT_STATUS",
+      "Output Fullpath": "/data/controlFileHeader/b2bTransactionTypeName",
+      "Mapping Types": "unknown",
+      "Mapping Notes/Rules": "Hard code \"MPC_OCEAN_SHIPMENT_STATUS\" to target data element"
+    },
+    "ISA01": {
+      "Source Occurs": "1…1",
+      "Source Format": "string",
+      "Source Length": "2/2",
+      "Source Sample": "00",
+      "Output Path": "/data/controlFileHeader/x12ControlFileHeader/x12InterchangeControlEnvelope",
+      "Output Element": "/authorizationInformationType",
+      "Output Occurs": "0…1",
+      "Output Format": "string",
+      "Output Length": "0/*",
+      "Output Sample": "00",
+      "Output Fullpath": "/data/controlFileHeader/x12ControlFileHeader/x12InterchangeControlEnvelope/authorizationInformationType",
+      "Mapping Types": "hardcode",
+      "Mapping Notes/Rules": "Store literal value. (Remove the restriction list of the restriction list of both source and target)"
+    },
+    "ISA02": {
+      "Source Occurs": "1…1",
+      "Source Format": "string",
+      "Source Length": "10/10",
+      "Output Path": "/data/controlFileHeader/x12ControlFileHeader/x12InterchangeControlEnvelope",
+      "Output Element": "/authorizationInformationValue",
+      "Output Occurs": "0…1",
+      "Output Format": "string",
+      "Output Length": "0/*",
+      "Output Fullpath": "/data/controlFileHeader/x12ControlFileHeader/x12InterchangeControlEnvelope/authorizationInformationValue",
+      "Mapping Types": "hardcode",
+      "Mapping Notes/Rules": "Store literal value if present."
+    },
+    "ISA03": {
+      "Source Occurs": "1…1",
+      "Source Format": "string",
+      "Source Length": "2/2",
+      "Source Sample": "00",
+      "Output Path": "/data/controlFileHeader/x12ControlFileHeader/x12InterchangeControlEnvelope",
+      "Output Element": "/securityInformationType",
+      "Output Occurs": "0…1",
+      "Output Format": "string",
+      "Output Length": "0/*",
+      "Output Sample": "00",
+      "Output Fullpath": "/data/controlFileHeader/x12ControlFileHeader/x12InterchangeControlEnvelope/securityInformationType",
+      "Mapping Types": "hardcode",
+      "Mapping Notes/Rules": "Store literal value if present. (Remove the restriction list of the restriction list of both source and target)"
+    },
+    "ISA04": {
+      "Source Occurs": "1…1",
+      "Source Format": "string",
+      "Source Length": "10/10",
+      "Output Path": "/data/controlFileHeader/x12ControlFileHeader/x12InterchangeControlEnvelope",
+      "Output Element": "/securityInformationValue",
+      "Output Occurs": "0…1",
+      "Output Format": "string",
+      "Output Length": "0/*",
+      "Output Fullpath": "/data/controlFileHeader/x12ControlFileHeader/x12InterchangeControlEnvelope/securityInformationValue",
+      "Mapping Types": "hardcode",
+      "Mapping Notes/Rules": "Store literal value if present."
+    },
+    "ISA05": {
+      "Source Occurs": "1…1",
+      "Source Format": "string",
+      "Source Length": "2/2",
+      "Source Codelist": "X12_EnvelopePartyType:ExternalCode",
+      "Source Sample": "07",
+      "Output Path": "/data/controlFileHeader/x12ControlFileHeader/x12InterchangeControlEnvelope/fileSenderType",
+      "Output Element": "/ediEnvelopePartyType",
+      "Output Occurs": "0…1",
+      "Output Format": "string",
+      "Output Length": "0/*",
+      "Output Codelist": "X12_EnvelopePartyType:CanonicalCode",
+      "Output Sample": "GLN",
+      "Output Fullpath": "/data/controlFileHeader/x12ControlFileHeader/x12InterchangeControlEnvelope/fileSenderType/ediEnvelopePartyType",
+      "Mapping Types": "lookup, conditional, transformation",
+      "Mapping Notes/Rules": "Convert from X12 source to canonical target value. Use the X12 envelope party identifier type lookup table to convert and validate that source type is correct.\n \nCALL \"com.tracelink.contivo.LookUp.XRefCodeLists\" for lookup file CL_X12EnvelopePartyType.txt with java. \n \nIf source value missing or is not included in list of valid qualifiers, throw error:\n \n\"Valid X12 interchange party identifier type in ISA05 is required !!!\"",
+      "Lookup Table": "to"
+    },
+    "ISA06(1)": {
+      "Source Occurs": "1…1",
+      "Source Format": "string",
+      "Source Length": "15/15",
+      "Source Required": "X",
+      "Source Sample": "7777776067344",
+      "Output Path": "/data/controlFileHeader",
+      "Output Element": "/fileSenderNumber",
+      "Output Occurs": "1…1",
+      "Output Format": "string",
+      "Output Length": "1/*",
+      "Output Required": "X",
+      "Output Sample": "GLN:7777776067344",
+      "Output Fullpath": "/data/controlFileHeader/fileSenderNumber",
+      "Mapping Types": "conditional, transformation",
+      "Mapping Notes/Rules": "Concatenate converted ISA05 + \":\" + ISA06. Trim source of trailing spaces if exist."
+    },
+    "ISA06(2)": {
+      "Source Sample": "7777776067344",
+      "Output Path": "/data/controlFileHeader",
+      "Output Element": "/linkIdentifier",
+      "Output Occurs": "1…1",
+      "Output Format": "string",
+      "Output Length": "1/*",
+      "Output Sample": "MPC.GLN:7777776067344.GLN:888888404358877",
+      "Output Fullpath": "/data/controlFileHeader/linkIdentifier",
+      "Mapping Types": "transformation",
+      "Mapping Notes/Rules": "Concatenate \"MPC\" + \".\" + [ISA05] + \":\" + [ISA06] + \".\" + [ISA07] + \":\"  + [ISA08]\n\nNote:  ISA05 and ISA07 convert from X12 to canonical, see enum worksheet on Row 24"
+    },
+    "ISA06(3)": {
+      "Source Sample": "7777776067344",
+      "Output Path": "/data/controlFileHeader/x12ControlFileHeader/x12InterchangeControlEnvelope/fileSenderType",
+      "Output Element": "/ediInterchangePartyValue",
+      "Output Occurs": "1…1",
+      "Output Format": "string",
+      "Output Length": "1/*",
+      "Output Sample": "'7777776067344",
+      "Output Fullpath": "/data/controlFileHeader/x12ControlFileHeader/x12InterchangeControlEnvelope/fileSenderType/ediInterchangePartyValue",
+      "Mapping Types": "hardcode",
+      "Mapping Notes/Rules": "Store literal value.  Trim source of trailing spaces if exist."
+    },
+    "ISA06(4)": {
+      "Source Sample": "7777776067344",
+      "Output Path": "/data/canonicalOceanShipmentStatusHeader/carrierInformation/mpcCompanyLocationIdentifierList",
+      "Output Element": "/companyIdentifierValue",
+      "Output Occurs": "0…1",
+      "Output Format": "string",
+      "Output Length": "0/*",
+      "Output Sample": "3333331013655",
+      "Output Fullpath": "/data/canonicalOceanShipmentStatusHeader/carrierInformation/mpcCompanyLocationIdentifierList/companyIdentifierValue",
+      "Mapping Types": "hardcode",
+      "Mapping Notes/Rules": "Store literal value if present."
+    },
+    "CONSTANT[COMPANYID]": {
+      "Output Path": "/data/canonicalOceanShipmentStatusHeader/shipperBusinessInformation/mpcCompanyLocationIdentifierList",
+      "Output Element": "/companyIdentifierType",
+      "Output Occurs": "0…1",
+      "Output Format": "string",
+      "Output Length": "0/*",
+      "Output Codelist": "CL_CompanyLocationIDType:CanonicalCode",
+      "Output Sample": "COMPANYID",
+      "Output Fullpath": "/data/canonicalOceanShipmentStatusHeader/shipperBusinessInformation/mpcCompanyLocationIdentifierList/companyIdentifierType",
+      "Mapping Types": "hardcode",
+      "Mapping Notes/Rules": "Hardcode \"COMPANYID\" to target"
+    },
+    "ISA07": {
+      "Source Occurs": "1…1",
+      "Source Format": "string",
+      "Source Length": "2/2",
+      "Source Codelist": "X12_EnvelopePartyType:ExternalCode",
+      "Source Sample": "01",
+      "Output Path": "/data/controlFileHeader/x12ControlFileHeader/x12InterchangeControlEnvelope/fileReceiverType",
+      "Output Element": "/ediEnvelopePartyType",
+      "Output Occurs": "0…1",
+      "Output Format": "string",
+      "Output Length": "0/*",
+      "Output Codelist": "X12_EnvelopePartyType:CanonicalCode",
+      "Output Sample": "DUNS",
+      "Output Fullpath": "/data/controlFileHeader/x12ControlFileHeader/x12InterchangeControlEnvelope/fileReceiverType/ediEnvelopePartyType",
+      "Mapping Types": "lookup, conditional, transformation",
+      "Mapping Notes/Rules": "Convert from X12 source to canonical target value. Use the X12 envelope party identifier type lookup table to convert and validate that source type is correct.\n \nCALL \"com.tracelink.contivo.LookUp.XRefCodeLists\" for lookup file CL_X12EnvelopePartyType.txt with java. \n \nIf source value missing or is not included in list of valid qualifiers, throw error:\n \n\"Valid X12 interchange party identifier type in ISA07 is required !!!\"",
+      "Lookup Table": "to"
+    },
+    "ISA08(1)": {
+      "Source Occurs": "1…1",
+      "Source Format": "string",
+      "Source Length": "15/15",
+      "Source Required": "X",
+      "Source Sample": "888888404358877",
+      "Output Path": "/data/controlFileHeader",
+      "Output Element": "/fileReceiverNumber",
+      "Output Occurs": "0…1",
+      "Output Format": "string",
+      "Output Length": "0/*",
+      "Output Required": "X",
+      "Output Sample": "DUNS:888888404358877",
+      "Output Fullpath": "/data/controlFileHeader/fileReceiverNumber",
+      "Mapping Types": "conditional, transformation",
+      "Mapping Notes/Rules": "Concatenate converted ISA07 + \":\" + ISA08. Trim source of trailing spaces if exist."
+    },
+    "ISA08(2)": {
+      "Source Required": "X",
+      "Source Sample": "888888404358877",
+      "Output Path": "/data/controlFileHeader/x12ControlFileHeader/x12InterchangeControlEnvelope/fileReceiverType",
+      "Output Element": "/ediInterchangePartyValue",
+      "Output Occurs": "0…1",
+      "Output Format": "string",
+      "Output Length": "0/*",
+      "Output Required": "X",
+      "Output Sample": "888888404358877",
+      "Output Fullpath": "/data/controlFileHeader/x12ControlFileHeader/x12InterchangeControlEnvelope/fileReceiverType/ediInterchangePartyValue",
+      "Mapping Types": "hardcode",
+      "Mapping Notes/Rules": "Store literal value from source to target. Trim source of trailing spaces if exist."
+    },
+    "ISA08(3)": {
+      "Source Sample": "888888404358877",
+      "Output Path": "/data/canonicalOceanShipmentStatusHeader/shipperBusinessInformation/mpcCompanyLocationIdentifierList",
+      "Output Element": "/companyIdentifierValue",
+      "Output Occurs": "0…1",
+      "Output Format": "string",
+      "Output Length": "0/*",
+      "Output Sample": "888888404358877",
+      "Output Fullpath": "/data/canonicalOceanShipmentStatusHeader/shipperBusinessInformation/mpcCompanyLocationIdentifierList/companyIdentifierValue",
+      "Mapping Types": "hardcode",
+      "Mapping Notes/Rules": "Store literal value if present."
+    },
+    "ISA09": {
+      "Source Occurs": "1…1",
+      "Source Format": "date",
+      "Source Length": "6/6",
+      "Source Required": "X",
+      "Source Sample": "231020",
+      "Output Path": "/data/controlFileHeader",
+      "Output Element": "/fileDateTime",
+      "Output Occurs": "0…1",
+      "Output Format": "string",
+      "Output Length": "0/*",
+      "Output Required": "X",
+      "Output Sample": "2023-10-20T14:20:00.000Z",
+      "Output Fullpath": "/data/controlFileHeader/fileDateTime",
+      "Mapping Types": "transformation",
+      "Mapping Notes/Rules": "Convert and concatenate from source X12 ISA09 + ISA10 to canonical datetime format YYYY-MM-DDTHH:MM:SS.nnnZ and store result in target data element."
+    },
+    "ISA11": {
+      "Source Occurs": "1…1",
+      "Source Format": "string",
+      "Source Length": "1/1",
+      "Source Sample": "^",
+      "Output Path": "/data/controlFileHeader/x12ControlFileHeader/x12InterchangeControlEnvelope",
+      "Output Element": "/repetitionSeparator",
+      "Output Occurs": "0…1",
+      "Output Format": "string",
+      "Output Length": "0/*",
+      "Output Sample": "^",
+      "Output Fullpath": "/data/controlFileHeader/x12ControlFileHeader/x12InterchangeControlEnvelope/repetitionSeparator",
+      "Mapping Types": "hardcode",
+      "Mapping Notes/Rules": "Store literal value"
+    },
+    "ISA12": {
+      "Source Occurs": "1…1",
+      "Source Format": "string",
+      "Source Length": "5/5",
+      "Source Sample": "00501",
+      "Output Path": "/data/controlFileHeader/x12ControlFileHeader/x12InterchangeControlEnvelope",
+      "Output Element": "/interchangeControlVersion",
+      "Output Occurs": "0…1",
+      "Output Format": "string",
+      "Output Length": "0/*",
+      "Output Sample": "00501",
+      "Output Fullpath": "/data/controlFileHeader/x12ControlFileHeader/x12InterchangeControlEnvelope/interchangeControlVersion",
+      "Mapping Types": "hardcode",
+      "Mapping Notes/Rules": "Store literal value."
+    },
+    "ISA13(1)": {
+      "Source Occurs": "1…1",
+      "Source Format": "string",
+      "Source Length": "9/9",
+      "Source Required": "X",
+      "Source Sample": "0000000000619827",
+      "Output Path": "/data/controlFileHeader",
+      "Output Element": "/fileControlNumber",
+      "Output Occurs": "1…1",
+      "Output Format": "string",
+      "Output Length": "1/*",
+      "Output Required": "X",
+      "Output Sample": "0000000000619827",
+      "Output Fullpath": "/data/controlFileHeader/fileControlNumber",
+      "Mapping Types": "hardcode",
+      "Mapping Notes/Rules": "Store literal value."
+    },
+    "ISA13(2)": {
+      "Source Sample": "0000000000619827",
+      "Output Path": "/data/controlFileHeader/x12ControlFileHeader/x12InterchangeControlEnvelope",
+      "Output Element": "/interchangeControlIdentifier",
+      "Output Occurs": "1…1",
+      "Output Format": "string",
+      "Output Length": "1/*",
+      "Output Sample": "0000000000619827",
+      "Output Fullpath": "/data/controlFileHeader/x12ControlFileHeader/x12InterchangeControlEnvelope/interchangeControlIdentifier",
+      "Mapping Types": "hardcode",
+      "Mapping Notes/Rules": "Store literal value."
+    },
+    "ISA14": {
+      "Source Occurs": "1…1",
+      "Source Format": "string",
+      "Source Length": "1/1",
+      "Source Sample": "0",
+      "Output Path": "/data/controlFileHeader/x12ControlFileHeader/x12InterchangeControlEnvelope",
+      "Output Element": "/isAcknowledgmentRequired",
+      "Output Occurs": "0…1",
+      "Output Format": "boolean",
+      "Output Sample": "false",
+      "Output Fullpath": "/data/controlFileHeader/x12ControlFileHeader/x12InterchangeControlEnvelope/isAcknowledgmentRequired",
+      "Mapping Types": "conditional",
+      "Mapping Notes/Rules": "If source = \"0\", move \"false\" to target\nIf source = \"1\", move \"true\" to target"
+    },
+    "ISA15": {
+      "Source Occurs": "1…1",
+      "Source Format": "string",
+      "Source Length": "1/1",
+      "Source Sample": "P",
+      "Output Path": "/data/controlFileHeader/x12ControlFileHeader/x12InterchangeControlEnvelope",
+      "Output Element": "/usageIndicator",
+      "Output Occurs": "0…1",
+      "Output Format": "string",
+      "Output Length": "0/*",
+      "Output Sample": "P",
+      "Output Fullpath": "/data/controlFileHeader/x12ControlFileHeader/x12InterchangeControlEnvelope/usageIndicator",
+      "Mapping Types": "hardcode",
+      "Mapping Notes/Rules": "Store literal value. (Remove the restriction list of the restriction list of both source and target)"
+    },
+    "ISA16": {
+      "Source Occurs": "1…1",
+      "Source Format": "string",
+      "Source Length": "1/1",
+      "Source Sample": ">",
+      "Output Path": "/data/controlFileHeader/x12ControlFileHeader/x12InterchangeControlEnvelope",
+      "Output Element": "/componentSeparator",
+      "Output Occurs": "0…1",
+      "Output Format": "string",
+      "Output Length": "0/*",
+      "Output Sample": ">",
+      "Output Fullpath": "/data/controlFileHeader/x12ControlFileHeader/x12InterchangeControlEnvelope/componentSeparator",
+      "Mapping Types": "hardcode",
+      "Mapping Notes/Rules": "Store literal value."
+    },
+    "GS": {
+      "Source Occurs": "1…*",
+      "Mapping Types": "unknown"
+    },
+    "GS02": {
+      "Source Occurs": "1…1",
+      "Source Format": "string",
+      "Source Length": "2/15",
+      "Source Sample": "2222224043588",
+      "Output Path": "/data/controlFileHeader/x12ControlFileHeader/x12FunctionalGroupControlEnvelope",
+      "Output Element": "/groupSenderNumber",
+      "Output Occurs": "0…1",
+      "Output Format": "string",
+      "Output Length": "0/*",
+      "Output Sample": "2222224043588",
+      "Output Fullpath": "/data/controlFileHeader/x12ControlFileHeader/x12FunctionalGroupControlEnvelope/groupSenderNumber",
+      "Mapping Types": "hardcode",
+      "Mapping Notes/Rules": "Store literal value."
+    },
+    "GS03": {
+      "Source Occurs": "1…1",
+      "Source Format": "string",
+      "Source Length": "2/15",
+      "Source Sample": "TRACELINK",
+      "Output Path": "/data/controlFileHeader/x12ControlFileHeader/x12FunctionalGroupControlEnvelope",
+      "Output Element": "/groupReceiverNumber",
+      "Output Occurs": "0…1",
+      "Output Format": "string",
+      "Output Length": "0/*",
+      "Output Sample": "TRACELINK",
+      "Output Fullpath": "/data/controlFileHeader/x12ControlFileHeader/x12FunctionalGroupControlEnvelope/groupReceiverNumber",
+      "Mapping Types": "hardcode",
+      "Mapping Notes/Rules": "Store literal value."
+    },
+    "GS04": {
+      "Source Occurs": "1…1",
+      "Source Format": "date",
+      "Source Length": "8/8",
+      "Source Sample": "20241020",
+      "Output Path": "/data/controlFileHeader/x12ControlFileHeader/x12FunctionalGroupControlEnvelope",
+      "Output Element": "/groupDate",
+      "Output Occurs": "0…1",
+      "Output Format": "string",
+      "Output Length": "0/*",
+      "Output Sample": "2024-10-20",
+      "Output Fullpath": "/data/controlFileHeader/x12ControlFileHeader/x12FunctionalGroupControlEnvelope/groupDate",
+      "Mapping Types": "transformation",
+      "Mapping Notes/Rules": "Store date in YYYY-MM-DD format"
+    },
+    "GS05": {
+      "Source Occurs": "1…1",
+      "Source Format": "time",
+      "Source Length": "4/8",
+      "Source Sample": "142000",
+      "Output Path": "/data/controlFileHeader/x12ControlFileHeader/x12FunctionalGroupControlEnvelope",
+      "Output Element": "/groupTime",
+      "Output Occurs": "0…1",
+      "Output Format": "string",
+      "Output Length": "0/*",
+      "Output Sample": "14:20:00.000Z",
+      "Output Fullpath": "/data/controlFileHeader/x12ControlFileHeader/x12FunctionalGroupControlEnvelope/groupTime",
+      "Mapping Types": "transformation",
+      "Mapping Notes/Rules": "Store time in HH:MM:SS.nnnZ format"
+    },
+    "GS06": {
+      "Source Occurs": "1…1",
+      "Source Format": "integer",
+      "Source Length": "1/9",
+      "Source Sample": "619827",
+      "Output Path": "/data/controlFileHeader/x12ControlFileHeader/x12FunctionalGroupControlEnvelope",
+      "Output Element": "/groupControlNumber",
+      "Output Occurs": "0…1",
+      "Output Format": "string",
+      "Output Length": "0/*",
+      "Output Sample": "619827",
+      "Output Fullpath": "/data/controlFileHeader/x12ControlFileHeader/x12FunctionalGroupControlEnvelope/groupControlNumber",
+      "Mapping Types": "hardcode",
+      "Mapping Notes/Rules": "Store literal value."
+    },
+    "GS07": {
+      "Source Occurs": "1…1",
+      "Source Format": "string",
+      "Source Length": "1/2",
+      "Source Sample": "X",
+      "Output Path": "/data/controlFileHeader/x12ControlFileHeader/x12FunctionalGroupControlEnvelope",
+      "Output Element": "/x12AgencyCode",
+      "Output Occurs": "0…1",
+      "Output Format": "string",
+      "Output Length": "0/*",
+      "Output Sample": "X",
+      "Output Fullpath": "/data/controlFileHeader/x12ControlFileHeader/x12FunctionalGroupControlEnvelope/x12AgencyCode",
+      "Mapping Types": "hardcode",
+      "Mapping Notes/Rules": "Store literal value."
+    },
+    "GS08": {
+      "Source Occurs": "1…1",
+      "Source Format": "string",
+      "Source Length": "1/12",
+      "Source Sample": "005010",
+      "Output Path": "/data/controlFileHeader/x12ControlFileHeader/x12FunctionalGroupControlEnvelope",
+      "Output Element": "/ediMessageVersionCode",
+      "Output Occurs": "0…1",
+      "Output Format": "string",
+      "Output Length": "0/*",
+      "Output Sample": "005010",
+      "Output Fullpath": "/data/controlFileHeader/x12ControlFileHeader/x12FunctionalGroupControlEnvelope/ediMessageVersionCode",
+      "Mapping Types": "hardcode",
+      "Mapping Notes/Rules": "Store literal value."
+    },
+    "ST": {
+      "Source Occurs": "1…*",
+      "Mapping Types": "unknown"
+    },
+    "ST02": {
+      "Source Occurs": "1…1",
+      "Source Format": "string",
+      "Source Length": "4/9",
+      "Source Sample": "0001",
+      "Output Path": "/data/controlFileHeader/x12ControlFileHeader/x12TransactionSetEnvelope",
+      "Output Element": "/transactionSetControlNumber",
+      "Output Occurs": "0…1",
+      "Output Format": "string",
+      "Output Length": "0/*",
+      "Output Sample": "0001",
+      "Output Fullpath": "/data/controlFileHeader/x12ControlFileHeader/x12TransactionSetEnvelope/transactionSetControlNumber",
+      "Mapping Types": "hardcode",
+      "Mapping Notes/Rules": "Store literal value."
+    },
+    "B4": {
+      "Source Occurs": "1…1",
+      "Mapping Types": "unknown"
+    },
+    "CONSTANT[\"ORIGINAL\"]": {
+      "Output Path": "/data/canonicalOceanShipmentStatusHeader",
+      "Output Element": "/processingFunctionTypeCode",
+      "Output Occurs": "0…1",
+      "Output Format": "string",
+      "Output Length": "0/*",
+      "Output Codelist": "CL_ProcessingFunctionTypeCode",
+      "Output Sample": "ORIGINAL",
+      "Output Fullpath": "/data/canonicalOceanShipmentStatusHeader/processingFunctionTypeCode",
+      "Mapping Types": "hardcode",
+      "Mapping Notes/Rules": "Hardcode \"ORIGINAL\" to target tdata element."
+    },
+    "B402": {
+      "Source Occurs": "0…1",
+      "Source Format": "number",
+      "Source Length": "1/3",
+      "Source Sample": "1",
+      "Output Path": "/data/canonicalOceanShipmentStatusHeader/transactionReferenceIdentifierList",
+      "Output Element": "/b2bTransactionIdentifierValue",
+      "Output Occurs": "0…1",
+      "Output Format": "string",
+      "Output Length": "0/*",
+      "Output Sample": "1",
+      "Output Fullpath": "/data/canonicalOceanShipmentStatusHeader/transactionReferenceIdentifierList/b2bTransactionIdentifierValue",
+      "Mapping Types": "hardcode",
+      "Mapping Notes/Rules": "Store literal value to target if B402 present, Else \n\nIf source missing, map current date time in YYYYMMDDTHHMMSSnnn format.\n\nNote:   When the outbound X12 transform is built, it should *NOT* map this element since the value may be created in IB Transform.\nIn the unlikely event that a partner does send it in."
+    },
+    "CONSTANT[\"OCEANSHIPMENTSTATUS\"]": {
+      "Output Path": "/data/canonicalOceanShipmentStatusHeader/transactionReferenceIdentifierList",
+      "Output Element": "/b2bTransactionIdentifierType",
+      "Output Occurs": "0…1",
+      "Output Format": "string",
+      "Output Length": "0/*",
+      "Output Sample": "OCEANSHIPMENTSTATUS",
+      "Output Fullpath": "/data/canonicalOceanShipmentStatusHeader/transactionReferenceIdentifierList/b2bTransactionIdentifierType",
+      "Mapping Types": "unknown",
+      "Mapping Notes/Rules": "Hard code \"OCEANSHIPMENTSTATUS\" to target data element"
+    },
+    "B403": {
+      "Source Occurs": "0…1",
+      "Source Format": "string",
+      "Source Length": "1/2",
+      "Source Codelist": "CL_TransactionStatusCode",
+      "Source Sample": "AE",
+      "Output Path": "/data/canonicalOceanShipmentStatusHeader",
+      "Output Element": "/transactionStatusCode",
+      "Output Occurs": "0…1",
+      "Output Format": "string",
+      "Output Length": "0/*",
+      "Output Codelist": "CL_TransactionStatusCode",
+      "Output Sample": "LOADEDONVESSEL",
+      "Output Fullpath": "/data/canonicalOceanShipmentStatusHeader/transactionStatusCode",
+      "Mapping Types": "lookup, conditional, transformation",
+      "Mapping Notes/Rules": "if source is present convert from source to target value. Use the transaction status code table to convert and validate that source type is correct.\n \nCALL \"com.tracelink.contivo.LookUp.XRefCodeLists\" for lookup file CL_TransactionStatusCode.txt with java. \n\nElse if source is invalid , throw error:\n\n\"Transaction status code is Invalid !!!\"",
+      "Lookup Table": "file"
+    },
+    "B404": {
+      "Source Occurs": "0…1",
+      "Source Format": "date",
+      "Source Length": "8/8",
+      "Source Sample": "20070609",
+      "Output Path": "/data/canonicalOceanShipmentStatusHeader",
+      "Output Element": "/dateReported",
+      "Output Occurs": "0…1",
+      "Output Format": "string",
+      "Output Length": "0/*",
+      "Output Sample": "20070609",
+      "Output Fullpath": "/data/canonicalOceanShipmentStatusHeader/dateReported",
+      "Mapping Types": "conditional, transformation",
+      "Mapping Notes/Rules": "If B404 and B405 are present, map to target from B404 and B405 in format YYYY-MM-DDTHH:MM:SS.nnnZ \n\nIf B404 is present and B405 is missing, map to target from B404 in date format YYYY-MM-DD"
+    },
+    "B404(1)": {
+      "Source Occurs": "0…1",
+      "Source Format": "date",
+      "Source Length": "8/8",
+      "Source Sample": "20070609",
+      "Output Path": "/data/canonicalOceanShipmentStatusHeader/transactionReferenceIdentifierList",
+      "Output Element": "/transactionDate",
+      "Output Occurs": "0…1",
+      "Output Format": "string",
+      "Output Length": "0/*",
+      "Output Sample": "20070609",
+      "Output Fullpath": "/data/canonicalOceanShipmentStatusHeader/transactionReferenceIdentifierList/transactionDate",
+      "Mapping Types": "conditional, transformation",
+      "Mapping Notes/Rules": "If B404 and B405 are present, map to target from B404 and B405 in format YYYY-MM-DDTHH:MM:SS.nnnZ when b2bTransactionIdentifierType = \"OCEANSHIPMENTSTATUS\"\nIf B404 is present and B405 is missing, map to target from B404 in date format YYYY-MM-DD when b2bTransactionIdentifierType = \"OCEANSHIPMENTSTATUS\"\nelse do nothing"
+    },
+    "B406": {
+      "Source Occurs": "0…1",
+      "Source Format": "string",
+      "Source Length": "3/5",
+      "Output Path": "/data/canonicalOceanShipmentStatusHeader",
+      "Output Element": "/statusLocation",
+      "Output Occurs": "0…1",
+      "Output Format": "string",
+      "Output Length": "0/*",
+      "Output Fullpath": "/data/canonicalOceanShipmentStatusHeader/statusLocation",
+      "Mapping Types": "hardcode",
+      "Mapping Notes/Rules": "Store literal value to target, if present."
+    },
+    "B407": {
+      "Source Occurs": "0…1",
+      "Source Format": "string",
+      "Source Length": "1/4",
+      "Source Sample": "HASU",
+      "Output Path": "/data/canonicalOceanShipmentStatusHeader",
+      "Output Element": "/equipmentPrefix",
+      "Output Occurs": "0…1",
+      "Output Format": "string",
+      "Output Length": "0/*",
+      "Output Sample": "'HASU",
+      "Output Fullpath": "/data/canonicalOceanShipmentStatusHeader/equipmentPrefix",
+      "Mapping Types": "hardcode",
+      "Mapping Notes/Rules": "Store literal value to target, if present."
+    },
+    "B408": {
+      "Source Occurs": "0…1",
+      "Source Format": "string",
+      "Source Length": "1/15",
+      "Source Sample": "483190",
+      "Output Path": "/data/canonicalOceanShipmentStatusHeader",
+      "Output Element": "/equipmentIdentifier",
+      "Output Occurs": "0…1",
+      "Output Format": "string",
+      "Output Length": "0/*",
+      "Output Sample": "483190",
+      "Output Fullpath": "/data/canonicalOceanShipmentStatusHeader/equipmentIdentifier",
+      "Mapping Types": "hardcode",
+      "Mapping Notes/Rules": "Store literal value to target, if present."
+    },
+    "B409": {
+      "Source Occurs": "0…1",
+      "Source Format": "string",
+      "Source Length": "1/2",
+      "Source Codelist": "CL_EquipmentStatusCode",
+      "Source Sample": "L",
+      "Output Path": "/data/canonicalOceanShipmentStatusHeader",
+      "Output Element": "/equipmentStatusCode",
+      "Output Occurs": "0…1",
+      "Output Format": "string",
+      "Output Length": "0/*",
+      "Output Codelist": "CL_EquipmentStatusCode",
+      "Output Sample": "LOAD",
+      "Output Fullpath": "/data/canonicalOceanShipmentStatusHeader/equipmentStatusCode",
+      "Mapping Types": "lookup, conditional, transformation",
+      "Mapping Notes/Rules": "if source is present convert from source to target value. Use the Equipment status code table to convert and validate that source type is correct.\n \nCALL \"com.tracelink.contivo.LookUp.XRefCodeLists\" for lookup file CL_EquipmentStatusCode.txt with java. \n\nElse if source is invalid , throw error:\n\n\"Equipment status code is invalid in B409 !!!\"",
+      "Lookup Table": "file"
+    },
+    "B410": {
+      "Source Occurs": "0…1",
+      "Source Format": "string",
+      "Source Length": "4/4",
+      "Source Sample": "22G1",
+      "Output Path": "/data/canonicalOceanShipmentStatusHeader",
+      "Output Element": "/equipmentTypeISOCode",
+      "Output Occurs": "0…1",
+      "Output Format": "string",
+      "Output Length": "0/*",
+      "Output Sample": "22G1",
+      "Output Fullpath": "/data/canonicalOceanShipmentStatusHeader/equipmentTypeISOCode",
+      "Mapping Types": "hardcode",
+      "Mapping Notes/Rules": "Store literal value to target, if present."
+    },
+    "B411": {
+      "Source Occurs": "0…1",
+      "Source Format": "string",
+      "Source Length": "1/30",
+      "Source Sample": "USLGB",
+      "Output Path": "/data/canonicalOceanShipmentStatusHeader",
+      "Output Element": "/oceanShipmentLocationIdentifier",
+      "Output Occurs": "0…1",
+      "Output Format": "string",
+      "Output Length": "0/*",
+      "Output Sample": "USLGB",
+      "Output Fullpath": "/data/canonicalOceanShipmentStatusHeader/oceanShipmentLocationIdentifier",
+      "Mapping Types": "hardcode",
+      "Mapping Notes/Rules": "Store literal value to target, if present."
+    },
+    "B412": {
+      "Source Occurs": "0…1",
+      "Source Format": "string",
+      "Source Length": "1/2",
+      "Source Codelist": "CL_LocationCode",
+      "Source Sample": "CI",
+      "Output Path": "/data/canonicalOceanShipmentStatusHeader",
+      "Output Element": "/oceanShipmentLocationCode",
+      "Output Occurs": "0…1",
+      "Output Format": "string",
+      "Output Length": "0/*",
+      "Output Codelist": "CL_LocationCode",
+      "Output Sample": "CITY",
+      "Output Fullpath": "/data/canonicalOceanShipmentStatusHeader/oceanShipmentLocationCode",
+      "Mapping Types": "lookup, conditional, transformation",
+      "Mapping Notes/Rules": "if source is present convert from source to target value. Use the Location code table to convert and validate that source type is correct.\n \nCALL \"com.tracelink.contivo.LookUp.XRefCodeLists\" for lookup file CL_LocationCode.txt with java. \n\nElse if source is invalid , throw error:\n\n\"Location code is invalid in B412 !!!\"",
+      "Lookup Table": "file"
+    },
+    "B413": {
+      "Source Occurs": "0…1",
+      "Source Format": "number",
+      "Source Length": "1/1",
+      "Source Sample": "1",
+      "Output Path": "/data/canonicalOceanShipmentStatusHeader",
+      "Output Element": "/checkDigitIdentifier",
+      "Output Occurs": "0…1",
+      "Output Format": "number",
+      "Output Length": "0/*",
+      "Output Sample": "1",
+      "Output Fullpath": "/data/canonicalOceanShipmentStatusHeader/checkDigitIdentifier",
+      "Mapping Types": "hardcode",
+      "Mapping Notes/Rules": "Store literal value to target, if present."
+    },
+    "N9(1)": {
+      "Source Occurs": "0…30",
+      "Mapping Types": "unknown"
+    },
+    "N901": {
+      "Source Occurs": "1…1",
+      "Source Format": "string",
+      "Source Length": "2/3",
+      "Source Codelist": "CL_TransactionReferenceType",
+      "Source Sample": "FN",
+      "Output Path": "/data/canonicalOceanShipmentStatusHeader/transactionReferenceInformation",
+      "Output Element": "/transactionReferenceType",
+      "Output Occurs": "0…1",
+      "Output Format": "string",
+      "Output Length": "0/*",
+      "Output Sample": "FORWARDERREFERENCE",
+      "Output Fullpath": "/data/canonicalOceanShipmentStatusHeader/transactionReferenceInformation/transactionReferenceType",
+      "Mapping Types": "lookup, conditional, transformation",
+      "Mapping Notes/Rules": "if source is present convert from source to target value. Use the transaction reference type table to convert and validate that source type is correct.\n \nCALL \"com.tracelink.contivo.LookUp.XRefCodeLists\" for lookup file CL_TransactionReferenceType.txt with java. \n\nElse if source is invalid, do nothing",
+      "Lookup Table": "file"
+    },
+    "N9(2)": {
+      "Source Occurs": "0…30",
+      "Mapping Types": "unknown"
+    },
+    "N9(3)": {
+      "Source Occurs": "0…30",
+      "Mapping Types": "unknown"
+    },
+    "Q2": {
+      "Source Occurs": "0…1",
+      "Mapping Types": "unknown"
+    },
+    "Q201": {
+      "Source Occurs": "0…1",
+      "Source Format": "string",
+      "Source Length": "1/8",
+      "Source Sample": "9399193",
+      "Output Path": "/data/canonicalOceanShipmentStatusHeader/vesselDetails",
+      "Output Element": "/vesselIdentifier",
+      "Output Occurs": "0…1",
+      "Output Format": "string",
+      "Output Length": "0/*",
+      "Output Sample": "9399193",
+      "Output Fullpath": "/data/canonicalOceanShipmentStatusHeader/vesselDetails/vesselIdentifier",
+      "Mapping Types": "hardcode",
+      "Mapping Notes/Rules": "Store literal value if present."
+    },
+    "Q202": {
+      "Source Occurs": "0…1",
+      "Source Format": "string",
+      "Source Length": "2/3",
+      "Source Sample": "UK",
+      "Output Path": "/data/canonicalOceanShipmentStatusHeader/vesselDetails",
+      "Output Element": "/countryCode",
+      "Output Occurs": "0…1",
+      "Output Format": "string",
+      "Output Length": "0/*",
+      "Output Sample": "UK",
+      "Output Fullpath": "/data/canonicalOceanShipmentStatusHeader/vesselDetails/countryCode",
+      "Mapping Types": "hardcode",
+      "Mapping Notes/Rules": "Store literal value if present."
+    },
+    "Q203": {
+      "Source Occurs": "0…1",
+      "Source Format": "date",
+      "Source Length": "8/8",
+      "Source Sample": "20250803",
+      "Output Path": "/data/canonicalOceanShipmentStatusHeader/vesselDetails",
+      "Output Element": "/pierdate",
+      "Output Occurs": "0…1",
+      "Output Format": "string",
+      "Output Length": "0/*",
+      "Output Sample": "2025-08-03",
+      "Output Fullpath": "/data/canonicalOceanShipmentStatusHeader/vesselDetails/pierdate",
+      "Mapping Types": "conditional, transformation",
+      "Mapping Notes/Rules": "Store in format YYYY-MM-DD, if present."
+    },
+    "Q204": {
+      "Source Occurs": "0…1",
+      "Source Format": "date",
+      "Source Length": "8/8",
+      "Source Sample": "20250804",
+      "Output Path": "/data/canonicalOceanShipmentStatusHeader/vesselDetails",
+      "Output Element": "/departureDate",
+      "Output Occurs": "0…1",
+      "Output Format": "string",
+      "Output Length": "0/*",
+      "Output Sample": "2025-08-04",
+      "Output Fullpath": "/data/canonicalOceanShipmentStatusHeader/vesselDetails/departureDate",
+      "Mapping Types": "conditional, transformation",
+      "Mapping Notes/Rules": "Store in format YYYY-MM-DD, if present."
+    },
+    "Q205": {
+      "Source Occurs": "0…1",
+      "Source Format": "date",
+      "Source Length": "8/8",
+      "Source Sample": "20250902",
+      "Output Path": "/data/canonicalOceanShipmentStatusHeader/vesselDetails",
+      "Output Element": "/unloadingDate",
+      "Output Occurs": "0…1",
+      "Output Format": "string",
+      "Output Length": "0/*",
+      "Output Sample": "2025-09-02",
+      "Output Fullpath": "/data/canonicalOceanShipmentStatusHeader/vesselDetails/unloadingDate",
+      "Mapping Types": "conditional, transformation",
+      "Mapping Notes/Rules": "Store in format YYYY-MM-DD, if present."
+    },
+    "Q206": {
+      "Source Occurs": "0…1",
+      "Source Format": "number",
+      "Source Length": "1/7",
+      "Source Sample": "12",
+      "Output Path": "/data/canonicalOceanShipmentStatusHeader/vesselDetails",
+      "Output Element": "/ladingQuantity",
+      "Output Occurs": "0…1",
+      "Output Format": "number",
+      "Output Length": "0/*",
+      "Output Sample": "12",
+      "Output Fullpath": "/data/canonicalOceanShipmentStatusHeader/vesselDetails/ladingQuantity",
+      "Mapping Types": "hardcode",
+      "Mapping Notes/Rules": "Store literal value if present."
+    },
+    "Q207": {
+      "Source Occurs": "0…1",
+      "Source Format": "number",
+      "Source Length": "1/10",
+      "Source Sample": "10",
+      "Output Path": "/data/canonicalOceanShipmentStatusHeader/vesselDetails",
+      "Output Element": "/weightValue",
+      "Output Occurs": "0…1",
+      "Output Format": "number",
+      "Output Length": "0/*",
+      "Output Sample": "10",
+      "Output Fullpath": "/data/canonicalOceanShipmentStatusHeader/vesselDetails/weightValue",
+      "Mapping Types": "hardcode",
+      "Mapping Notes/Rules": "Store literal value if Q208 is valid."
+    },
+    "Q208": {
+      "Source Occurs": "0…1",
+      "Source Format": "string",
+      "Source Length": "1/2",
+      "Source Codelist": "CL_WeightType",
+      "Source Sample": "FR",
+      "Output Path": "/data/canonicalOceanShipmentStatusHeader/vesselDetails",
+      "Output Element": "/weightType",
+      "Output Occurs": "0…1",
+      "Output Format": "string",
+      "Output Length": "0/*",
+      "Output Codelist": "CL_WeightType",
+      "Output Sample": "FREIGHT",
+      "Output Fullpath": "/data/canonicalOceanShipmentStatusHeader/vesselDetails/weightType",
+      "Mapping Types": "lookup, conditional, transformation",
+      "Mapping Notes/Rules": "if source is present , Convert from X12 source to canonical target value. Use the weight type lookup table to convert and validate that source type is correct.\n \nCALL \"com.tracelink.contivo.LookUp.XRefCodeLists\" for lookup file CL_WeightType.txt with java. \n\nIf source value invalid, throw error:\n\n\"Valid weight type is required in Q208 !!!\"",
+      "Lookup Table": "to"
+    },
+    "Q209": {
+      "Source Occurs": "0…1",
+      "Source Format": "string",
+      "Source Length": "2/30",
+      "Source Sample": "073E",
+      "Output Path": "/data/canonicalOceanShipmentStatusHeader/vesselDetails",
+      "Output Element": "/voyageIdentifier",
+      "Output Occurs": "0…1",
+      "Output Format": "string",
+      "Output Length": "0/*",
+      "Output Sample": "073E",
+      "Output Fullpath": "/data/canonicalOceanShipmentStatusHeader/vesselDetails/voyageIdentifier",
+      "Mapping Types": "hardcode",
+      "Mapping Notes/Rules": "Store literal value if present."
+    },
+    "Q211(1)": {
+      "Source Occurs": "0…1",
+      "Source Format": "string",
+      "Source Length": "1/80",
+      "Source Sample": "SCA2324",
+      "Output Path": "/data/canonicalOceanShipmentStatusHeader/vesselDetails",
+      "Output Element": "/carrierCode",
+      "Output Occurs": "0…1",
+      "Output Format": "string",
+      "Output Length": "0/*",
+      "Output Sample": "SCA2324",
+      "Output Fullpath": "/data/canonicalOceanShipmentStatusHeader/vesselDetails/carrierCode",
+      "Mapping Types": "hardcode",
+      "Mapping Notes/Rules": "Store literal value when Q210(1)= SCA."
+    },
+    "Q210(2)": {
+      "Source Occurs": "0…1",
+      "Source Format": "string",
+      "Source Length": "2/3",
+      "Source Codelist": "CL_TransactionReferenceType",
+      "Source Sample": "EQ",
+      "Output Path": "/data/canonicalOceanShipmentStatusHeader/vesselDetails",
+      "Output Element": "/transactionReferenceType",
+      "Output Occurs": "0…1",
+      "Output Format": "string",
+      "Output Length": "0/*",
+      "Output Codelist": "CL_TransactionReferenceType",
+      "Output Sample": "EQUIPMENTIDENTIFIER",
+      "Output Fullpath": "/data/canonicalOceanShipmentStatusHeader/vesselDetails/transactionReferenceType",
+      "Mapping Types": "lookup, conditional, transformation",
+      "Mapping Notes/Rules": "if source is present and not equal to SCA, convert from source to target value. Use the transaction reference type table to convert and validate that source type is correct.\n \nCALL \"com.tracelink.contivo.LookUp.XRefCodeLists\" for lookup file CL_TransactionReferenceType.txt with java. \n\nElse if source is invalid, do nothing",
+      "Lookup Table": "file"
+    },
+    "Q212": {
+      "Source Occurs": "0…1",
+      "Source Format": "string",
+      "Source Length": "1/1",
+      "Source Sample": "B",
+      "Output Path": "/data/canonicalOceanShipmentStatusHeader/vesselDetails",
+      "Output Element": "/vesselCodeType",
+      "Output Occurs": "0…1",
+      "Output Format": "string",
+      "Output Length": "0/*",
+      "Output Sample": "UK",
+      "Output Fullpath": "/data/canonicalOceanShipmentStatusHeader/vesselDetails/vesselCodeType",
+      "Mapping Types": "conditional",
+      "Mapping Notes/Rules": "If source = \"B\" hard code \"USBUREAU\" to target\nIf source = \"C\" hard code \"SHIPSRADIO\" to target\nIf source = \"L\" hard code \"LLOYD\" to target\nIf source = \"Z\" hard code \"MUTUALLYDEFINED\" to target\n\nElse if source is invalid, do nothing"
+    },
+    "Q213": {
+      "Source Occurs": "0…1",
+      "Source Format": "string",
+      "Source Length": "2/28",
+      "Source Sample": "CMA CGM LIBRA",
+      "Output Path": "/data/canonicalOceanShipmentStatusHeader/vesselDetails",
+      "Output Element": "/vesselName",
+      "Output Occurs": "0…1",
+      "Output Format": "string",
+      "Output Length": "0/*",
+      "Output Sample": "CMA CGM LIBRA",
+      "Output Fullpath": "/data/canonicalOceanShipmentStatusHeader/vesselDetails/vesselName",
+      "Mapping Types": "hardcode",
+      "Mapping Notes/Rules": "Store literal value if present."
+    },
+    "Q214": {
+      "Source Occurs": "0…1",
+      "Source Format": "number",
+      "Source Length": "1/8",
+      "Source Sample": "10",
+      "Output Path": "/data/canonicalOceanShipmentStatusHeader/vesselDetails",
+      "Output Element": "/volumeValue",
+      "Output Occurs": "0…1",
+      "Output Format": "number",
+      "Output Length": "0/*",
+      "Output Sample": "10",
+      "Output Fullpath": "/data/canonicalOceanShipmentStatusHeader/vesselDetails/volumeValue",
+      "Mapping Types": "hardcode",
+      "Mapping Notes/Rules": "Store literal value if Q215 is valid."
+    },
+    "Q215": {
+      "Source Occurs": "0…1",
+      "Source Format": "string",
+      "Source Length": "1/1",
+      "Source Codelist": "CL_VolumeType",
+      "Source Sample": "B",
+      "Output Path": "/data/canonicalOceanShipmentStatusHeader/vesselDetails",
+      "Output Element": "/volumeType",
+      "Output Occurs": "0…1",
+      "Output Format": "string",
+      "Output Length": "0/*",
+      "Output Codelist": "CL_VolumeType",
+      "Output Sample": "BARGE",
+      "Output Fullpath": "/data/canonicalOceanShipmentStatusHeader/vesselDetails/volumeType",
+      "Mapping Types": "lookup, conditional, transformation",
+      "Mapping Notes/Rules": "if source is present , Convert from X12 source to canonical target value. Use the volume type lookup table to convert and validate that source type is correct.\n \nCALL \"com.tracelink.contivo.LookUp.XRefCodeLists\" for lookup file CL_VolumeType.txt with java. \n\nIf source value invalid, throw error:\n\n\"Valid volume type is required in Q215 !!!\"",
+      "Lookup Table": "to"
+    },
+    "Q216": {
+      "Source Occurs": "0…1",
+      "Source Format": "string",
+      "Source Length": "1/1",
+      "Source Codelist": "CL_WeightUnitTypeCode",
+      "Source Sample": "E",
+      "Output Path": "/data/canonicalOceanShipmentStatusHeader/vesselDetails",
+      "Output Element": "/weightUnitType",
+      "Output Occurs": "0…1",
+      "Output Format": "string",
+      "Output Length": "0/*",
+      "Output Codelist": "CL_WeightUnitTypeCode",
+      "Output Sample": "FREIGHT",
+      "Output Fullpath": "/data/canonicalOceanShipmentStatusHeader/vesselDetails/weightUnitType",
+      "Mapping Types": "lookup, conditional, transformation",
+      "Mapping Notes/Rules": "if source is present , Convert from X12 source to canonical target value. Use the weight unit type lookup table to convert and validate that source type is correct.\n \nCALL \"com.tracelink.contivo.LookUp.XRefCodeLists\" for lookup file CL_WeightUnitTypeCode.txt with java. \n\nIf source value invalid, throw error:\n\n\"Valid weight unit type is required in Q216 !!!\"",
+      "Lookup Table": "to"
+    },
+    "SG": {
+      "Source Occurs": "0…15",
+      "Mapping Types": "unknown"
+    },
+    "SG01": {
+      "Source Occurs": "0…1",
+      "Source Format": "string",
+      "Source Length": "1/2",
+      "Source Codelist": "CL_TransactionStatusCode",
+      "Source Sample": "AC",
+      "Output Path": "/data/canonicalOceanShipmentStatusHeader/oceanShipmentStatusDetails",
+      "Output Element": "/transactionStatusCode",
+      "Output Occurs": "0…1",
+      "Output Format": "string",
+      "Output Length": "0/*",
+      "Output Codelist": "CL_TransactionStatusCode",
+      "Output Sample": "AWAITINGCLEARANCE",
+      "Output Fullpath": "/data/canonicalOceanShipmentStatusHeader/oceanShipmentStatusDetails/transactionStatusCode",
+      "Mapping Types": "lookup, conditional, transformation",
+      "Mapping Notes/Rules": "if source is present convert from source to target value. Use the transaction status code table to convert and validate that source type is correct.\n \nCALL \"com.tracelink.contivo.LookUp.XRefCodeLists\" for lookup file CL_TransactionStatusCode.txt with java. \n\nElse if source is invalid , throw error:\n\n\"Transaction status code is Invalid in SG01 !!!\"",
+      "Lookup Table": "file"
+    },
+    "SG02": {
+      "Source Occurs": "0…1",
+      "Source Format": "string",
+      "Source Length": "3/3",
+      "Source Codelist": "CL_TransactionStatusReasonCode",
+      "Source Sample": "A03",
+      "Output Path": "/data/canonicalOceanShipmentStatusHeader/oceanShipmentStatusDetails",
+      "Output Element": "/transactionStatusReasonCode",
+      "Output Occurs": "0…1",
+      "Output Format": "string",
+      "Output Length": "0/*",
+      "Output Codelist": "CL_TransactionStatusReasonCode",
+      "Output Sample": "INCORRECTADDRESS",
+      "Output Fullpath": "/data/canonicalOceanShipmentStatusHeader/oceanShipmentStatusDetails/transactionStatusReasonCode",
+      "Mapping Types": "lookup, conditional, transformation",
+      "Mapping Notes/Rules": "if source is present convert from source to target value. Use the transaction status reason code table to convert and validate that source type is correct.\n \nCALL \"com.tracelink.contivo.LookUp.XRefCodeLists\" for lookup file CL_TransactionStatusReasonCode.txt with java. \n\nElse if source is invalid , throw error:\n\n\"Transaction status reason code is invalid in SG02 !!!\"",
+      "Lookup Table": "file"
+    },
+    "SG03": {
+      "Source Occurs": "0…1",
+      "Source Format": "string",
+      "Source Length": "2/3",
+      "Output Path": "/data/canonicalOceanShipmentStatusHeader/oceanShipmentStatusDetails",
+      "Output Element": "/billOfLadingDispositionCode",
+      "Output Occurs": "0…1",
+      "Output Format": "string",
+      "Output Length": "0/*",
+      "Output Fullpath": "/data/canonicalOceanShipmentStatusHeader/oceanShipmentStatusDetails/billOfLadingDispositionCode",
+      "Mapping Types": "hardcode",
+      "Mapping Notes/Rules": "Store literal value if present."
+    },
+    "SG04": {
+      "Source Occurs": "0…1",
+      "Source Format": "date",
+      "Source Length": "8/8",
+      "Source Sample": "20070609",
+      "Output Path": "/data/canonicalOceanShipmentStatusHeader/oceanShipmentStatusDetails",
+      "Output Element": "/shipmentStatusDateString",
+      "Output Occurs": "0…1",
+      "Output Format": "string",
+      "Output Length": "0/*",
+      "Output Sample": "2007-06-09",
+      "Output Fullpath": "/data/canonicalOceanShipmentStatusHeader/oceanShipmentStatusDetails/shipmentStatusDateString",
+      "Mapping Types": "conditional, transformation",
+      "Mapping Notes/Rules": "If SG04 and SG05 are present, map to target from SG04 and SG05 in format YYYY-MM-DDTHH:MM:SS.nnnZ.\nIf SG04 is present and SG05 is missing, map to target from SG04 in date format YYYY-MM-DD.\nelse do nothing"
+    },
+    "SG06": {
+      "Source Occurs": "0…1",
+      "Source Format": "string",
+      "Source Length": "2/2",
+      "Source Sample": "CT",
+      "Output Path": "/data/canonicalOceanShipmentStatusHeader/oceanShipmentStatusDetails",
+      "Output Element": "/timeZone",
+      "Output Occurs": "0…1",
+      "Output Format": "string",
+      "Output Length": "0/*",
+      "Output Fullpath": "/data/canonicalOceanShipmentStatusHeader/oceanShipmentStatusDetails/timeZone",
+      "Mapping Types": "hardcode",
+      "Mapping Notes/Rules": "Store literal value if present."
+    },
+    "R4": {
+      "Source Occurs": "1…20",
+      "Mapping Types": "unknown"
+    },
+    "CONSTANT[Incremental value]": {
+      "Output Path": "/data/canonicalOceanShipmentStatusDetails",
+      "Output Element": "/lineItemNumber",
+      "Output Occurs": "0…1",
+      "Output Format": "string",
+      "Output Length": "0/*",
+      "Output Fullpath": "/data/canonicalOceanShipmentStatusDetails/lineItemNumber",
+      "Mapping Types": "unknown",
+      "Mapping Notes/Rules": "For each iteration of R4, increment the value and map it to target"
+    },
+    "R401": {
+      "Source Occurs": "1…1",
+      "Source Format": "string",
+      "Source Length": "1/1",
+      "Source Codelist": "CL_PortOrTerminalFunctionCode",
+      "Source Sample": "O",
+      "Output Path": "/data/canonicalOceanShipmentStatusDetails/portOrTerminalDetails",
+      "Output Element": "/portOrTerminalFunctionCode",
+      "Output Occurs": "0…1",
+      "Output Format": "string",
+      "Output Length": "0/*",
+      "Output Codelist": "CL_PortOrTerminalFunctionCode",
+      "Output Sample": "ORIGIN",
+      "Output Fullpath": "/data/canonicalOceanShipmentStatusDetails/portOrTerminalDetails/portOrTerminalFunctionCode",
+      "Mapping Types": "lookup, conditional, transformation",
+      "Mapping Notes/Rules": "if source is present convert from source to target value. Use the Port or terminal function code table to convert and validate that source type is correct.\n \nCALL \"com.tracelink.contivo.LookUp.XRefCodeLists\" for lookup file CL_PortOrTerminalFunctionCode.txt with java. \n\nElse if source is not present or invalid throw error:\n\n\"Valid port or terminal function code is required in R401 !!!",
+      "Lookup Table": "file"
+    },
+    "R402": {
+      "Source Occurs": "0…1",
+      "Source Format": "string",
+      "Source Length": "1/2",
+      "Source Codelist": "CL_LocationCode",
+      "Source Sample": "CI",
+      "Output Path": "/data/canonicalOceanShipmentStatusDetails/portOrTerminalDetails",
+      "Output Element": "/oceanShipmentLocationCode",
+      "Output Occurs": "0…1",
+      "Output Format": "string",
+      "Output Length": "0/*",
+      "Output Codelist": "CL_LocationCode",
+      "Output Sample": "CITY",
+      "Output Fullpath": "/data/canonicalOceanShipmentStatusDetails/portOrTerminalDetails/oceanShipmentLocationCode",
+      "Mapping Types": "lookup, conditional, transformation",
+      "Mapping Notes/Rules": "if source is present convert from source to target value. Use the Location code table to convert and validate that source type is correct.\n \nCALL \"com.tracelink.contivo.LookUp.XRefCodeLists\" for lookup file CL_LocationCode.txt with java. \n\nElse if source is invalid , throw error:\n\n\"Location code is invalid in R402 !!!\"",
+      "Lookup Table": "file"
+    },
+    "R403": {
+      "Source Occurs": "0…1",
+      "Source Format": "string",
+      "Source Length": "1/30",
+      "Source Sample": "USLGB",
+      "Output Path": "/data/canonicalOceanShipmentStatusDetails/portOrTerminalDetails",
+      "Output Element": "/oceanShipmentLocationIdentifier",
+      "Output Occurs": "0…1",
+      "Output Format": "string",
+      "Output Length": "0/*",
+      "Output Sample": "USLGB",
+      "Output Fullpath": "/data/canonicalOceanShipmentStatusDetails/portOrTerminalDetails/oceanShipmentLocationIdentifier",
+      "Mapping Types": "hardcode",
+      "Mapping Notes/Rules": "Store literal value to target, if R402 is valid"
+    },
+    "R404": {
+      "Source Occurs": "0…1",
+      "Source Format": "string",
+      "Source Length": "2/24",
+      "Source Sample": "USPort",
+      "Output Path": "/data/canonicalOceanShipmentStatusDetails/portOrTerminalDetails",
+      "Output Element": "/portName",
+      "Output Occurs": "0…1",
+      "Output Format": "string",
+      "Output Length": "0/*",
+      "Output Sample": "USPort",
+      "Output Fullpath": "/data/canonicalOceanShipmentStatusDetails/portOrTerminalDetails/portName",
+      "Mapping Types": "hardcode",
+      "Mapping Notes/Rules": "Store literal value if present"
+    },
+    "R405": {
+      "Source Occurs": "0…1",
+      "Source Format": "string",
+      "Source Length": "2/3",
+      "Source Sample": "US",
+      "Output Path": "/data/canonicalOceanShipmentStatusDetails/portOrTerminalDetails",
+      "Output Element": "/countryCode",
+      "Output Occurs": "0…1",
+      "Output Format": "string",
+      "Output Length": "0/*",
+      "Output Sample": "US",
+      "Output Fullpath": "/data/canonicalOceanShipmentStatusDetails/portOrTerminalDetails/countryCode",
+      "Mapping Types": "hardcode",
+      "Mapping Notes/Rules": "Store literal value if present."
+    },
+    "R406": {
+      "Source Occurs": "0…1",
+      "Source Format": "string",
+      "Source Length": "2/20",
+      "Source Sample": "Terminal",
+      "Output Path": "/data/canonicalOceanShipmentStatusDetails/portOrTerminalDetails",
+      "Output Element": "/terminalName",
+      "Output Occurs": "0…1",
+      "Output Format": "string",
+      "Output Length": "0/*",
+      "Output Sample": "Terminal",
+      "Output Fullpath": "/data/canonicalOceanShipmentStatusDetails/portOrTerminalDetails/terminalName",
+      "Mapping Types": "hardcode",
+      "Mapping Notes/Rules": "Store literal value if present."
+    },
+    "R408": {
+      "Source Occurs": "0…1",
+      "Source Format": "string",
+      "Source Length": "2/2",
+      "Source Sample": "TX",
+      "Output Path": "/data/canonicalOceanShipmentStatusDetails/portOrTerminalDetails",
+      "Output Element": "/state",
+      "Output Occurs": "0…1",
+      "Output Format": "string",
+      "Output Length": "0/*",
+      "Output Sample": "TX",
+      "Output Fullpath": "/data/canonicalOceanShipmentStatusDetails/portOrTerminalDetails/state",
+      "Mapping Types": "hardcode",
+      "Mapping Notes/Rules": "Store literal value if present."
+    },
+    "DTM": {
+      "Source Occurs": "0…15",
+      "Mapping Types": "conditional",
+      "Mapping Notes/Rules": "create instance of mpcDates only DTM01 is present and valid, else do not create mpcDates instance."
+    },
+    "DTM04": {
+      "Source Occurs": "0…1",
+      "Source Format": "string",
+      "Source Length": "2/2",
+      "Source Sample": "CT",
+      "Output Path": "/data/canonicalOceanShipmentStatusDetails/mpcDates/mpcDates",
+      "Output Element": "/timeZone",
+      "Output Occurs": "0…1",
+      "Output Format": "string",
+      "Output Length": "0/*",
+      "Output Sample": "CT",
+      "Output Fullpath": "/data/canonicalOceanShipmentStatusDetails/mpcDates/mpcDates/timeZone",
+      "Mapping Types": "hardcode",
+      "Mapping Notes/Rules": "Store literal value if present."
+    },
+    "V9": {
+      "Source Occurs": "0…10",
+      "Mapping Types": "unknown"
+    },
+    "V901": {
+      "Source Occurs": "1…1",
+      "Source Format": "string",
+      "Source Length": "3/3",
+      "Source Codelist": "CL_ShipmentEventType",
+      "Source Sample": "APU",
+      "Output Path": "/data/canonicalOceanShipmentEventDetails",
+      "Output Element": "/shipmentEventType",
+      "Output Occurs": "0…1",
+      "Output Format": "string",
+      "Output Length": "0/*",
+      "Output Codelist": "CL_ShipmentEventType",
+      "Output Sample": "ANTICIPATEDPICKUP",
+      "Output Fullpath": "/data/canonicalOceanShipmentEventDetails/shipmentEventType",
+      "Mapping Types": "lookup, conditional, transformation",
+      "Mapping Notes/Rules": "if source is present convert from source to target value. Use the shpment event type table to convert and validate that source type is correct.\n \nCALL \"com.tracelink.contivo.LookUp.XRefCodeLists\" for lookup file CL_ShipmentEventType.txt with java. \n\nElse if source is missing or invalid , throw error:\n\n\"Valid shipment event type is required in V901 !!!\"",
+      "Lookup Table": "file"
+    },
+    "V902": {
+      "Source Occurs": "0…1",
+      "Source Format": "string",
+      "Source Length": "1/25",
+      "Source Sample": "Vessel arrived",
+      "Output Path": "/data/canonicalOceanShipmentEventDetails",
+      "Output Element": "/eventName",
+      "Output Occurs": "0…1",
+      "Output Format": "string",
+      "Output Length": "0/*",
+      "Output Sample": "Vessel arrived",
+      "Output Fullpath": "/data/canonicalOceanShipmentEventDetails/eventName",
+      "Mapping Types": "hardcode",
+      "Mapping Notes/Rules": "Store literal value if present."
+    },
+    "V903": {
+      "Source Occurs": "0…1",
+      "Source Format": "date",
+      "Source Length": "8/8",
+      "Source Sample": "20070609",
+      "Output Path": "/data/canonicalOceanShipmentEventDetails",
+      "Output Element": "/transportEventTimeStamp",
+      "Output Occurs": "0…1",
+      "Output Format": "string",
+      "Output Length": "0/*",
+      "Output Sample": "20070609",
+      "Output Fullpath": "/data/canonicalOceanShipmentEventDetails/transportEventTimeStamp",
+      "Mapping Types": "conditional, transformation",
+      "Mapping Notes/Rules": "If V903 and V904 are present, map to target from V903 and V904 in format YYYY-MM-DDTHH:MM:SS.nnnZ.\nIf V903 is present and V904 is missing, map to target from V903 in date format YYYY-MM-DD.\nelse do nothing"
+    },
+    "V905": {
+      "Source Occurs": "0…1",
+      "Source Format": "string",
+      "Source Length": "2/30",
+      "Source Sample": "Texas",
+      "Output Path": "/data/canonicalOceanShipmentEventDetails",
+      "Output Element": "/city",
+      "Output Occurs": "0…1",
+      "Output Format": "string",
+      "Output Length": "0/*",
+      "Output Sample": "Texas",
+      "Output Fullpath": "/data/canonicalOceanShipmentEventDetails/city",
+      "Mapping Types": "hardcode",
+      "Mapping Notes/Rules": "Store literal value if present."
+    },
+    "V906": {
+      "Source Occurs": "0…1",
+      "Source Format": "string",
+      "Source Length": "2/2",
+      "Source Sample": "TX",
+      "Output Path": "/data/canonicalOceanShipmentEventDetails",
+      "Output Element": "/state",
+      "Output Occurs": "0…1",
+      "Output Format": "string",
+      "Output Length": "0/*",
+      "Output Sample": "TX",
+      "Output Fullpath": "/data/canonicalOceanShipmentEventDetails/state",
+      "Mapping Types": "hardcode",
+      "Mapping Notes/Rules": "Store literal value if present."
+    },
+    "V907": {
+      "Source Occurs": "0…1",
+      "Source Format": "string",
+      "Source Length": "2/3",
+      "Source Sample": "UK",
+      "Output Path": "/data/canonicalOceanShipmentEventDetails",
+      "Output Element": "/countryCode",
+      "Output Occurs": "0…1",
+      "Output Format": "string",
+      "Output Length": "0/*",
+      "Output Sample": "UK",
+      "Output Fullpath": "/data/canonicalOceanShipmentEventDetails/countryCode",
+      "Mapping Types": "hardcode",
+      "Mapping Notes/Rules": "Store literal value if present."
+    },
+    "V908": {
+      "Source Occurs": "0…1",
+      "Source Format": "string",
+      "Source Length": "3/3",
+      "Source Codelist": "CL_TransactionStatusReasonCode",
+      "Source Sample": "A03",
+      "Output Path": "/data/canonicalOceanShipmentEventDetails",
+      "Output Element": "/transactionStatusReasonCode",
+      "Output Occurs": "0…1",
+      "Output Format": "string",
+      "Output Length": "0/*",
+      "Output Codelist": "CL_TransactionStatusReasonCode",
+      "Output Sample": "INCORRECTADDRESS",
+      "Output Fullpath": "/data/canonicalOceanShipmentEventDetails/transactionStatusReasonCode",
+      "Mapping Types": "lookup, conditional, transformation",
+      "Mapping Notes/Rules": "if source is present convert from source to target value. Use the transaction status reason code table to convert and validate that source type is correct.\n \nCALL \"com.tracelink.contivo.LookUp.XRefCodeLists\" for lookup file CL_TransactionStatusReasonCode.txt with java. \n\nElse if source is invalid , throw error:\n\n\"Shipment event status reason code is invalid in V908 !!!\"",
+      "Lookup Table": "file"
+    },
+    "V9013": {
+      "Source Occurs": "0…1",
+      "Source Format": "string",
+      "Source Length": "2/2",
+      "Source Sample": "CT",
+      "Output Path": "/data/canonicalOceanShipmentEventDetails",
+      "Output Element": "/timeZone",
+      "Output Occurs": "0…1",
+      "Output Format": "string",
+      "Output Length": "0/*",
+      "Output Sample": "CT",
+      "Output Fullpath": "/data/canonicalOceanShipmentEventDetails/timeZone",
+      "Mapping Types": "hardcode",
+      "Mapping Notes/Rules": "Store literal value if present."
+    },
+    "SE": {
+      "Source Occurs": "1…1",
+      "Mapping Types": "unknown",
+      "Mapping Notes/Rules": "Create one instance of x12TrailerSegments for the SE transaction trailer"
+    },
+    "CONSTANT[TRANSACTION]": {
+      "Output Path": "/data/controlFileHeader/x12ControlFileHeader/x12TrailerSegments",
+      "Output Element": "/trailerSegmentType",
+      "Output Occurs": "0…1",
+      "Output Format": "string",
+      "Output Length": "0/*",
+      "Output Sample": "TRANSACTION",
+      "Output Fullpath": "/data/controlFileHeader/x12ControlFileHeader/x12TrailerSegments/trailerSegmentType",
+      "Mapping Types": "conditional",
+      "Mapping Notes/Rules": "Hard code \"TRANSACTION\" to target if source SE is present."
+    },
+    "SE01": {
+      "Source Occurs": "1…1",
+      "Source Format": "integer",
+      "Source Length": "1/10",
+      "Source Sample": "10",
+      "Output Path": "/data/controlFileHeader/x12ControlFileHeader/x12TrailerSegments",
+      "Output Element": "/trailerSegmentCount",
+      "Output Occurs": "0…1",
+      "Output Format": "string",
+      "Output Length": "0/*",
+      "Output Sample": "10",
+      "Output Fullpath": "/data/controlFileHeader/x12ControlFileHeader/x12TrailerSegments/trailerSegmentCount",
+      "Mapping Types": "hardcode",
+      "Mapping Notes/Rules": "Store literal value."
+    },
+    "SE02": {
+      "Source Occurs": "1…1",
+      "Source Format": "string",
+      "Source Length": "4/9",
+      "Source Sample": "0001",
+      "Output Path": "/data/controlFileHeader/x12ControlFileHeader/x12TrailerSegments",
+      "Output Element": "/trailerSegmentIdentifier",
+      "Output Occurs": "0…1",
+      "Output Format": "string",
+      "Output Length": "0/*",
+      "Output Sample": "0001",
+      "Output Fullpath": "/data/controlFileHeader/x12ControlFileHeader/x12TrailerSegments/trailerSegmentIdentifier",
+      "Mapping Types": "hardcode",
+      "Mapping Notes/Rules": "Store literal value."
+    },
+    "GE": {
+      "Source Occurs": "1…1",
+      "Mapping Types": "unknown",
+      "Mapping Notes/Rules": "Create one instance of x12TrailerSegments for the GE group trailer"
+    },
+    "CONSTANT[GROUP]": {
+      "Output Path": "/data/controlFileHeader/x12ControlFileHeader/x12TrailerSegments",
+      "Output Element": "/trailerSegmentType",
+      "Output Occurs": "0…1",
+      "Output Format": "string",
+      "Output Length": "0/*",
+      "Output Sample": "GROUP",
+      "Output Fullpath": "/data/controlFileHeader/x12ControlFileHeader/x12TrailerSegments/trailerSegmentType",
+      "Mapping Types": "conditional",
+      "Mapping Notes/Rules": "Hard code \"GROUP\" to target if source SE is present."
+    },
+    "GE01": {
+      "Source Occurs": "1…1",
+      "Source Format": "integer",
+      "Source Length": "1/6",
+      "Source Sample": "5",
+      "Output Path": "/data/controlFileHeader/x12ControlFileHeader/x12TrailerSegments",
+      "Output Element": "/trailerSegmentCount",
+      "Output Occurs": "0…1",
+      "Output Format": "string",
+      "Output Length": "0/*",
+      "Output Sample": "5",
+      "Output Fullpath": "/data/controlFileHeader/x12ControlFileHeader/x12TrailerSegments/trailerSegmentCount",
+      "Mapping Types": "hardcode",
+      "Mapping Notes/Rules": "Store literal value."
+    },
+    "GE02": {
+      "Source Occurs": "1…1",
+      "Source Format": "string",
+      "Source Length": "1/9",
+      "Source Sample": "619827",
+      "Output Path": "/data/controlFileHeader/x12ControlFileHeader/x12TrailerSegments",
+      "Output Element": "/trailerSegmentIdentifier",
+      "Output Occurs": "0…1",
+      "Output Format": "string",
+      "Output Length": "0/*",
+      "Output Sample": "619827",
+      "Output Fullpath": "/data/controlFileHeader/x12ControlFileHeader/x12TrailerSegments/trailerSegmentIdentifier",
+      "Mapping Types": "hardcode",
+      "Mapping Notes/Rules": "Store literal value."
+    },
+    "IEA": {
+      "Source Occurs": "1…1",
+      "Mapping Types": "unknown",
+      "Mapping Notes/Rules": "Create one instance of x12TrailerSegments for the IEA group trailer"
+    },
+    "CONSTANT[INTERCHANGE]": {
+      "Output Path": "/data/controlFileHeader/x12ControlFileHeader/x12TrailerSegments",
+      "Output Element": "/trailerSegmentType",
+      "Output Occurs": "0…1",
+      "Output Format": "string",
+      "Output Length": "0/*",
+      "Output Sample": "INTERCHANGE",
+      "Output Fullpath": "/data/controlFileHeader/x12ControlFileHeader/x12TrailerSegments/trailerSegmentType",
+      "Mapping Types": "conditional",
+      "Mapping Notes/Rules": "Hard code \"INTERCHANGE\" to target if source SE is present."
+    },
+    "IEA01": {
+      "Source Occurs": "1…1",
+      "Source Format": "integer",
+      "Source Length": "1/5",
+      "Source Sample": "1",
+      "Output Path": "/data/controlFileHeader/x12ControlFileHeader/x12TrailerSegments",
+      "Output Element": "/trailerSegmentCount",
+      "Output Occurs": "0…1",
+      "Output Format": "string",
+      "Output Length": "0/*",
+      "Output Sample": "1",
+      "Output Fullpath": "/data/controlFileHeader/x12ControlFileHeader/x12TrailerSegments/trailerSegmentCount",
+      "Mapping Types": "hardcode",
+      "Mapping Notes/Rules": "Store literal value."
+    },
+    "IEA02": {
+      "Source Occurs": "1…1",
+      "Source Format": "string",
+      "Source Length": "9/9",
+      "Source Sample": "0000000000619827",
+      "Output Path": "/data/controlFileHeader/x12ControlFileHeader/x12TrailerSegments",
+      "Output Element": "/trailerSegmentIdentifier",
+      "Output Occurs": "0…1",
+      "Output Format": "string",
+      "Output Length": "0/*",
+      "Output Sample": "0000000000619827",
+      "Output Fullpath": "/data/controlFileHeader/x12ControlFileHeader/x12TrailerSegments/trailerSegmentIdentifier",
+      "Mapping Types": "hardcode",
+      "Mapping Notes/Rules": "Store literal value."
+    }
+  },
+  "lookupTables": {
+    "CL_TransactionStatusCode": [
+      {
+        "X12 Code": "Code List:",
+        "EDIFACT 98A Code": "Shipment status code"
+      },
+      {
+        "X12 Code": "X12 Code",
+        "EDIFACT 98A Code": "EDIFACT 98A Code",
+        "EDIFACT 98B Code": "EDIFACT 98B Code",
+        "CanonicalCode": "CanonicalCode",
+        "Description": "Description"
+      },
+      {
+        "X12 Code": "1",
+        "EDIFACT 98A Code": "85",
+        "CanonicalCode": "DELIVEREDSHORT",
+        "Description": "Shipment was delivered with missing piece or pieces"
+      },
+      {
+        "X12 Code": "2",
+        "CanonicalCode": "CARRIERTERMINALRETURNED",
+        "Description": "Returned to carrier terminal"
+      },
+      {
+        "X12 Code": "3",
+        "EDIFACT 98A Code": "82",
+        "CanonicalCode": "SHIPMENTRETURNED",
+        "Description": "Returned to shipper"
+      },
+      {
+        "X12 Code": "4",
+        "EDIFACT 98A Code": "18",
+        "CanonicalCode": "SHIPMENTDAMAGED",
+        "Description": "Shipment delivered with damage noted by carrier or consignee"
+      },
+      {
+        "X12 Code": "A",
+        "EDIFACT 98A Code": "1",
+        "CanonicalCode": "SHIPMENTARRIVED",
+        "Description": "Shipment has arrived at the location specified"
+      },
+      {
+        "X12 Code": "AA",
+        "CanonicalCode": "PICKUPAPPOINTMENT",
+        "Description": "Pick-up appointment date and time"
+      },
+      {
+        "X12 Code": "AC",
+        "CanonicalCode": "AWAITINGCLEARANCE",
+        "Description": "Awaiting clearance"
+      },
+      {
+        "X12 Code": "AD",
+        "CanonicalCode": "DELIVERYAPPOINTMENT",
+        "Description": "Delivery appointment date and time"
+      },
+      {
+        "X12 Code": "AE",
+        "EDIFACT 98A Code": "48",
+        "CanonicalCode": "LOADEDONVESSEL",
+        "Description": "Loaded on vessel"
+      },
+      {
+        "X12 Code": "AF",
+        "EDIFACT 98A Code": "13",
+        "CanonicalCode": "PICKEDUP",
+        "Description": "Carrier departed pickup location with shipment"
+      },
+      {
+        "X12 Code": "AG",
+        "CanonicalCode": "ESTIMATEDDELIVERY",
+        "Description": "Estimated delivery"
+      },
+      {
+        "X12 Code": "AH",
+        "EDIFACT 98A Code": "23",
+        "CanonicalCode": "ATTEMPTEDDELIVERY",
+        "Description": "Attempted delivery"
+      },
+      {
+        "X12 Code": "AI",
+        "CanonicalCode": "RECONSIGNED",
+        "Description": "Shipment has been reconsigned"
+      },
+      {
+        "X12 Code": "AJ",
+        "EDIFACT 98A Code": "42",
+        "CanonicalCode": "DELIVERYTENDERED",
+        "Description": "Tendered for delivery"
+      },
+      {
+        "X12 Code": "AL",
+        "CanonicalCode": "LOADEDONRAIL",
+        "Description": "Loaded on rail"
+      },
+      {
+        "X12 Code": "AM",
+        "CanonicalCode": "LOADEDONTRUCK",
+        "Description": "Loaded on truck"
+      },
+      {
+        "X12 Code": "AN",
+        "CanonicalCode": "DELIVEREDTOAIRCARRIER",
+        "Description": "Delivered to air carrier"
+      },
+      {
+        "X12 Code": "AO",
+        "CanonicalCode": "LOADEDONBARGE",
+        "Description": "Loaded on barge"
+      },
+      {
+        "X12 Code": "AP",
+        "CanonicalCode": "LOADEDONFEEDERVESSEL",
+        "Description": "Loaded on feeder vessel"
+      },
+      {
+        "X12 Code": "AR",
+        "CanonicalCode": "RAILARRIVAL",
+        "Description": "Rail arrival at destination intermodal ramp"
+      },
+      {
+        "X12 Code": "AU",
+        "CanonicalCode": "AVAILABLEFORPICKUP",
+        "Description": "Shipment available for pick-up"
+      },
+      {
+        "X12 Code": "AV",
+        "CanonicalCode": "AVAILABLEFORDELIVERY",
+        "Description": "Available for delivery"
+      },
+      {
+        "X12 Code": "AW",
+        "CanonicalCode": "AWAITINGEXPORT",
+        "Description": "Awaiting for export"
+      },
+      {
+        "X12 Code": "B",
+        "CanonicalCode": "BADORDER",
+        "Description": "Shipment was inoperative, equipment failed"
+      },
+      {
+        "X12 Code": "BC",
+        "EDIFACT 98A Code": "91",
+        "CanonicalCode": "INTRANSITSTORAGE",
+        "Description": "Storage in transit"
+      },
+      {
+        "X12 Code": "BR",
+        "CanonicalCode": "BILLOFLADINGRELEASED",
+        "Description": "Bill of lading released"
+      },
+      {
+        "X12 Code": "C",
+        "CanonicalCode": "ESTIMATEDDEPART",
+        "Description": "Estimated to depart terminal location"
+      },
+      {
+        "X12 Code": "CD",
+        "CanonicalCode": "ORIGINRECEIVED",
+        "Description": "Received at origin"
+      },
+      {
+        "X12 Code": "CH",
+        "CanonicalCode": "CUSTOMSHOLD",
+        "Description": "Customs hold"
+      },
+      {
+        "X12 Code": "CR",
+        "CanonicalCode": "CARRIERRELEASED",
+        "Description": "Carrier release"
+      },
+      {
+        "X12 Code": "CS",
+        "EDIFACT 98A Code": "78",
+        "CanonicalCode": "CONTAINERSEALED",
+        "Description": "Container sealed"
+      },
+      {
+        "X12 Code": "CT",
+        "EDIFACT 98A Code": "12",
+        "CanonicalCode": "CUSTOMSRELEASED",
+        "Description": "Customs released"
+      },
+      {
+        "X12 Code": "CU",
+        "CanonicalCode": "CARRIERCUSTOMSRELEASED",
+        "Description": "Carrier and customs released"
+      },
+      {
+        "X12 Code": "D",
+        "CanonicalCode": "DELIVERED",
+        "Description": "Shipment was delivered to the consignee or receiver"
+      },
+      {
+        "X12 Code": "DO",
+        "CanonicalCode": "DESTINATIONSTOPOFF",
+        "Description": "Destination stop-off"
+      },
+      {
+        "X12 Code": "E",
+        "CanonicalCode": "ESTIMATEDARRIVALENROUTE",
+        "Description": "Estimated to arrive (en route)"
+      },
+      {
+        "X12 Code": "EE",
+        "CanonicalCode": "EMPTYEQUIPMENTDISPATCHED",
+        "Description": "Empty equipment dispatched"
+      },
+      {
+        "X12 Code": "HR",
+        "CanonicalCode": "RELEASEDHOLD",
+        "Description": "Carrier un-release (hold released)"
+      },
+      {
+        "X12 Code": "I",
+        "CanonicalCode": "INGATE",
+        "Description": "In-gate"
+      },
+      {
+        "X12 Code": "IB",
+        "CanonicalCode": "USCUSTOMSAUTHORIZED",
+        "Description": "U.S. Customs, in-bond movement authorized"
+      },
+      {
+        "X12 Code": "J",
+        "CanonicalCode": "DELIVEREDCONNECTINGLINE",
+        "Description": "Delivered to connecting line"
+      },
+      {
+        "X12 Code": "K",
+        "CanonicalCode": "ARRIVEDCUSTOMS",
+        "Description": "Arrived at customs"
+      },
+      {
+        "X12 Code": "K3",
+        "CanonicalCode": "CUSTOMSPAPERWORKPROVIDED",
+        "Description": "Complete customs paperwork has been provided"
+      },
+      {
+        "X12 Code": "L",
+        "CanonicalCode": "LOADING",
+        "Description": "Loading"
+      },
+      {
+        "X12 Code": "N",
+        "CanonicalCode": "RECEIVEDNOPAPERWORK",
+        "Description": "No paperwork received with shipment or equipment"
+      },
+      {
+        "X12 Code": "O",
+        "CanonicalCode": "SHIPMENTNOTRECEIVED",
+        "Description": "Paperwork received – did not receive shipment or equipment"
+      },
+      {
+        "X12 Code": "OA",
+        "CanonicalCode": "OUTGATE",
+        "Description": "Out gate"
+      },
+      {
+        "X12 Code": "OP",
+        "CanonicalCode": "PAPERWORKPROVIDED",
+        "Description": "All paperwork has been provided to consignee"
+      },
+      {
+        "X12 Code": "P",
+        "CanonicalCode": "DEPARTEDTERMINAL",
+        "Description": "Departed terminal location, shipment has left the carrier's terminal or other control point"
+      },
+      {
+        "X12 Code": "PA",
+        "CanonicalCode": "USCUSTOMSHOLDEXAMINATION",
+        "Description": "U.S. Customs hold, intensive examination"
+      },
+      {
+        "X12 Code": "PB",
+        "CanonicalCode": "USCUSTOMSHOLDINSUFFICIENTPAPERS",
+        "Description": "U.S. Customs hold, insufficient paperwork"
+      },
+      {
+        "X12 Code": "PC",
+        "CanonicalCode": "USCUSTOMSHOLDDISCREPANCYPAPERS",
+        "Description": "U.S. Customs hold, discrepancy paperwork"
+      },
+      {
+        "X12 Code": "PD",
+        "CanonicalCode": "USCUSTOMSHOLDDISCREPANCYPIECES",
+        "Description": "U.S. Customs hold, discrepancy piece count"
+      },
+      {
+        "X12 Code": "PE",
+        "CanonicalCode": "USCOASTGUARDHOLD",
+        "Description": "U.S. Customs and Border Protection (CBP) hold, hold by Coast Guard"
+      },
+      {
+        "X12 Code": "PF",
+        "CanonicalCode": "USFBIHOLD",
+        "Description": "U.S. Customs and Border Protection (CBP) hold, hold by F.B.I."
+      },
+      {
+        "X12 Code": "PI",
+        "CanonicalCode": "USFDAHOLD",
+        "Description": "U.S. Customs and Border Protection (CBP) hold, hold by Food and Drug"
+      },
+      {
+        "X12 Code": "PK",
+        "CanonicalCode": "USDRUGENFORCEMENTHOLD",
+        "Description": "U.S. Customs and Border Protection (CBP) hold, hold by Drug Enforcement"
+      },
+      {
+        "X12 Code": "NH",
+        "CanonicalCode": "HAZARDOUSMATERIALDOCUMENT",
+        "Description": "Awaiting for hazardous material document"
+      },
+      {
+        "X12 Code": "NR",
+        "CanonicalCode": "SHIPMENTINFORMATION",
+        "Description": "Awaiting for shipment information"
+      },
+      {
+        "X12 Code": "NS",
+        "CanonicalCode": "NOSEAL",
+        "Description": "No seal on load"
+      },
+      {
+        "X12 Code": "RB",
+        "CanonicalCode": "DELIVERYAPPOINTMENTREQUESTED",
+        "Description": "Delivery appointment requested"
+      },
+      {
+        "X12 Code": "RD",
+        "CanonicalCode": "CONTAINERRETURN",
+        "Description": "Return container"
+      },
+      {
+        "X12 Code": "RL",
+        "CanonicalCode": "RAILDEPARTED",
+        "Description": "Rail departure from origin intermodal ramp"
+      },
+      {
+        "X12 Code": "SD",
+        "EDIFACT 98A Code": "101",
+        "CanonicalCode": "SHIPMENTDELAYED",
+        "Description": "Shipment delayed"
+      },
+      {
+        "X12 Code": "T",
+        "CanonicalCode": "ATINTRATERMINAL",
+        "Description": "At terminal, intra-terminal movement"
+      },
+      {
+        "X12 Code": "U",
+        "CanonicalCode": "UNLOADING",
+        "Description": "Unloading"
+      },
+      {
+        "X12 Code": "UC",
+        "CanonicalCode": "CONTAINERUNLOADED",
+        "Description": "Shipment container unloaded from chassis"
+      },
+      {
+        "X12 Code": "UO",
+        "CanonicalCode": "UNLOADEDFROMBARGE",
+        "Description": "Unloaded from barge"
+      },
+      {
+        "X12 Code": "UR",
+        "CanonicalCode": "UNLOADEDFROMRAILCAR",
+        "Description": "Shipment conveyance unloaded from rail car"
+      },
+      {
+        "X12 Code": "UV",
+        "CanonicalCode": "UNLOADEDFROMVESSEL",
+        "Description": "Unloaded from vessel"
+      },
+      {
+        "X12 Code": "VA",
+        "CanonicalCode": "VESSELARRIVAL",
+        "Description": "Vessel scheduled to arrive or has arrived"
+      },
+      {
+        "X12 Code": "VD",
+        "CanonicalCode": "VESSELDEPARTURE",
+        "Description": "Vessel scheduled to depart or has departed"
+      },
+      {
+        "X12 Code": "W",
+        "CanonicalCode": "RELEASEDBYCUSTOMER",
+        "Description": "Released by customer"
+      },
+      {
+        "X12 Code": "X1",
+        "CanonicalCode": "ARRIVEDATLOCATION",
+        "Description": "Arrived at delivery location"
+      },
+      {
+        "X12 Code": "X2",
+        "CanonicalCode": "ESTIMATEDARRIVAL",
+        "Description": "Estimated date/time of arrival at consignee's location"
+      },
+      {
+        "X12 Code": "X3",
+        "CanonicalCode": "PICKUPARRIVAL",
+        "Description": "Arrived at pickup location"
+      },
+      {
+        "X12 Code": "X4",
+        "CanonicalCode": "AIRPORTARRIVAL",
+        "Description": "Arrived at terminal location"
+      },
+      {
+        "X12 Code": "X5",
+        "CanonicalCode": "ARRIVEDATDELIVERYDOCK",
+        "Description": "Arrived at delivery location delivery dock"
+      },
+      {
+        "X12 Code": "X6",
+        "EDIFACT 98A Code": "31",
+        "CanonicalCode": "DELIVERYENROUTE",
+        "Description": "Enroute to delivery location"
+      },
+      {
+        "X12 Code": "X7",
+        "CanonicalCode": "PICKUPENROUTE",
+        "Description": "Enroute to pickup location"
+      },
+      {
+        "X12 Code": "X8",
+        "CanonicalCode": "ARRIVEDPICKUPLOCATIONDOCK",
+        "Description": "Arrived at pickup location loading dock"
+      },
+      {
+        "X12 Code": "X9",
+        "CanonicalCode": "ARRIVEDCARRIERWAREHOUSE",
+        "Description": "Arrived at carrier's warehouse"
+      },
+      {
+        "X12 Code": "XB",
+        "CanonicalCode": "ACKNOWLEDGED",
+        "Description": "Shipment acknowledged"
+      },
+      {
+        "X12 Code": "ZZ",
+        "CanonicalCode": "MUTUALLYDEFINED",
+        "Description": "Custom status code"
+      },
+      {
+        "EDIFACT 98B Code": "1",
+        "CanonicalCode": "TODO",
+        "Description": "Instruction has not yet been done."
+      },
+      {
+        "EDIFACT 98B Code": "2",
+        "CanonicalCode": "DONE",
+        "Description": "Instruction has been completed"
+      },
+      {
+        "EDIFACT 98B Code": "3",
+        "CanonicalCode": "PASSEDON",
+        "Description": "Information has been passed on."
+      },
+      {
+        "EDIFACT 98B Code": "16",
+        "CanonicalCode": "NONE",
+        "Description": "No status or condition has been communicated"
+      },
+      {
+        "EDIFACT 98B Code": "17",
+        "CanonicalCode": "REQUESTED",
+        "Description": "A status or condition has been requested"
+      },
+      {
+        "EDIFACT 98B Code": "20",
+        "CanonicalCode": "PERMANENT",
+        "Description": "Status is intended to last indefinitely"
+      },
+      {
+        "EDIFACT 98B Code": "21",
+        "CanonicalCode": "TEMPORARY",
+        "Description": "Status is intended to last for a limited period"
+      },
+      {
+        "EDIFACT 98B Code": "23",
+        "CanonicalCode": "ADDED",
+        "Description": "Status adds to a quantity"
+      },
+      {
+        "EDIFACT 98B Code": "24",
+        "CanonicalCode": "DEDUCTED",
+        "Description": "Status deducts from a quantity"
+      },
+      {
+        "EDIFACT 98B Code": "28",
+        "CanonicalCode": "EXECUTETRANSACTION",
+        "Description": "Transaction is expected to be executed"
+      },
+      {
+        "EDIFACT 98B Code": "35",
+        "CanonicalCode": "STARTED",
+        "Description": "Specifies that an event has started"
+      },
+      {
+        "EDIFACT 98B Code": "36",
+        "CanonicalCode": "REVISED",
+        "Description": "The instruction has been revised"
+      },
+      {
+        "EDIFACT 98B Code": "37",
+        "CanonicalCode": "STOLEN",
+        "Description": "A consignment or goods has been stolen"
+      },
+      {
+        "EDIFACT 98B Code": "39",
+        "CanonicalCode": "APPROVED",
+        "Description": "The instruction has been approved"
+      },
+      {
+        "EDIFACT 98B Code": "43",
+        "CanonicalCode": "POSTPONED",
+        "Description": "Further action is delayed"
+      },
+      {
+        "EDIFACT 98B Code": "45",
+        "CanonicalCode": "NOSTATUS",
+        "Description": "There is not status information to report"
+      },
+      {
+        "EDIFACT 98B Code": "53",
+        "CanonicalCode": "EXTRACT",
+        "Description": "Instruction to remove goods or stock"
+      },
+      {
+        "EDIFACT 98B Code": "60",
+        "CanonicalCode": "NOTORDERED",
+        "Description": "Product not ordered"
+      },
+      {
+        "EDIFACT 98B Code": "64",
+        "CanonicalCode": "CANCELLED",
+        "Description": "Order or request cancelled"
+      },
+      {
+        "EDIFACT 98B Code": "67",
+        "CanonicalCode": "PRELIMINARY",
+        "Description": "Preliminary instruction"
+      },
+      {
+        "EDIFACT 98B Code": "68",
+        "CanonicalCode": "SPLIT",
+        "Description": "Split movement or handling"
+      },
+      {
+        "EDIFACT 98B Code": "71",
+        "CanonicalCode": "AVAILABLE",
+        "Description": "Available for ordering"
+      },
+      {
+        "EDIFACT 98B Code": "72",
+        "CanonicalCode": "NOTAVAILABLE",
+        "Description": "Not available for ordering"
+      },
+      {
+        "EDIFACT 98B Code": "74",
+        "CanonicalCode": "EXPIRED",
+        "Description": "Expiry date exceeded"
+      },
+      {
+        "EDIFACT 98B Code": "85",
+        "CanonicalCode": "UPDATED",
+        "Description": "Brought up to date"
+      },
+      {
+        "EDIFACT 98B Code": "106",
+        "CanonicalCode": "ARRANGED",
+        "Description": "Planned or provided for."
+      },
+      {
+        "EDIFACT 98B Code": "110",
+        "CanonicalCode": "CORRECTED",
+        "Description": "Stock quantity corrected"
+      },
+      {
+        "EDIFACT 98B Code": "111",
+        "CanonicalCode": "INACTIVE",
+        "Description": "Inactive"
+      },
+      {
+        "EDIFACT 98B Code": "112",
+        "CanonicalCode": "ACTIVE",
+        "Description": "Active"
+      },
+      {
+        "EDIFACT 98B Code": "113",
+        "CanonicalCode": "INCOMPLETE",
+        "Description": "Incomplete data"
+      },
+      {
+        "EDIFACT 98B Code": "115",
+        "CanonicalCode": "PROVISIONAL",
+        "Description": "Object in a provisional state"
+      },
+      {
+        "EDIFACT 98B Code": "119",
+        "CanonicalCode": "OUTOFDATE",
+        "Description": "Information is out of date"
+      },
+      {
+        "EDIFACT 98B Code": "121",
+        "CanonicalCode": "COMPLETE",
+        "Description": "Complete"
+      },
+      {
+        "EDIFACT 98B Code": "122",
+        "CanonicalCode": "PARTIAL",
+        "Description": "Incomplete"
+      },
+      {
+        "EDIFACT 98B Code": "123",
+        "CanonicalCode": "CONTRACTED",
+        "Description": "Governed by a contract"
+      },
+      {
+        "EDIFACT 98B Code": "125",
+        "CanonicalCode": "ADJUSTED",
+        "Description": "Information is adjusted"
+      },
+      {
+        "EDIFACT 98B Code": "126",
+        "CanonicalCode": "EXPECTEDDELIVERY",
+        "Description": "Expected delivery"
+      },
+      {
+        "EDIFACT 98B Code": "127",
+        "CanonicalCode": "MEASURED",
+        "Description": "Referenced item has been measured"
+      },
+      {
+        "EDIFACT 98B Code": "128",
+        "CanonicalCode": "READYTOLOAD",
+        "Description": "Ready for loading"
+      },
+      {
+        "EDIFACT 98B Code": "129",
+        "CanonicalCode": "NOHEAT",
+        "Description": "Not heat treated"
+      },
+      {
+        "EDIFACT 98B Code": "130",
+        "CanonicalCode": "HEAT",
+        "Description": "Heat treated"
+      },
+      {
+        "EDIFACT 98B Code": "135",
+        "CanonicalCode": "SOLID",
+        "Description": "Object is a solid"
+      },
+      {
+        "EDIFACT 98B Code": "136",
+        "CanonicalCode": "LIQUID",
+        "Description": "Object is a liquid"
+      },
+      {
+        "EDIFACT 98B Code": "137",
+        "CanonicalCode": "GAS",
+        "Description": "Object is a gas"
+      },
+      {
+        "EDIFACT 98B Code": "138",
+        "CanonicalCode": "SLUDGE",
+        "Description": "Object is a semi-solid material"
+      },
+      {
+        "EDIFACT 98B Code": "139",
+        "CanonicalCode": "NORMALSECURITY",
+        "Description": "Minimum appropriate protective security measures shall be maintained at all times on the means of transport"
+      },
+      {
+        "EDIFACT 98B Code": "140",
+        "CanonicalCode": "HEIGHTENEDSECURITY",
+        "Description": "Appropriate additional protective security measures shall be maintained for a period of time as a result of heightened risk of a security incident."
+      },
+      {
+        "EDIFACT 98B Code": "146",
+        "CanonicalCode": "TRANSSHIPPED",
+        "Description": "The goods/consignment/transport equipment has been trans-shipped from one means of transport to another"
+      },
+      {
+        "EDIFACT 98B Code": "147",
+        "CanonicalCode": "DEFECTIVE",
+        "Description": "Object does not meet requirements due to defects"
+      },
+      {
+        "EDIFACT 98B Code": "148",
+        "CanonicalCode": "RECYCLED",
+        "Description": "The object is recycled"
+      },
+      {
+        "EDIFACT 98B Code": "149",
+        "CanonicalCode": "REUSED",
+        "Description": "The object is reused"
+      },
+      {
+        "EDIFACT 98B Code": "150",
+        "CanonicalCode": "REGISTERED",
+        "Description": "The object has been registered"
+      },
+      {
+        "EDIFACT 98B Code": "151",
+        "CanonicalCode": "RETURNED",
+        "Description": "The object is returned"
+      },
+      {
+        "EDIFACT 98B Code": "154",
+        "CanonicalCode": "RECALLED",
+        "Description": "The object or item is recalled"
+      },
+      {
+        "EDIFACT 98B Code": "155",
+        "CanonicalCode": "RESERVED",
+        "Description": "The object or item is reserved"
+      },
+      {
+        "EDIFACT 98B Code": "156",
+        "CanonicalCode": "SOLD",
+        "Description": "The object or item is sold"
+      },
+      {
+        "EDIFACT 98B Code": "157",
+        "CanonicalCode": "DAMAGED",
+        "Description": "The object or item is damaged"
+      },
+      {
+        "EDIFACT 98B Code": "158",
+        "CanonicalCode": "DESTROYED",
+        "Description": "The object or item is destroyed"
+      },
+      {
+        "EDIFACT 98B Code": "161",
+        "CanonicalCode": "DISPENSED",
+        "Description": "The object or item is dispensed"
+      },
+      {
+        "EDIFACT 98B Code": "162",
+        "CanonicalCode": "PARTIALLYDISPENSED",
+        "Description": "The object or item is partially dispensed"
+      },
+      {
+        "EDIFACT 98B Code": "163",
+        "CanonicalCode": "DISPOSED",
+        "Description": "The object or item is disposed"
+      },
+      {
+        "EDIFACT 98B Code": "164",
+        "CanonicalCode": "INPROGRESS",
+        "Description": "The object or item is in progress"
+      },
+      {
+        "EDIFACT 98B Code": "165",
+        "CanonicalCode": "REPLACE",
+        "Description": "The object or item needs replacement"
+      },
+      {
+        "EDIFACT 98B Code": "166",
+        "CanonicalCode": "NOTSELLABLE",
+        "Description": "The object or item is not sellable"
+      },
+      {
+        "EDIFACT 98B Code": "170",
+        "CanonicalCode": "ACKNOWLEDGED",
+        "Description": "Processing has been acknowledged"
+      },
+      {
+        "EDIFACT 98B Code": "171",
+        "CanonicalCode": "CONDITIONALLYACCEPTED",
+        "Description": "Processing has been accepted under conditions stated and proceeded accordingly"
+      }
+    ],
+    "CL_TransactionStatusReasonCode": [
+      {
+        "X12 Codes": "Code List:",
+        "CanonicalCode": "Shipment status reason codes"
+      },
+      {
+        "X12 Codes": "X12 Codes",
+        "EDIFACT Codes": "EDIFACT Codes",
+        "CanonicalCode": "CanonicalCode",
+        "Description": "Description"
+      },
+      {
+        "X12 Codes": "A24",
+        "EDIFACT Codes": "88",
+        "CanonicalCode": "ACCIDENT",
+        "Description": "Delay in the shipment because of an accident."
+      },
+      {
+        "X12 Codes": "A06",
+        "EDIFACT Codes": "9",
+        "CanonicalCode": "ADDRESS",
+        "Description": "The address for the shipment is incorrect or an additional address is required before the delivery can be completed."
+      },
+      {
+        "EDIFACT Codes": "3",
+        "CanonicalCode": "AGENTREFUSAL",
+        "Description": "The customer's agent refused to accept delivery"
+      },
+      {
+        "EDIFACT Codes": "4",
+        "CanonicalCode": "ALTEREDSEALS",
+        "Description": "The seals on the equipment have been changed from those that were expected"
+      },
+      {
+        "X12 Codes": "B15",
+        "CanonicalCode": "BORDERCLEARANCE",
+        "Description": "Shiipment is being held pending clearance at a border point."
+      },
+      {
+        "X12 Codes": "A11",
+        "EDIFACT Codes": "7",
+        "CanonicalCode": "BUSINESSCLOSED",
+        "Description": "The shiipment could not be delivered because the business was closed."
+      },
+      {
+        "X12 Codes": "A05",
+        "EDIFACT Codes": "59",
+        "CanonicalCode": "CANNOTLOCATE",
+        "Description": "The transportation carrier cannot find the customer location"
+      },
+      {
+        "X12 Codes": "D01",
+        "CanonicalCode": "CARRIERDISPATCHERROR",
+        "Description": "The shipment has been delayed for delivery because of a carrier dispatch error."
+      },
+      {
+        "X12 Codes": "A33",
+        "EDIFACT Codes": "69",
+        "CanonicalCode": "CARRIEROTHER",
+        "Description": "Delivery delay caused by a non-specified carrier related reason."
+      },
+      {
+        "X12 Codes": "A07",
+        "EDIFACT Codes": "90",
+        "CanonicalCode": "CONSIGNEEREFUSED",
+        "Description": "Shipment refused by consignee or delivery party."
+      },
+      {
+        "X12 Codes": "A26",
+        "CanonicalCode": "CONSIGNEERELATED",
+        "Description": "An unspecified delay caused by consignee"
+      },
+      {
+        "X12 Codes": "052",
+        "CanonicalCode": "CONTAINERDELAY",
+        "Description": "Import container delay"
+      },
+      {
+        "X12 Codes": "A31",
+        "CanonicalCode": "COURIERDISPATCHTOSTATION",
+        "Description": "Arrived in station after courier dispatch"
+      },
+      {
+        "EDIFACT Codes": "12",
+        "CanonicalCode": "CUSTOMER",
+        "Description": "Shipment of the goods/consignment/equipment require delivery arrangements by the customer."
+      },
+      {
+        "EDIFACT Codes": "21",
+        "CanonicalCode": "CUSTOMERACTION",
+        "Description": "An action in transport chain has been affected by action from a customer"
+      },
+      {
+        "X12 Codes": "A17",
+        "EDIFACT Codes": "15",
+        "CanonicalCode": "CUSTOMERDELAY",
+        "Description": "Delay in delivery due to a customer or consignee's request."
+      },
+      {
+        "X12 Codes": "A55",
+        "EDIFACT Codes": "13",
+        "CanonicalCode": "CUSTOMSHOLD",
+        "Description": "The shipment is on hold or has not been refused because customs and/or documentation issues."
+      },
+      {
+        "X12 Codes": "A65",
+        "CanonicalCode": "CUSTOMSRELEASE",
+        "Description": "Customs release"
+      },
+      {
+        "X12 Codes": "A95",
+        "EDIFACT Codes": "50",
+        "CanonicalCode": "CUTOFFTIMEPASSED",
+        "Description": "Past cutoff time. Delivery of the goods/consignments/equipment has been scheduled past or later than the cut-off time."
+      },
+      {
+        "X12 Codes": "049",
+        "EDIFACT Codes": "14",
+        "CanonicalCode": "DAMAGED",
+        "Description": "The merchandise was damaged or destroyed"
+      },
+      {
+        "X12 Codes": "A09",
+        "CanonicalCode": "DAMAGEDDELIVERYCOMPLETE",
+        "Description": "Goods damaged delivery has been completed"
+      },
+      {
+        "X12 Codes": "A10",
+        "CanonicalCode": "DAMAGEDDELIVERYNOTCOMPLETED",
+        "Description": "Goods damaged delivery has not been completed"
+      },
+      {
+        "X12 Codes": "A37",
+        "CanonicalCode": "DAMAGEDREWRAPPEDINHUB",
+        "Description": "Damaged rewrapped In hub"
+      },
+      {
+        "X12 Codes": "D50",
+        "EDIFACT Codes": "43",
+        "CanonicalCode": "DELAYED",
+        "Description": "Further action on the delivery is delayed or postponed."
+      },
+      {
+        "X12 Codes": "A01",
+        "EDIFACT Codes": "6",
+        "CanonicalCode": "DELIVERYMISSED",
+        "Description": "An unsuccessful attempt has been made to deliver the shipment"
+      },
+      {
+        "X12 Codes": "A45",
+        "CanonicalCode": "DELIVERYNOTCOMPLETED",
+        "Description": "Delivery not completed"
+      },
+      {
+        "EDIFACT Codes": "17",
+        "CanonicalCode": "DEPARTUREDELAY",
+        "Description": "Departure of the shipment has been delayed."
+      },
+      {
+        "X12 Codes": "A27",
+        "CanonicalCode": "DRIVERRELATED",
+        "Description": "The driver returned the shipment to the terminal"
+      },
+      {
+        "EDIFACT Codes": "22",
+        "CanonicalCode": "EMPTY"
+      },
+      {
+        "EDIFACT Codes": "25",
+        "CanonicalCode": "EXPORTRESTRICTIONS",
+        "Description": "The goods/consisgnments/equipment are prohibited from export pending further investigation."
+      },
+      {
+        "X12 Codes": "A42",
+        "EDIFACT Codes": "134",
+        "CanonicalCode": "HOLIDAY",
+        "Description": "Delivery party facilities closed for holiday."
+      },
+      {
+        "EDIFACT Codes": "129",
+        "CanonicalCode": "IMPORTDELTA",
+        "Description": "Inventory has changed because imported goods have been added to inventory."
+      },
+      {
+        "X12 Codes": "A50",
+        "CanonicalCode": "IMPROPERPAPERWORK",
+        "Description": "Improper international paperwork"
+      },
+      {
+        "X12 Codes": "B08",
+        "CanonicalCode": "IMPROPERUNLOADING",
+        "Description": "Shipment is on hold pending contract unloading facility or equipment"
+      },
+      {
+        "X12 Codes": "A19",
+        "CanonicalCode": "INCOMPATIBLERESTRICTEDITEMS",
+        "Description": "Restricted articles are incompatible"
+      },
+      {
+        "X12 Codes": "A03",
+        "EDIFACT Codes": "30",
+        "CanonicalCode": "INCORRECTADDRESS",
+        "Description": "The address for the shipment is incorrect."
+      },
+      {
+        "X12 Codes": "A04",
+        "CanonicalCode": "INDIRECTDELIVERY",
+        "Description": "Indirect Delivery"
+      },
+      {
+        "X12 Codes": "T07",
+        "EDIFACT Codes": "131",
+        "CanonicalCode": "INSUFFICIENTDELIVERYTIME",
+        "Description": "Insufficient delivery time at the delivery location prevented the carriere from completing delivery of the goods."
+      },
+      {
+        "X12 Codes": "A96",
+        "CanonicalCode": "INSUFFICIENTPICKUPTIME",
+        "Description": "Insufficient pickup time"
+      },
+      {
+        "X12 Codes": "A30",
+        "EDIFACT Codes": "35",
+        "CanonicalCode": "MECHANICALBREAKDOWN",
+        "Description": "A mechanical breakdown in the means of transport or equipment that were moving the goods."
+      },
+      {
+        "EDIFACT Codes": "2",
+        "CanonicalCode": "MISSEDTRANSPORT",
+        "Description": "The goods arrived after the means of transport departed."
+      },
+      {
+        "X12 Codes": "B14",
+        "EDIFACT Codes": "37",
+        "CanonicalCode": "MISSINGDOCUMENTS",
+        "Description": "Shipment is being held because of missing documents. Complete and correct documentation is required."
+      },
+      {
+        "X12 Codes": "A18",
+        "CanonicalCode": "MISSORT",
+        "Description": "Missort -- what is \"missort\"?"
+      },
+      {
+        "X12 Codes": "A49",
+        "CanonicalCode": "ODACARTAGEAGENT",
+        "Description": "Out of Delivery Area (ODA) cartage agent"
+      },
+      {
+        "X12 Codes": "A15",
+        "EDIFACT Codes": "31",
+        "CanonicalCode": "ONSTRIKE",
+        "Description": "Business on strike. The action was frustrated by an industrial dispute."
+      },
+      {
+        "X12 Codes": "A13",
+        "EDIFACT Codes": "121",
+        "CanonicalCode": "OTHER",
+        "Description": "Other undefined reason"
+      },
+      {
+        "X12 Codes": "A34",
+        "CanonicalCode": "OVERGOODS",
+        "Description": "Package shipped from overgoods"
+      },
+      {
+        "X12 Codes": "A36",
+        "CanonicalCode": "OVERGOODSHOLD",
+        "Description": "Holding in overgoods"
+      },
+      {
+        "X12 Codes": "029",
+        "CanonicalCode": "OWNERSHIPTRANSFER",
+        "Description": "Transfer of ownership is pending"
+      },
+      {
+        "X12 Codes": "A39",
+        "CanonicalCode": "PREVIOUSSTOPDELAY",
+        "Description": "The customer previous to this stop caused a delay"
+      },
+      {
+        "X12 Codes": "A46",
+        "EDIFACT Codes": "39",
+        "CanonicalCode": "RECIPIENTUNAVAILABLE",
+        "Description": "Recipient Unavailable -- Delivery Delayed. No information available concerning the responsible at the delivery address."
+      },
+      {
+        "X12 Codes": "B01",
+        "CanonicalCode": "RECONSIGNED",
+        "Description": "Anticipated delay caused by contractor"
+      },
+      {
+        "X12 Codes": "A20",
+        "CanonicalCode": "RESTRICTEDITEMSUNACCEPTABLE",
+        "Description": "Restricted articles are unacceptable"
+      },
+      {
+        "X12 Codes": "A14",
+        "CanonicalCode": "RETURNEDTOSHIPPER",
+        "Description": "Returned to shipper"
+      },
+      {
+        "EDIFACT Codes": "8",
+        "CanonicalCode": "SCHEDULECHANGED",
+        "Description": "The goods could not be delivered because the schedule has been changed."
+      },
+      {
+        "EDIFACT Codes": "5",
+        "CanonicalCode": "SCHEDULED",
+        "Description": "An appointment has been scheduled to deliver at a specific time."
+      },
+      {
+        "X12 Codes": "A40",
+        "EDIFACT Codes": "142",
+        "CanonicalCode": "SHIPPERDELAY",
+        "Description": "Unspecified delay caused by shipper."
+      },
+      {
+        "X12 Codes": "A12",
+        "EDIFACT Codes": "53",
+        "CanonicalCode": "SORTINGDELAY",
+        "Description": "Delay caused by carrier sorting the shipment incorrectly."
+      },
+      {
+        "X12 Codes": "A29",
+        "CanonicalCode": "STATUSHOLDTODELIVERY",
+        "Description": "Hold changed to delivery package"
+      },
+      {
+        "EDIFACT Codes": "10",
+        "CanonicalCode": "SYSTEMDOWN",
+        "Description": "The computer system is down."
+      },
+      {
+        "X12 Codes": "THT",
+        "EDIFACT Codes": "66",
+        "CanonicalCode": "THEFT",
+        "Description": "A consignment or goods have been stolen."
+      },
+      {
+        "EDIFACT Codes": "58",
+        "CanonicalCode": "TRANSITDELAY",
+        "Description": "Delivery of the goods has been delayed in transit."
+      },
+      {
+        "EDIFACT Codes": "60",
+        "CanonicalCode": "UNACCEPTABLECONDITION",
+        "Description": "The goods/consignments/equipment were in an unacceptable condition at the time of delivery or collection."
+      },
+      {
+        "X12 Codes": "A59",
+        "EDIFACT Codes": "32",
+        "CanonicalCode": "WAITINGFORINSTRUCTIONS",
+        "Description": "Further instructions are required. Hold at location."
+      },
+      {
+        "X12 Codes": "P02",
+        "EDIFACT Codes": "24",
+        "CanonicalCode": "WAITINGINSPECTION",
+        "Description": "Relevant authorities have ordered the goods/consisgnments/equipment be held for inspection."
+      },
+      {
+        "X12 Codes": "A43",
+        "EDIFACT Codes": "63",
+        "CanonicalCode": "WEATHERRELATED",
+        "Description": "Shipment is delayed by severe weather or natural disasters."
+      },
+      {
+        "EDIFACT Codes": "16",
+        "CanonicalCode": "WRONGDESTINATION",
+        "Description": "The shipment has been sent to the wrong destination."
+      },
+      {
+        "X12 Codes": "W15",
+        "CanonicalCode": "WRONGEQUIPMENT",
+        "Description": "Wrong equipment"
+      }
+    ],
+    "CL_ShipmentEventType": [
+      {
+        "X12 Code": "Code List:",
+        "EDIFACT Code": "Shipment status code"
+      },
+      {
+        "X12 Code": "X12 Code",
+        "EDIFACT Code": "EDIFACT Code",
+        "CanonicalCode": "CanonicalCode",
+        "Description": "Description",
+        "Extended description": "Extended description"
+      },
+      {
+        "X12 Code": "ALV",
+        "CanonicalCode": "LOADEDONVESSEL",
+        "Description": "Actually Loaded on Vessel",
+        "Extended description": "Cargo has been loaded onto the vessel.",
+        "": "- LOADEDONVESSEL"
+      },
+      {
+        "X12 Code": "ARR",
+        "CanonicalCode": "FINALDESTINATIONARRIVAL",
+        "Description": "Arrival Final Destination",
+        "Extended description": "Shipment has arrived at the final destination.",
+        "": "- FINALDESTINATIONARRIVAL"
+      },
+      {
+        "X12 Code": "APU",
+        "CanonicalCode": "ANTICIPATEDPICKUP",
+        "Description": "Anticipated Pickup",
+        "Extended description": "Expected date and time for pickup.",
+        "": "- ANTICIPATEDPICKUP"
+      },
+      {
+        "X12 Code": "ARD",
+        "CanonicalCode": "FINALDESTINATIONACTUALARRIVALDATE",
+        "Description": "Actual Arrival Date at Final Destination",
+        "Extended description": "Actual date and time of arrival at the final destination.",
+        "": "- FINALDESTINATIONACTUALARRIVALDATE"
+      },
+      {
+        "X12 Code": "ETA",
+        "CanonicalCode": "ESTIMATEDARRIVALTIME",
+        "Description": "Advanced Estimated Time of Arrival",
+        "Extended description": "Estimated time of arrival at the destination.",
+        "": "- ESTIMATEDARRIVALTIME"
+      },
+      {
+        "X12 Code": "EAD",
+        "CanonicalCode": "ESTIMATEDARRIVALDATE",
+        "Description": "Estimated Arrival Date",
+        "Extended description": "Estimated date of arrival at the destination.",
+        "": "- ESTIMATEDARRIVALDATE"
+      },
+      {
+        "X12 Code": "ERD",
+        "CanonicalCode": "FINALDESTINATIONESTIMATEDARRIVALDATE",
+        "Description": "Estimated Arrival Date at Final Destination",
+        "Extended description": "Estimated date of arrival at the final destination.",
+        "": "- FINALDESTINATIONESTIMATEDARRIVALDATE"
+      },
+      {
+        "X12 Code": "VAR",
+        "CanonicalCode": "VESSELARRIVAL",
+        "Description": "Vessel Arrival",
+        "Extended description": "Vessel has arrived at port.",
+        "": "- VESSELARRIVAL"
+      },
+      {
+        "X12 Code": "VDP",
+        "CanonicalCode": "VESSELDEPARTURE",
+        "Description": "Vessel Departure",
+        "Extended description": "Vessel has departed from port.",
+        "": "- VESSELDEPARTURE"
+      },
+      {
+        "X12 Code": "UFV",
+        "CanonicalCode": "UNLOADEDFROMVESSEL",
+        "Description": "Unloaded From Vessel",
+        "Extended description": "Cargo has been unloaded from the vessel.",
+        "": "- UNLOADEDFROMVESSEL"
+      },
+      {
+        "X12 Code": "CTD",
+        "CanonicalCode": "CUSTOMSDOCUMENTATIONSUBMITTED",
+        "Description": "Customs Documentation Submitted",
+        "Extended description": "Customs paperwork has been submitted.",
+        "": "- CUSTOMSDOCUMENTATIONSUBMITTED"
+      },
+      {
+        "X12 Code": "CLR",
+        "CanonicalCode": "CUSTOMSCLEARANCE",
+        "Description": "Customs Clearance",
+        "Extended description": "Shipment has cleared customs.",
+        "": "- CUSTOMSCLEARANCE"
+      },
+      {
+        "X12 Code": "ICD",
+        "CanonicalCode": "INLANDCONTAINERDISPATCHED",
+        "Description": "Inland Container Dispatched",
+        "Extended description": "Container dispatched from an inland location.",
+        "": "- INLANDCONTAINERDISPATCHED"
+      },
+      {
+        "X12 Code": "RCV",
+        "CanonicalCode": "RECEIVEDATTERMINAL",
+        "Description": "Received at Terminal",
+        "Extended description": "Cargo has been received at the port or terminal.",
+        "": "- RECEIVEDATTERMINAL"
+      },
+      {
+        "X12 Code": "GIT",
+        "CanonicalCode": "GOODSINTRANSIT",
+        "Description": "Goods In Transit",
+        "Extended description": "Shipment is currently en route to destination.",
+        "": "- GOODSINTRANSIT"
+      },
+      {
+        "X12 Code": "HLD",
+        "CanonicalCode": "ONHOLD",
+        "Description": "On Hold",
+        "Extended description": "Shipment is currently on hold.",
+        "": "- ONHOLD"
+      },
+      {
+        "X12 Code": "DOC",
+        "CanonicalCode": "COMPLETEDDOCUMENTATION",
+        "Description": "Documentation Completed",
+        "Extended description": "All shipment documentation is completed.",
+        "": "- COMPLETEDDOCUMENTATION"
+      },
+      {
+        "X12 Code": "CUS",
+        "CanonicalCode": "ATCUSTOMS",
+        "Description": "At Customs",
+        "Extended description": "Shipment is currently at customs.",
+        "": "- ATCUSTOMS"
+      },
+      {
+        "X12 Code": "ARI",
+        "CanonicalCode": "TRANSITLOCATIONARRIVAL",
+        "Description": "Arrival Transit Location",
+        "Extended description": "Shipment arrived at intermediate location",
+        "": "- TRANSITLOCATIONARRIVAL"
+      },
+      {
+        "X12 Code": "SLD",
+        "CanonicalCode": "SAILED",
+        "Description": "Sailed",
+        "": "- SAILED"
+      },
+      {
+        "X12 Code": "ZZZ",
+        "CanonicalCode": "MUTUALLYDEFINED",
+        "Description": "Mutually defined",
+        "Extended description": "Custom event code",
+        "": "- MUTUALLYDEFINED"
+      }
+    ],
+    "CL_WeightType": [
+      {
+        "X12 Codes": "Code List:",
+        "EDIFACT Codes": "Weight type code"
+      },
+      {
+        "X12 Codes": "X12 Codes",
+        "EDIFACT Codes": "EDIFACT Codes",
+        "CanonicalCode": "CanonicalCode",
+        "Description": "Description"
+      },
+      {
+        "X12 Codes": "A5",
+        "CanonicalCode": "AVERAGE",
+        "Description": "Average weight"
+      },
+      {
+        "X12 Codes": "A4",
+        "CanonicalCode": "AVERAGELOAD",
+        "Description": "Average weight per load"
+      },
+      {
+        "X12 Codes": "B",
+        "CanonicalCode": "BILLED",
+        "Description": "Billed weight"
+      },
+      {
+        "X12 Codes": "CE",
+        "CanonicalCode": "CERTIFIED",
+        "Description": "Certified weight of cargo"
+      },
+      {
+        "X12 Codes": "A",
+        "CanonicalCode": "CONSOLIDATED",
+        "Description": "Consolidated weight"
+      },
+      {
+        "X12 Codes": "F",
+        "CanonicalCode": "DEFICIT",
+        "Description": "Deficit weight"
+      },
+      {
+        "X12 Codes": "E",
+        "CanonicalCode": "ESTIMATEDNET",
+        "Description": "Estimated net weight"
+      },
+      {
+        "X12 Codes": "O",
+        "CanonicalCode": "EXCESS",
+        "Description": "Excess weight over maximum"
+      },
+      {
+        "X12 Codes": "FR",
+        "CanonicalCode": "FREIGHT",
+        "Description": "Freight weight"
+      },
+      {
+        "X12 Codes": "G",
+        "CanonicalCode": "GROSSWEIGHT",
+        "Description": "Gross weight"
+      },
+      {
+        "X12 Codes": "L",
+        "CanonicalCode": "LEGAL",
+        "Description": "Legal weight"
+      },
+      {
+        "X12 Codes": "LC",
+        "CanonicalCode": "MAXIMUMLADING",
+        "Description": "Maximum lading capacity"
+      },
+      {
+        "X12 Codes": "M",
+        "CanonicalCode": "MINIMUM",
+        "Description": "Minimum weight for rate"
+      },
+      {
+        "X12 Codes": "N",
+        "CanonicalCode": "NETWEIGHT",
+        "Description": "Actual net weight"
+      },
+      {
+        "X12 Codes": "ND",
+        "CanonicalCode": "NONCHARGEABLE",
+        "Description": "Non-chargeable dunnage"
+      },
+      {
+        "X12 Codes": "V",
+        "CanonicalCode": "NONTRANSIT",
+        "Description": "Non transit weight - transit bills only"
+      },
+      {
+        "X12 Codes": "PA",
+        "CanonicalCode": "PALLET",
+        "Description": "Pallet weight"
+      },
+      {
+        "X12 Codes": "U",
+        "CanonicalCode": "PERUNIT",
+        "Description": "Weight per unit"
+      },
+      {
+        "X12 Codes": "A3",
+        "CanonicalCode": "SHIPPER",
+        "Description": "Shipper's weight"
+      },
+      {
+        "X12 Codes": "SK",
+        "CanonicalCode": "SKID",
+        "Description": "Skid weight"
+      },
+      {
+        "X12 Codes": "T",
+        "CanonicalCode": "TARE",
+        "Description": "Tare weight"
+      },
+      {
+        "X12 Codes": "W",
+        "CanonicalCode": "TRANSIT",
+        "Description": "Transit weigth - transit bills only"
+      },
+      {
+        "X12 Codes": "SO",
+        "CanonicalCode": "TRANSITSTORAGE",
+        "Description": "Storage in transit out"
+      }
+    ],
+    "CL_WeightUnitType": [
+      {
+        "X12 Codes": "Code List:",
+        "EDIFACT Codes": "Weight type code"
+      },
+      {
+        "X12 Codes": "X12 Codes",
+        "EDIFACT Codes": "EDIFACT Codes",
+        "CanonicalCode": "CanonicalCode",
+        "Description": "Description"
+      },
+      {
+        "X12 Codes": "E",
+        "CanonicalCode": "METRICTON",
+        "Description": "Metric ton"
+      },
+      {
+        "X12 Codes": "G",
+        "CanonicalCode": "GRAMS",
+        "Description": "Grams"
+      },
+      {
+        "X12 Codes": "K",
+        "CanonicalCode": "KILOGRAMS",
+        "Description": "Kilograms"
+      },
+      {
+        "X12 Codes": "L",
+        "CanonicalCode": "POUNDS",
+        "Description": "Pounds"
+      },
+      {
+        "X12 Codes": "M",
+        "CanonicalCode": "MEASUREMENTTON",
+        "Description": "Measurement ton"
+      },
+      {
+        "X12 Codes": "O",
+        "CanonicalCode": "OUNCES",
+        "Description": "Ounces"
+      },
+      {
+        "X12 Codes": "S",
+        "CanonicalCode": "SHORTTON",
+        "Description": "Short ton"
+      },
+      {
+        "X12 Codes": "T",
+        "CanonicalCode": "LONGTON",
+        "Description": "Long ton"
+      }
+    ],
+    "CL_VolumeType": [
+      {
+        "X12 Codes": "Code List:",
+        "EDIFACT Codes": "Weight type code"
+      },
+      {
+        "X12 Codes": "X12 Codes",
+        "EDIFACT Codes": "EDIFACT Codes",
+        "CanonicalCode": "CanonicalCode",
+        "Description": "Description"
+      },
+      {
+        "X12 Codes": "B",
+        "CanonicalCode": "BARGE",
+        "Description": "Volume of barge"
+      },
+      {
+        "X12 Codes": "T",
+        "CanonicalCode": "CONTAINER",
+        "Description": "Volume of container"
+      },
+      {
+        "X12 Codes": "C",
+        "CanonicalCode": "CUBICCENTIMETERS",
+        "Description": "Cubic centimeters"
+      },
+      {
+        "X12 Codes": "M",
+        "CanonicalCode": "CUBICDECIMETERS",
+        "Description": "Cubic decimeters"
+      },
+      {
+        "X12 Codes": "E",
+        "CanonicalCode": "CUBICFEET",
+        "Description": "Cubic feet"
+      },
+      {
+        "X12 Codes": "N",
+        "CanonicalCode": "CUBICINCHES",
+        "Description": "Cubic inches"
+      },
+      {
+        "X12 Codes": "X",
+        "CanonicalCode": "CUBICMETERS",
+        "Description": "Cubic meters"
+      },
+      {
+        "X12 Codes": "G",
+        "CanonicalCode": "GALLONS",
+        "Description": "Gallons"
+      },
+      {
+        "X12 Codes": "V",
+        "CanonicalCode": "LITER",
+        "Description": "Liter"
+      },
+      {
+        "X12 Codes": "L",
+        "CanonicalCode": "LOADING",
+        "Description": "Total volume of load"
+      }
+    ],
+    "CL_LocationCode": [
+      {
+        "X12 Codes": "Code List:",
+        "EDIFACT Codes": "Weight type code"
+      },
+      {
+        "X12 Codes": "X12 Codes",
+        "EDIFACT Codes": "EDIFACT Codes",
+        "CanonicalCode": "CanonicalCode",
+        "Description": "Description"
+      },
+      {
+        "X12 Codes": "18",
+        "CanonicalCode": "MARKERLOCATION",
+        "Description": "Marker identifier location"
+      },
+      {
+        "X12 Codes": "CI",
+        "CanonicalCode": "CITY",
+        "Description": "City code"
+      },
+      {
+        "X12 Codes": "D",
+        "CanonicalCode": "DOMESTICUSPORTS",
+        "Description": "Domestic U.S. ports (Schedule D)"
+      },
+      {
+        "X12 Codes": "L",
+        "CanonicalCode": "LOCALADDRESS",
+        "Description": "Local address"
+      },
+      {
+        "X12 Codes": "K",
+        "CanonicalCode": "INTERNATIONALPORTS",
+        "Description": "Foreign ports (Schedule K), and international"
+      },
+      {
+        "X12 Codes": "UN",
+        "CanonicalCode": "UNLOCODE",
+        "Description": "United Nations Location Code"
+      },
+      {
+        "X12 Codes": "OV",
+        "CanonicalCode": "ONVESSEL",
+        "Description": "On Vessel (Free On Board [FOB] point)"
+      },
+      {
+        "X12 Codes": "CY",
+        "CanonicalCode": "CONTAINERYARD",
+        "Description": "Container Yard  - Area designated for container storage"
+      },
+      {
+        "X12 Codes": "DC",
+        "CanonicalCode": "DISTRIBUTIONCENTER",
+        "Description": "Distribution Center Number"
+      },
+      {
+        "X12 Codes": "DE",
+        "CanonicalCode": "DESTINATION",
+        "Description": "Destination - Shipping"
+      },
+      {
+        "X12 Codes": "DO",
+        "CanonicalCode": "DISTRICTOFFICE",
+        "Description": "District Office"
+      },
+      {
+        "X12 Codes": "FR",
+        "CanonicalCode": "CUSTOMSFIRMS",
+        "Description": "U.S. Customs Facilities Information and Resource Management Systems (FIRMS) — Identifies U.S. Customs facilities related to the shipment."
+      },
+      {
+        "X12 Codes": "FT",
+        "CanonicalCode": "FOREIGNTRADEZONE",
+        "Description": "Foreign Trade Zone -  A designated area where goods can be stored without being subject to customs duties."
+      },
+      {
+        "X12 Codes": "KE",
+        "CanonicalCode": "EMBARKATIONPORT",
+        "Description": "Port of Embarkation - The port where the cargo is loaded onto the vessel."
+      },
+      {
+        "X12 Codes": "KL",
+        "CanonicalCode": "LOADINGPORT",
+        "Description": "Port of Loading - Another term for the port where the cargo is loaded."
+      },
+      {
+        "X12 Codes": "LO",
+        "CanonicalCode": "LOCALOFFICE",
+        "Description": "Local Office"
+      },
+      {
+        "X12 Codes": "OR",
+        "CanonicalCode": "ORIGIN",
+        "Description": "Origin (Shipping Point)"
+      },
+      {
+        "X12 Codes": "PA",
+        "CanonicalCode": "ARRIVALPORT",
+        "Description": "Port of Arrival - The port where the cargo arrives in the destination country."
+      },
+      {
+        "X12 Codes": "PB",
+        "CanonicalCode": "DISCHARGEPORT",
+        "Description": "Port of Discharge - The port where the cargo is unloaded from the vessel."
+      },
+      {
+        "X12 Codes": "PD",
+        "CanonicalCode": "DELIVERYPLACE",
+        "Description": "Place of Delivery"
+      },
+      {
+        "X12 Codes": "PE",
+        "CanonicalCode": "PORTOFENTRY",
+        "Description": "Port of Entry - The port where customs clearance is performed."
+      },
+      {
+        "X12 Codes": "PL",
+        "CanonicalCode": "PLANT",
+        "Description": "Plant - Facility where goods are manufactured or processed"
+      },
+      {
+        "X12 Codes": "TL",
+        "CanonicalCode": "TERMINALCARGOLOCATION",
+        "Description": "Terminal Cargo Location - The specific terminal within a port where the cargo is handled."
+      },
+      {
+        "X12 Codes": "TM",
+        "CanonicalCode": "TERMINAL",
+        "Description": "Terminal - Specific terminal facility within a port"
+      },
+      {
+        "X12 Codes": "WF",
+        "CanonicalCode": "WHARF",
+        "Description": "Wharf - The dock or quay where the vessel is moored."
+      },
+      {
+        "X12 Codes": "ZZ",
+        "CanonicalCode": "MUTUALLYDEFINED",
+        "Description": "Mutually Defined - Custom qualifier defined by trading partners"
+      }
+    ],
+    "CL_EquipmentStatusCode": [
+      {
+        "X12 Code": "Code List:",
+        "EDIFACT Code": "Shipment status code"
+      },
+      {
+        "X12 Code": "X12 Code",
+        "EDIFACT Code": "EDIFACT Code",
+        "CanonicalCode": "CanonicalCode",
+        "Description": "Description"
+      },
+      {
+        "X12 Code": "AA",
+        "CanonicalCode": "POOLAVAILABLE",
+        "Description": "Empty and Available at Pool"
+      },
+      {
+        "X12 Code": "AB",
+        "CanonicalCode": "CARGOEMPTY",
+        "Description": "Out Empty to Pick Up Cargo from the Shipper"
+      },
+      {
+        "X12 Code": "AC",
+        "CanonicalCode": "ENROUTETOLOADINGPORT",
+        "Description": "Loaded en route to port of loading or baseport"
+      },
+      {
+        "X12 Code": "AG",
+        "CanonicalCode": "BASEPORTRECEIVED",
+        "Description": "Received at port of discharge or baseport"
+      },
+      {
+        "X12 Code": "AH",
+        "CanonicalCode": "ENROUTETOCONSIGNEE",
+        "Description": "Loaded en route to consignee"
+      },
+      {
+        "X12 Code": "AI",
+        "CanonicalCode": "ENROUTEFROMCONSIGNEE",
+        "Description": "Stripped and en route to pool from a consignee"
+      },
+      {
+        "X12 Code": "AJ",
+        "CanonicalCode": "EMPTYPOSITIONING",
+        "Description": "Empty Positioning"
+      },
+      {
+        "X12 Code": "AK",
+        "CanonicalCode": "OUTOFSERVICE",
+        "Description": "Out of Service"
+      },
+      {
+        "X12 Code": "AL",
+        "CanonicalCode": "EMPTYNONHAZARDOUS",
+        "Description": "Empty Non-hazardous Last Contained"
+      },
+      {
+        "X12 Code": "D",
+        "CanonicalCode": "DEADHEADLOCOMOTIVE",
+        "Description": "Deadhead Locomotive or Caboose"
+      },
+      {
+        "X12 Code": "E",
+        "CanonicalCode": "EMPTY",
+        "Description": "Empty"
+      },
+      {
+        "X12 Code": "HR",
+        "CanonicalCode": "HOLDFORRELOAD",
+        "Description": "Held for Reload"
+      },
+      {
+        "X12 Code": "L",
+        "CanonicalCode": "LOAD",
+        "Description": "Load"
+      },
+      {
+        "X12 Code": "LI",
+        "CanonicalCode": "LOADEDINBOUND",
+        "Description": "Loaded Inbound"
+      },
+      {
+        "X12 Code": "LO",
+        "CanonicalCode": "LOADEDOUTBOUND",
+        "Description": "Loaded Outbound"
+      },
+      {
+        "X12 Code": "O",
+        "CanonicalCode": "OPERATINGLOCOMOTIVE",
+        "Description": "Operating Locomotive or Caboose"
+      },
+      {
+        "X12 Code": "RJ",
+        "CanonicalCode": "REJECTED",
+        "Description": "Rejected/Unusable"
+      },
+      {
+        "X12 Code": "W",
+        "CanonicalCode": "EMPTYREVENUE",
+        "Description": "Revenue Empty"
+      }
+    ],
+    "CL_b2bTransactionIdentifierType": [
+      {
+        "X12 Codes": "Code List:",
+        "CanonicalCode": "Transaction reference type qualifiers"
+      },
+      {
+        "X12 Codes": "X12 Codes",
+        "CanonicalCode": "CanonicalCode",
+        "Description": "Description"
+      },
+      {
+        "X12 Codes": "CT",
+        "CanonicalCode": "CONTRACT",
+        "Description": "Contract number",
+        "": "- CT = Contract number"
+      },
+      {
+        "X12 Codes": "BM",
+        "CanonicalCode": "BOL",
+        "Description": "Bill of Lading Number",
+        "": "- BM = Bill of Lading Number"
+      },
+      {
+        "X12 Codes": "PO",
+        "CanonicalCode": "PURCHASEORDER",
+        "Description": "Purchase Order Number",
+        "": "- PO = Purchase Order Number"
+      },
+      {
+        "X12 Codes": "VN",
+        "CanonicalCode": "SUPPLIERORDER",
+        "Description": "Vendor order number",
+        "": "- VN = Vendor order number"
+      },
+      {
+        "X12 Codes": "SI",
+        "CanonicalCode": "SHIPMENT",
+        "Description": "Shipper's identifier for the shipment",
+        "": "- SI = Shipper's identifier for the shipment"
+      },
+      {
+        "X12 Codes": "IV",
+        "CanonicalCode": "INVOICE",
+        "Description": "Seller invoice number",
+        "": "- IV = Seller invoice number"
+      },
+      {
+        "X12 Codes": "MB",
+        "CanonicalCode": "MASTERBOL",
+        "Description": "Master BOL",
+        "": "- MB = Master BOL"
+      },
+      {
+        "X12 Codes": "SN",
+        "CanonicalCode": "SEALNUMBER",
+        "Description": "Seal number",
+        "": "- SN = Seal number"
+      },
+      {
+        "X12 Codes": "AG",
+        "CanonicalCode": "AGENTSHIPMENT",
+        "Description": "Agent shipment number",
+        "": "- AG = Agent shipment number"
+      },
+      {
+        "X12 Codes": "CN",
+        "CanonicalCode": "CARRIERREFERENCE",
+        "Description": "Carrier reference number",
+        "": "- CN = Carrier reference number"
+      },
+      {
+        "X12 Codes": "CG",
+        "CanonicalCode": "CONSIGNEEORDERIDENTIFIER",
+        "Description": "Conginees order number",
+        "": "- CG = Conginees order number"
+      },
+      {
+        "X12 Codes": "PR",
+        "CanonicalCode": "PRICEQUOTEIDENTIFIER",
+        "Description": "Price quote number",
+        "": "- PR = Price quote number"
+      }
+    ],
+    "CL_ProcessingFunctionTypeCode": [
+      {
+        "Description": "Not populated. Do not map. No error."
+      },
+      {
+        "CanonicalCode": "CHANGESTOHEADERANDITEMS",
+        "IDoc K01-ACTION": "004",
+        "Description": "Changes to header and items"
+      },
+      {
+        "CanonicalCode": "CHANGESTOITEMS",
+        "IDoc K01-ACTION": "003",
+        "Description": "Changes to one or more items"
+      },
+      {
+        "CanonicalCode": "ITEMNOTCHANGED",
+        "EDIFACT LIN020": "11",
+        "IDoc P01-ACTION": "004",
+        "Description": "Item has not been changed"
+      },
+      {
+        "CanonicalCode": "CANCEL",
+        "X12Codes": "01",
+        "EDIFACT BGM030": "1",
+        "Description": "Cancel order"
+      },
+      {
+        "CanonicalCode": "CHANGE",
+        "X12Codes": "04",
+        "EDIFACT BGM030": "4",
+        "IDoc K01-ACTION": "002",
+        "Description": "Changes to order"
+      },
+      {
+        "CanonicalCode": "CONFIRM",
+        "X12Codes": "06",
+        "EDIFACT BGM030": "6",
+        "Description": "Document is a confirmation"
+      },
+      {
+        "CanonicalCode": "CONSIGNMENT",
+        "Description": "Consighment message"
+      },
+      {
+        "CanonicalCode": "CORRECTION",
+        "X12Codes": "CO",
+        "Description": "Document has been corrected"
+      },
+      {
+        "CanonicalCode": "CREATE",
+        "X12Codes": "02",
+        "EDIFACT BGM030": "2",
+        "EDIFACT LIN020": "39",
+        "Description": "Create document or item from message"
+      },
+      {
+        "CanonicalCode": "DELETE",
+        "X12Codes": "03",
+        "EDIFACT BGM030": "3",
+        "EDIFACT LIN020": "2",
+        "Description": "Delete document"
+      },
+      {
+        "CanonicalCode": "NONE",
+        "EDIFACT LIN020": "4",
+        "IDoc K01-ACTION": "000",
+        "Description": "No particular action is required"
+      },
+      {
+        "CanonicalCode": "ORIGINAL",
+        "X12Codes": "00",
+        "EDIFACT BGM030": "9",
+        "Description": "Original document, create in target"
+      },
+      {
+        "CanonicalCode": "REPLACE",
+        "X12Codes": "05",
+        "EDIFACT BGM030": "5",
+        "EDIFACT LIN020": "38",
+        "Description": "Replace entire document"
+      },
+      {
+        "CanonicalCode": "RETURN",
+        "IDoc P01-ACTION": "093",
+        "Description": "Item returned"
+      },
+      {
+        "CanonicalCode": "REVERSE",
+        "IDoc K01-ACTION": "001",
+        "Description": "Reverse entire document"
+      },
+      {
+        "CanonicalCode": "STATUS",
+        "X12Codes": "08",
+        "EDIFACT BGM030": "8"
+      },
+      {
+        "CanonicalCode": "ITEMADDED",
+        "EDIFACT LIN020": "1",
+        "IDoc P01-ACTION": "001",
+        "Description": "Item added."
+      },
+      {
+        "CanonicalCode": "ITEMCHANGED",
+        "EDIFACT LIN020": "3",
+        "IDoc P01-ACTION": "002",
+        "Description": "Item changed."
+      },
+      {
+        "CanonicalCode": "CANCEL",
+        "EDIFACT LIN020": "37",
+        "IDoc P01-ACTION": "003",
+        "Description": "Item canceled."
+      },
+      {
+        "CanonicalCode": "ITEMLOCKED",
+        "IDoc P01-ACTION": "005",
+        "Description": "Item locked."
+      },
+      {
+        "CanonicalCode": "INFORMATION",
+        "X12Codes": "22",
+        "EDIFACT BGM030": "55"
+      },
+      {
+        "CanonicalCode": "RESPONSE",
+        "X12Codes": "11",
+        "EDIFACT BGM030": "11"
+      },
+      {
+        "CanonicalCode": "PROPOSED",
+        "X12Codes": "16",
+        "EDIFACT BGM030": "16",
+        "EDIFACT LIN020": "41"
+      },
+      {
+        "CanonicalCode": "DONOTIMPORT"
+      },
+      {
+        "CanonicalCode": "RESEND",
+        "X12Codes": "15"
+      },
+      {
+        "CanonicalCode": "REQUEST",
+        "X12Codes": "13",
+        "EDIFACT BGM030": "13"
+      },
+      {
+        "CanonicalCode": "ADVANCENOTIFICATION",
+        "EDIFACT BGM030": "14"
+      },
+      {
+        "CanonicalCode": "CANCELREISSUE"
+      },
+      {
+        "CanonicalCode": "DAMAGEDINTRANSIT"
+      },
+      {
+        "CanonicalCode": "DUPLICATE",
+        "X12Codes": "07",
+        "EDIFACT BGM030": "7"
+      },
+      {
+        "CanonicalCode": "FOLLOWUP"
+      },
+      {
+        "CanonicalCode": "CORRECTEDVERIFIED",
+        "X12Codes": "41"
+      },
+      {
+        "CanonicalCode": "REISSUE",
+        "X12Codes": "18"
+      },
+      {
+        "CanonicalCode": "FOLLOWUP",
+        "X12Codes": "45"
+      }
+    ],
+    "CL_CompanyIdentifierType": [
+      {
+        "X12 Code": "Code List:",
+        "Canonical Code": "Company identifier type qualifiers"
+      },
+      {
+        "X12 Code": "X12 Code",
+        "Canonical Code": "Canonical Code",
+        "Description": "Description"
+      },
+      {
+        "X12 Code": "1",
+        "Canonical Code": "DUNS",
+        "Description": "D-U-N-S number, Dun and Bradstreet"
+      },
+      {
+        "X12 Code": "2",
+        "Canonical Code": "SCAC",
+        "Description": "Standard Carrier Alpha Code"
+      },
+      {
+        "X12 Code": "9",
+        "Canonical Code": "DUNS4",
+        "Description": "D-U-N-S + 4r, Dun and Bradstreet number plus suffix"
+      },
+      {
+        "X12 Code": "11",
+        "Canonical Code": "DEA",
+        "Description": "Drug Enforcement Agency registration number"
+      },
+      {
+        "X12 Code": "21",
+        "Canonical Code": "HIN",
+        "Description": "Health Industry Number"
+      },
+      {
+        "X12 Code": "91",
+        "Canonical Code": "COMPANYID",
+        "Description": "Assigned by seller company identifier"
+      },
+      {
+        "X12 Code": "92",
+        "Canonical Code": "COMPANYSITEID",
+        "Description": "Assigned by buyer company site identifier"
+      },
+      {
+        "X12 Code": "UL",
+        "Canonical Code": "GLN",
+        "Description": "Global Location Number"
+      },
+      {
+        "X12 Code": "PI",
+        "Canonical Code": "US_340B_ID",
+        "Description": "HDA payer identifier for 340B identifier."
+      },
+      {
+        "X12 Code": "PP",
+        "Canonical Code": "PHARMACY_PROCESSOR_NUMBER",
+        "Description": "Pharmacy processor number. Unique number assigned to each pharmacy for submitting claims"
+      }
+    ],
+    "CL_TransactionReferenceType": [
+      {
+        "X12 Codes": "Code List:",
+        "CanonicalCode": "Transaction reference type qualifiers"
+      },
+      {
+        "X12 Codes": "X12 Codes",
+        "CanonicalCode": "CanonicalCode",
+        "Description": "Description"
+      },
+      {
+        "X12 Codes": "FN",
+        "CanonicalCode": "FORWARDERREFERENCE",
+        "Description": "Freight forwarder reference identifier"
+      },
+      {
+        "X12 Codes": "ZZ",
+        "CanonicalCode": "CUSTOM",
+        "Description": "Mutually defined number"
+      },
+      {
+        "X12 Codes": "OC",
+        "CanonicalCode": "OCEANCONTAINERIDENTIFIER",
+        "Description": "Ocean container number"
+      },
+      {
+        "X12 Codes": "8X",
+        "CanonicalCode": "TRANSACTIONTYPE",
+        "Description": "Transaction Type"
+      },
+      {
+        "X12 Codes": "BN",
+        "CanonicalCode": "BOOKINGIDENTIFIER",
+        "Description": "Booking number"
+      },
+      {
+        "X12 Codes": "SE",
+        "CanonicalCode": "SERIALNUMBER",
+        "Description": "Serial number"
+      },
+      {
+        "X12 Codes": "EQ",
+        "CanonicalCode": "EQUIPMENTIDENTIFIER",
+        "Description": "Equipment number"
+      },
+      {
+        "X12 Codes": "P8",
+        "CanonicalCode": "PICKUPIDENTIFIER",
+        "Description": "Pickup reference number"
+      },
+      {
+        "X12 Codes": "1J",
+        "CanonicalCode": "FACILITYIDENTIFIER",
+        "Description": "Facility ID Number"
+      },
+      {
+        "X12 Codes": "4F",
+        "CanonicalCode": "CARRIERASSIGNEDSHIPPERIDENTIFIER",
+        "Description": "Carrier-assigned Shipper Number"
+      }
+    ],
+    "CL_QuantityType": [
+      {
+        "X12 Codes": "Code List:",
+        "CanonicalCode": "Product adjustment type codees."
+      },
+      {
+        "X12 Codes": "X12 Codes",
+        "EDIFACT Codes": "EDIFACT Codes",
+        "CanonicalCode": "CanonicalCode",
+        "Description": "Description"
+      },
+      {
+        "X12 Codes": "32",
+        "CanonicalCode": "SOLD",
+        "Description": "Quantity Sold"
+      },
+      {
+        "X12 Codes": "76",
+        "CanonicalCode": "RETURNED",
+        "Description": "Returns"
+      },
+      {
+        "X12 Codes": "V3",
+        "CanonicalCode": "TRANSFER",
+        "Description": "Transfer quantity"
+      },
+      {
+        "X12 Codes": "39",
+        "CanonicalCode": "SHIPPED",
+        "Description": "Shipped quantity"
+      }
+    ],
+    "X12_EnvelopePartyType": [
+      {
+        "ExternalCode": "Code List:",
+        "CanonicalCode": "EDI ISA partner type ID"
+      },
+      {
+        "ExternalCode": "ExternalCode",
+        "CanonicalCode": "CanonicalCode",
+        "Encoding Description": "Encoding Description"
+      },
+      {
+        "ExternalCode": "01",
+        "CanonicalCode": "DUNS",
+        "Encoding Description": "Duns (Dun & Bradstreet)"
+      },
+      {
+        "ExternalCode": "02",
+        "CanonicalCode": "SCAC",
+        "Encoding Description": "Standard Carrier Alpha Code"
+      },
+      {
+        "ExternalCode": "03",
+        "CanonicalCode": "FMC",
+        "Encoding Description": "Federal Maritime Commission"
+      },
+      {
+        "ExternalCode": "04",
+        "CanonicalCode": "IATA",
+        "Encoding Description": "International Air Transport Association"
+      },
+      {
+        "ExternalCode": "07",
+        "CanonicalCode": "GLN",
+        "Encoding Description": "Global Location Number (GLN)."
+      },
+      {
+        "ExternalCode": "08",
+        "CanonicalCode": "UCC",
+        "Encoding Description": "UCC EDI Communications ID (Comm ID)"
+      },
+      {
+        "ExternalCode": "09",
+        "CanonicalCode": "X121",
+        "Encoding Description": "X.121 (CCITT)"
+      },
+      {
+        "ExternalCode": "10",
+        "CanonicalCode": "DODADDRESS",
+        "Encoding Description": "Department of Defense (DoD) Activity Address Code"
+      },
+      {
+        "ExternalCode": "11",
+        "CanonicalCode": "DEA",
+        "Encoding Description": "Drug Enforcement Administration identifier"
+      },
+      {
+        "ExternalCode": "12",
+        "CanonicalCode": "PHONE",
+        "Encoding Description": "Telephone Companies"
+      },
+      {
+        "ExternalCode": "13",
+        "CanonicalCode": "UCS",
+        "Encoding Description": "Used for UCS Transmissions. Includes Area Code and Telephone Number of a Modem."
+      },
+      {
+        "ExternalCode": "14",
+        "CanonicalCode": "DUNSPLUS",
+        "Encoding Description": "Duns Plus Suffix"
+      },
+      {
+        "ExternalCode": "15",
+        "CanonicalCode": "PASC",
+        "Encoding Description": "Petroleum Accountants Society of Canada Company Code"
+      },
+      {
+        "ExternalCode": "16",
+        "CanonicalCode": "DUNS4",
+        "Encoding Description": "DINS Number With 4-Character Suffix"
+      },
+      {
+        "ExternalCode": "17",
+        "CanonicalCode": "ABA",
+        "Encoding Description": "American Bankers Association (ABA) Transit Routing Number (Including Check Digit, 9 Digit)"
+      },
+      {
+        "ExternalCode": "18",
+        "CanonicalCode": "AAR",
+        "Encoding Description": "Association of American Railroads (AAR) Standard Distribution Code"
+      },
+      {
+        "ExternalCode": "19",
+        "CanonicalCode": "EDIAUSTRALIA",
+        "Encoding Description": "EDI Council of Australia (EDICA) Communications ID Number (COMM ID)"
+      },
+      {
+        "ExternalCode": "20",
+        "CanonicalCode": "HIN",
+        "Encoding Description": "Health Industry Number (HIN)"
+      },
+      {
+        "ExternalCode": "21",
+        "CanonicalCode": "IPEDS",
+        "Encoding Description": "Integrated Postsecondary Education Data System"
+      },
+      {
+        "ExternalCode": "22",
+        "CanonicalCode": "FICE",
+        "Encoding Description": "Federal Interagency Commission on Education, or FICE"
+      },
+      {
+        "ExternalCode": "23",
+        "CanonicalCode": "NCES",
+        "Encoding Description": "National Center for Education Statistics Common Core of Data 12-Digit Number for Pre-K-Grade 12 Institutes"
+      },
+      {
+        "ExternalCode": "24",
+        "CanonicalCode": "ATP",
+        "Encoding Description": "The College Board's Admission Testing Program 4-Digit Code of Postsecondary Institutes, or ATP"
+      },
+      {
+        "ExternalCode": "25",
+        "CanonicalCode": "ACT",
+        "Encoding Description": "4-Digit Code of Postsecondary Institutions."
+      },
+      {
+        "ExternalCode": "26",
+        "CanonicalCode": "STATSCANPOSTSECONDARY",
+        "Encoding Description": "Statistics of Canada List of Postsecondary Institutions"
+      },
+      {
+        "ExternalCode": "27",
+        "CanonicalCode": "HCFACARRIER",
+        "Encoding Description": "Carrier Identification Number as assigned by Health Care Financing Administration (HCFA)"
+      },
+      {
+        "ExternalCode": "28",
+        "CanonicalCode": "HCFAINTERMEDIARY",
+        "Encoding Description": "Fiscal Intermediary Identification Number as assigned by Health Care Financing Administration (HCFA)"
+      },
+      {
+        "ExternalCode": "29",
+        "CanonicalCode": "HCFAMEDICAREPROVIDER",
+        "Encoding Description": "Medicare Provider and Supplier Identification Number assigned by Health Care Financing Administration (HCFA)"
+      },
+      {
+        "ExternalCode": "30",
+        "CanonicalCode": "USTIN",
+        "Encoding Description": "U.S. Federal Tax Identification Number"
+      },
+      {
+        "ExternalCode": "31",
+        "CanonicalCode": "IAIABCJURISDICTION",
+        "Encoding Description": "Jurisdiction Identification Number Plus 4 assigned by the International Association of Industrial Accident Boards and Commissions (IAIABC)"
+      },
+      {
+        "ExternalCode": "32",
+        "CanonicalCode": "USEIN",
+        "Encoding Description": "U.S. Federal Employer Identification Number (FEIN)"
+      },
+      {
+        "ExternalCode": "33",
+        "CanonicalCode": "NAIC",
+        "Encoding Description": "National Association of Insurance Commissioners Company Code (NAIC)"
+      },
+      {
+        "ExternalCode": "34",
+        "CanonicalCode": "HCFAMEDICAIDPROVIDER",
+        "Encoding Description": "Medicaid Provider and Supplier Identification Number as assigned by individual State Medicaid Agencies in conjunction with Health Care Financing Administration (HCFA)"
+      },
+      {
+        "ExternalCode": "35",
+        "CanonicalCode": "STATSCANCOLLEGESTUDENT",
+        "Encoding Description": "Statistics Canada Canadian College Student Information System Institution Codes"
+      },
+      {
+        "ExternalCode": "36",
+        "CanonicalCode": "STATSCANUNIVERSITYSTUDENT",
+        "Encoding Description": "Statistics Canada University Student Information System Institution Codes"
+      },
+      {
+        "ExternalCode": "37",
+        "CanonicalCode": "SPICA",
+        "Encoding Description": "Society of Property Information Compilers and Analysts (SPICA)"
+      },
+      {
+        "ExternalCode": "38",
+        "CanonicalCode": "COLLEGEBOARD",
+        "Encoding Description": "The College Board and ACT, Inc. 6-Digit Code List of Secondary Institutions"
+      },
+      {
+        "ExternalCode": "AM",
+        "CanonicalCode": "AMECOP",
+        "Encoding Description": "Association Mexicana del Codigo de Producto (AMECOP) Communication ID"
+      },
+      {
+        "ExternalCode": "NR",
+        "CanonicalCode": "NRMA",
+        "Encoding Description": "National Retail Merchants Association (NRMA) - Assigned"
+      },
+      {
+        "ExternalCode": "SA",
+        "CanonicalCode": "SAFER",
+        "Encoding Description": "User Identification Number as assigned by the Safety and the Fitness Electronic Records (SAFER) System"
+      },
+      {
+        "ExternalCode": "SN",
+        "CanonicalCode": "ADDRESS",
+        "Encoding Description": "Standard Address Number"
+      },
+      {
+        "ExternalCode": "ZZ",
+        "CanonicalCode": "CUSTOM",
+        "Encoding Description": "Mutually Defined"
+      }
+    ],
+    "CL_UnitOfMeasureEnum": [
+      {
+        "External X12 Code": "Code List:",
+        "External EDIFACT Cod": "Unit of Measure enums"
+      },
+      {
+        "External X12 Code": "External X12 Code",
+        "External EDIFACT Cod": "External EDIFACT Cod",
+        "CanonicalCode": "CanonicalCode",
+        "Description": "Description"
+      },
+      {
+        "External X12 Code": "02",
+        "External EDIFACT Cod": "02",
+        "CanonicalCode": "02",
+        "Description": "Statute Mile"
+      },
+      {
+        "External X12 Code": "4G",
+        "External EDIFACT Cod": "4G",
+        "CanonicalCode": "4G",
+        "Description": "Microliter"
+      },
+      {
+        "External X12 Code": "AM",
+        "External EDIFACT Cod": "AM",
+        "CanonicalCode": "AM",
+        "Description": "Ampoule"
+      },
+      {
+        "External X12 Code": "AV",
+        "External EDIFACT Cod": "AV",
+        "CanonicalCode": "AV",
+        "Description": "Capsule"
+      },
+      {
+        "External X12 Code": "BD",
+        "External EDIFACT Cod": "BD",
+        "CanonicalCode": "BD",
+        "Description": "Bundle"
+      },
+      {
+        "External X12 Code": "BG",
+        "External EDIFACT Cod": "BG",
+        "CanonicalCode": "BG",
+        "Description": "Bag"
+      },
+      {
+        "External X12 Code": "BO",
+        "External EDIFACT Cod": "BO",
+        "CanonicalCode": "BO",
+        "Description": "Bottle"
+      },
+      {
+        "External X12 Code": "BX",
+        "External EDIFACT Cod": "BX",
+        "CanonicalCode": "BX",
+        "Description": "Box"
+      },
+      {
+        "External X12 Code": "C3",
+        "External EDIFACT Cod": "C3",
+        "CanonicalCode": "C3",
+        "Description": "Centiliter"
+      },
+      {
+        "External X12 Code": "CA",
+        "External EDIFACT Cod": "CA",
+        "CanonicalCode": "CA",
+        "Description": "Case"
+      },
+      {
+        "External X12 Code": "CC",
+        "External EDIFACT Cod": "CC",
+        "CanonicalCode": "CC",
+        "Description": "Cubic Centimeter"
+      },
+      {
+        "External X12 Code": "CF",
+        "External EDIFACT Cod": "CF",
+        "CanonicalCode": "CF",
+        "Description": "Cubic Feet"
+      },
+      {
+        "External X12 Code": "CG",
+        "External EDIFACT Cod": "CG",
+        "CanonicalCode": "CG",
+        "Description": "Card Blister"
+      },
+      {
+        "External X12 Code": "CI",
+        "External EDIFACT Cod": "CI",
+        "CanonicalCode": "CI",
+        "Description": "Cubic Inches"
+      },
+      {
+        "External X12 Code": "CL",
+        "External EDIFACT Cod": "CL",
+        "CanonicalCode": "CL",
+        "Description": "Cylinder"
+      },
+      {
+        "External X12 Code": "CM",
+        "External EDIFACT Cod": "CM",
+        "CanonicalCode": "CM",
+        "Description": "Centimeter"
+      },
+      {
+        "External X12 Code": "CN",
+        "External EDIFACT Cod": "CN",
+        "CanonicalCode": "CN",
+        "Description": "Can"
+      },
+      {
+        "External X12 Code": "CP",
+        "External EDIFACT Cod": "CP",
+        "CanonicalCode": "CP",
+        "Description": "Crate"
+      },
+      {
+        "External X12 Code": "CQ",
+        "External EDIFACT Cod": "CQ",
+        "CanonicalCode": "CQ",
+        "Description": "Cartridge"
+      },
+      {
+        "External X12 Code": "CR",
+        "External EDIFACT Cod": "CR",
+        "CanonicalCode": "CR",
+        "Description": "Cubic Meters"
+      },
+      {
+        "External X12 Code": "CT",
+        "External EDIFACT Cod": "CT",
+        "CanonicalCode": "CT",
+        "Description": "Carton"
+      },
+      {
+        "External X12 Code": "DA",
+        "External EDIFACT Cod": "DA",
+        "CanonicalCode": "DA",
+        "Description": "Day"
+      },
+      {
+        "External X12 Code": "DI",
+        "External EDIFACT Cod": "DI",
+        "CanonicalCode": "DI",
+        "Description": "Dispenser"
+      },
+      {
+        "External X12 Code": "DK",
+        "External EDIFACT Cod": "DK",
+        "CanonicalCode": "DK",
+        "Description": "Kilometers"
+      },
+      {
+        "External X12 Code": "DL",
+        "External EDIFACT Cod": "DL",
+        "CanonicalCode": "DL",
+        "Description": "Deciliter"
+      },
+      {
+        "External X12 Code": "DM",
+        "External EDIFACT Cod": "DM",
+        "CanonicalCode": "DM",
+        "Description": "Decimeter"
+      },
+      {
+        "External X12 Code": "DR",
+        "External EDIFACT Cod": "DR",
+        "CanonicalCode": "DR",
+        "Description": "Drum"
+      },
+      {
+        "External X12 Code": "DS",
+        "External EDIFACT Cod": "DS",
+        "CanonicalCode": "DS",
+        "Description": "Display"
+      },
+      {
+        "External X12 Code": "DZ",
+        "External EDIFACT Cod": "DZ",
+        "CanonicalCode": "DZ",
+        "Description": "Dozen"
+      },
+      {
+        "External X12 Code": "EA",
+        "External EDIFACT Cod": "EA",
+        "CanonicalCode": "EA",
+        "Description": "Each"
+      },
+      {
+        "External X12 Code": "FO",
+        "External EDIFACT Cod": "FO",
+        "CanonicalCode": "FO",
+        "Description": "US Fluid Ounce"
+      },
+      {
+        "External X12 Code": "FT",
+        "External EDIFACT Cod": "FT",
+        "CanonicalCode": "FT",
+        "Description": "Foot"
+      },
+      {
+        "External X12 Code": "GA",
+        "External EDIFACT Cod": "GA",
+        "CanonicalCode": "GA",
+        "Description": "US Gallon"
+      },
+      {
+        "External X12 Code": "GL",
+        "External EDIFACT Cod": "GL",
+        "CanonicalCode": "GL",
+        "Description": "Gram/Liter"
+      },
+      {
+        "External X12 Code": "GR",
+        "External EDIFACT Cod": "GRM",
+        "CanonicalCode": "GR",
+        "Description": "Gram"
+      },
+      {
+        "External X12 Code": "GS",
+        "External EDIFACT Cod": "GS",
+        "CanonicalCode": "GS",
+        "Description": "Gross"
+      },
+      {
+        "External X12 Code": "H4",
+        "External EDIFACT Cod": "H4",
+        "CanonicalCode": "H4",
+        "Description": "Hectoliter"
+      },
+      {
+        "External X12 Code": "HF",
+        "External EDIFACT Cod": "HF",
+        "CanonicalCode": "HF",
+        "Description": "Hundred Feet"
+      },
+      {
+        "External X12 Code": "HR",
+        "External EDIFACT Cod": "HR",
+        "CanonicalCode": "HR",
+        "Description": "Hours"
+      },
+      {
+        "External X12 Code": "IN",
+        "External EDIFACT Cod": "IN",
+        "CanonicalCode": "IN",
+        "Description": "Inch"
+      },
+      {
+        "External X12 Code": "K6",
+        "External EDIFACT Cod": "K6",
+        "CanonicalCode": "K6",
+        "Description": "Kiloliters"
+      },
+      {
+        "External X12 Code": "KG",
+        "External EDIFACT Cod": "KG",
+        "CanonicalCode": "KG",
+        "Description": "Kilogram"
+      },
+      {
+        "External X12 Code": "KT",
+        "External EDIFACT Cod": "KT",
+        "CanonicalCode": "KT",
+        "Description": "Kit"
+      },
+      {
+        "External X12 Code": "LB",
+        "External EDIFACT Cod": "LB",
+        "CanonicalCode": "LB",
+        "Description": "US Pound"
+      },
+      {
+        "External X12 Code": "LF",
+        "External EDIFACT Cod": "LF",
+        "CanonicalCode": "LF",
+        "Description": "Linear Foot"
+      },
+      {
+        "External X12 Code": "LO",
+        "External EDIFACT Cod": "LO",
+        "CanonicalCode": "LO",
+        "Description": "Lot (unit of procurement)"
+      },
+      {
+        "External X12 Code": "LT",
+        "External EDIFACT Cod": "LT",
+        "CanonicalCode": "LT",
+        "Description": "Liter"
+      },
+      {
+        "External X12 Code": "LY",
+        "External EDIFACT Cod": "LY",
+        "CanonicalCode": "LY",
+        "Description": "Linear Yard"
+      },
+      {
+        "External X12 Code": "MC",
+        "External EDIFACT Cod": "MC",
+        "CanonicalCode": "MC",
+        "Description": "Microgram"
+      },
+      {
+        "External X12 Code": "ME",
+        "External EDIFACT Cod": "ME",
+        "CanonicalCode": "ME",
+        "Description": "Milligram"
+      },
+      {
+        "External X12 Code": "ML",
+        "External EDIFACT Cod": "ML",
+        "CanonicalCode": "ML",
+        "Description": "Milliliter"
+      },
+      {
+        "External X12 Code": "MM",
+        "External EDIFACT Cod": "MM",
+        "CanonicalCode": "MM",
+        "Description": "Millimeter"
+      },
+      {
+        "External X12 Code": "MO",
+        "External EDIFACT Cod": "MO",
+        "CanonicalCode": "MO",
+        "Description": "Months"
+      },
+      {
+        "External X12 Code": "MR",
+        "External EDIFACT Cod": "MR",
+        "CanonicalCode": "MR",
+        "Description": "Meter"
+      },
+      {
+        "External X12 Code": "OZ",
+        "External EDIFACT Cod": "OZ",
+        "CanonicalCode": "OZ",
+        "Description": "Ounce"
+      },
+      {
+        "External X12 Code": "PC",
+        "External EDIFACT Cod": "PC",
+        "CanonicalCode": "PC",
+        "Description": "Piece"
+      },
+      {
+        "External X12 Code": "PF",
+        "External EDIFACT Cod": "PF",
+        "CanonicalCode": "PF",
+        "Description": "Pallet"
+      },
+      {
+        "External X12 Code": "PH",
+        "External EDIFACT Cod": "PH",
+        "CanonicalCode": "PH",
+        "Description": "Pack"
+      },
+      {
+        "External X12 Code": "PK",
+        "External EDIFACT Cod": "PK",
+        "CanonicalCode": "PK",
+        "Description": "Package"
+      },
+      {
+        "External X12 Code": "PR",
+        "External EDIFACT Cod": "PR",
+        "CanonicalCode": "PR",
+        "Description": "Pair"
+      },
+      {
+        "External X12 Code": "PT",
+        "External EDIFACT Cod": "PT",
+        "CanonicalCode": "PT",
+        "Description": "Pint"
+      },
+      {
+        "External X12 Code": "QT",
+        "External EDIFACT Cod": "QT",
+        "CanonicalCode": "QT",
+        "Description": "Quart"
+      },
+      {
+        "External X12 Code": "RL",
+        "External EDIFACT Cod": "RL",
+        "CanonicalCode": "RL",
+        "Description": "Roll"
+      },
+      {
+        "External X12 Code": "SC",
+        "External EDIFACT Cod": "SC",
+        "CanonicalCode": "SC",
+        "Description": "Square Centimeter"
+      },
+      {
+        "External X12 Code": "SF",
+        "External EDIFACT Cod": "SF",
+        "CanonicalCode": "SF",
+        "Description": "Square Foot"
+      },
+      {
+        "External X12 Code": "SH",
+        "External EDIFACT Cod": "SH",
+        "CanonicalCode": "SH",
+        "Description": "Sheet"
+      },
+      {
+        "External X12 Code": "SI",
+        "External EDIFACT Cod": "SI",
+        "CanonicalCode": "SI",
+        "Description": "Square Inch"
+      },
+      {
+        "External X12 Code": "SM",
+        "External EDIFACT Cod": "SM",
+        "CanonicalCode": "SM",
+        "Description": "Square Meter"
+      },
+      {
+        "External X12 Code": "ST",
+        "External EDIFACT Cod": "ST",
+        "CanonicalCode": "ST",
+        "Description": "Set"
+      },
+      {
+        "External X12 Code": "SY",
+        "External EDIFACT Cod": "SY",
+        "CanonicalCode": "SY",
+        "Description": "Square Yard"
+      },
+      {
+        "External X12 Code": "T3",
+        "External EDIFACT Cod": "T3",
+        "CanonicalCode": "T3",
+        "Description": "Thousand Pieces"
+      },
+      {
+        "External X12 Code": "TB",
+        "External EDIFACT Cod": "TB",
+        "CanonicalCode": "TB",
+        "Description": "Tube"
+      },
+      {
+        "External X12 Code": "TH",
+        "External EDIFACT Cod": "TH",
+        "CanonicalCode": "TH",
+        "Description": "Thousands"
+      },
+      {
+        "External X12 Code": "TY",
+        "External EDIFACT Cod": "TY",
+        "CanonicalCode": "TY",
+        "Description": "Tray"
+      },
+      {
+        "External X12 Code": "U2",
+        "External EDIFACT Cod": "U2",
+        "CanonicalCode": "U2",
+        "Description": "Tablet"
+      },
+      {
+        "External X12 Code": "UM",
+        "External EDIFACT Cod": "UM",
+        "CanonicalCode": "UM",
+        "Description": "Million"
+      },
+      {
+        "External X12 Code": "UN",
+        "External EDIFACT Cod": "UN",
+        "CanonicalCode": "UN",
+        "Description": "Unit"
+      },
+      {
+        "External X12 Code": "V2",
+        "External EDIFACT Cod": "V2",
+        "CanonicalCode": "V2",
+        "Description": "Pouch"
+      },
+      {
+        "External X12 Code": "VI",
+        "External EDIFACT Cod": "VI",
+        "CanonicalCode": "VI",
+        "Description": "Vial"
+      },
+      {
+        "External X12 Code": "WK",
+        "External EDIFACT Cod": "WK",
+        "CanonicalCode": "WK",
+        "Description": "Week"
+      },
+      {
+        "External X12 Code": "YD",
+        "External EDIFACT Cod": "YD",
+        "CanonicalCode": "YD",
+        "Description": "Yard"
+      },
+      {
+        "External X12 Code": "YR",
+        "External EDIFACT Cod": "YR",
+        "CanonicalCode": "YR",
+        "Description": "Years"
+      },
+      {
+        "External X12 Code": "CH",
+        "External EDIFACT Cod": "CH",
+        "CanonicalCode": "CH",
+        "Description": "Container"
+      },
+      {
+        "External X12 Code": "P1",
+        "External EDIFACT Cod": "P1",
+        "CanonicalCode": "P1",
+        "Description": "Percent"
+      },
+      {
+        "External X12 Code": "SP",
+        "External EDIFACT Cod": "SP",
+        "CanonicalCode": "SP",
+        "Description": "Self Package"
+      },
+      {
+        "External X12 Code": "SZ",
+        "External EDIFACT Cod": "SZ",
+        "CanonicalCode": "SZ",
+        "Description": "Syringe"
+      },
+      {
+        "External X12 Code": "TS",
+        "External EDIFACT Cod": "TS",
+        "CanonicalCode": "TS",
+        "Description": "Thousands"
+      },
+      {
+        "External X12 Code": "US",
+        "External EDIFACT Cod": "US",
+        "CanonicalCode": "US",
+        "Description": "Dosage Form"
+      },
+      {
+        "External X12 Code": "DQ",
+        "External EDIFACT Cod": "DQ",
+        "CanonicalCode": "DQ",
+        "Description": "Cubic decimeters"
+      },
+      {
+        "External X12 Code": "TN",
+        "External EDIFACT Cod": "TN",
+        "CanonicalCode": "TN",
+        "Description": "Tonne"
+      }
+    ],
+    "CL_dateType": [
+      {
+        "X12 Code": "Code List:",
+        "CanonicalCode": "Type of payment or remittance"
+      },
+      {
+        "X12 Code": "X12 Code",
+        "CanonicalCode": "CanonicalCode",
+        "Description": "Description"
+      },
+      {
+        "X12 Code": "139",
+        "CanonicalCode": "ESTIMATED",
+        "Description": "Estimated"
+      },
+      {
+        "X12 Code": "140",
+        "CanonicalCode": "ACTUAL",
+        "Description": "Actual date"
+      },
+      {
+        "X12 Code": "369",
+        "CanonicalCode": "ESTIMATEDDEPARTURE",
+        "Description": "Estimated Departure Date"
+      },
+      {
+        "X12 Code": "370",
+        "CanonicalCode": "ACTUALDEPARTURE",
+        "Description": "Actual Departure date"
+      },
+      {
+        "X12 Code": "371",
+        "CanonicalCode": "ESTIMATEDARRIVAL",
+        "Description": "Estimated Arrrivale date"
+      },
+      {
+        "X12 Code": "372",
+        "CanonicalCode": "ACTUALARRIVAL",
+        "Description": "Actual arrival date"
+      },
+      {
+        "X12 Code": "058",
+        "CanonicalCode": "CUSTOMSCLEARANCE",
+        "Description": "Customs Clearance date"
+      },
+      {
+        "X12 Code": "161",
+        "CanonicalCode": "VESSELLOADED",
+        "Description": "Loaded on vessel date"
+      },
+      {
+        "X12 Code": "813",
+        "CanonicalCode": "CUSTOMSENTRY",
+        "Description": "Customs entry date"
+      },
+      {
+        "X12 Code": "510",
+        "CanonicalCode": "PACKED",
+        "Description": "Date packed"
+      }
+    ],
+    "CL_CompanyLocationIDType": [
+      {
+        "ExternalCode": "Code List:",
+        "CanonicalCode": "Business address ID lookup enum"
+      },
+      {
+        "ExternalCode": "ExternalCode",
+        "CanonicalCode": "CanonicalCode",
+        "Description": "Description"
+      },
+      {
+        "ExternalCode": "1",
+        "CanonicalCode": "DUNS",
+        "Description": "D-U-N-S number, Dun and Bradstreet"
+      },
+      {
+        "ExternalCode": "9",
+        "CanonicalCode": "DUNS4",
+        "Description": "D-U-N-S + 4r, Dun and Bradstreet number plus suffix"
+      },
+      {
+        "ExternalCode": "11",
+        "CanonicalCode": "DEA",
+        "Description": "Drug Enforcement Agency registration number"
+      },
+      {
+        "ExternalCode": "21",
+        "CanonicalCode": "HIN",
+        "Description": "Health Industry Number"
+      },
+      {
+        "ExternalCode": "91",
+        "CanonicalCode": "COMPANYID",
+        "Description": "Assigned by seller … company identifier"
+      },
+      {
+        "ExternalCode": "92",
+        "CanonicalCode": "COMPANYSITEID",
+        "Description": "Assigned by buyer … company site identifier"
+      },
+      {
+        "ExternalCode": "UL",
+        "CanonicalCode": "GLN",
+        "Description": "Global Location Number"
+      }
+    ]
+  },
+  "hierarchies": {
+    "source": {
+      "type": "flat",
+      "fields": [
+        "/315"
+      ]
+    },
+    "target": {
+      "type": "flat",
+      "fields": [
+        "/data/canonicalOceanShipmentEventDetails/city",
+        "/data/canonicalOceanShipmentEventDetails/countryCode",
+        "/data/canonicalOceanShipmentEventDetails/eventName",
+        "/data/canonicalOceanShipmentEventDetails/shipmentEventType",
+        "/data/canonicalOceanShipmentEventDetails/state",
+        "/data/canonicalOceanShipmentEventDetails/timeZone",
+        "/data/canonicalOceanShipmentEventDetails/transactionStatusReasonCode",
+        "/data/canonicalOceanShipmentEventDetails/transportEventTimeStamp",
+        "/data/canonicalOceanShipmentStatusDetails/lineItemNumber",
+        "/data/canonicalOceanShipmentStatusDetails/mpcDates/mpcDates/dateType",
+        "/data/canonicalOceanShipmentStatusDetails/mpcDates/mpcDates/dateValue",
+        "/data/canonicalOceanShipmentStatusDetails/mpcDates/mpcDates/timeZone",
+        "/data/canonicalOceanShipmentStatusDetails/portOrTerminalDetails/countryCode",
+        "/data/canonicalOceanShipmentStatusDetails/portOrTerminalDetails/oceanShipmentLocationCode",
+        "/data/canonicalOceanShipmentStatusDetails/portOrTerminalDetails/oceanShipmentLocationIdentifier",
+        "/data/canonicalOceanShipmentStatusDetails/portOrTerminalDetails/portName",
+        "/data/canonicalOceanShipmentStatusDetails/portOrTerminalDetails/portOrTerminalFunctionCode",
+        "/data/canonicalOceanShipmentStatusDetails/portOrTerminalDetails/state",
+        "/data/canonicalOceanShipmentStatusDetails/portOrTerminalDetails/terminalName",
+        "/data/canonicalOceanShipmentStatusHeader/carrierCode",
+        "/data/canonicalOceanShipmentStatusHeader/carrierInformation/mpcCompanyLocationIdentifierList/companyIdentifierType",
+        "/data/canonicalOceanShipmentStatusHeader/carrierInformation/mpcCompanyLocationIdentifierList/companyIdentifierValue",
+        "/data/canonicalOceanShipmentStatusHeader/checkDigitIdentifier",
+        "/data/canonicalOceanShipmentStatusHeader/dateReported",
+        "/data/canonicalOceanShipmentStatusHeader/equipmentIdentifier",
+        "/data/canonicalOceanShipmentStatusHeader/equipmentPrefix",
+        "/data/canonicalOceanShipmentStatusHeader/equipmentStatusCode",
+        "/data/canonicalOceanShipmentStatusHeader/equipmentTypeISOCode",
+        "/data/canonicalOceanShipmentStatusHeader/oceanShipmentLocationCode",
+        "/data/canonicalOceanShipmentStatusHeader/oceanShipmentLocationIdentifier",
+        "/data/canonicalOceanShipmentStatusHeader/oceanShipmentStatusDetails/billOfLadingDispositionCode",
+        "/data/canonicalOceanShipmentStatusHeader/oceanShipmentStatusDetails/shipmentStatusDateString",
+        "/data/canonicalOceanShipmentStatusHeader/oceanShipmentStatusDetails/timeZone",
+        "/data/canonicalOceanShipmentStatusHeader/oceanShipmentStatusDetails/transactionStatusCode",
+        "/data/canonicalOceanShipmentStatusHeader/oceanShipmentStatusDetails/transactionStatusReasonCode",
+        "/data/canonicalOceanShipmentStatusHeader/processingFunctionTypeCode",
+        "/data/canonicalOceanShipmentStatusHeader/shipperBusinessInformation/mpcCompanyLocationIdentifierList/companyIdentifierType",
+        "/data/canonicalOceanShipmentStatusHeader/shipperBusinessInformation/mpcCompanyLocationIdentifierList/companyIdentifierValue",
+        "/data/canonicalOceanShipmentStatusHeader/statusLocation",
+        "/data/canonicalOceanShipmentStatusHeader/transactionReferenceIdentifierList/b2bTransactionIdentifierType",
+        "/data/canonicalOceanShipmentStatusHeader/transactionReferenceIdentifierList/b2bTransactionIdentifierValue",
+        "/data/canonicalOceanShipmentStatusHeader/transactionReferenceIdentifierList/transactionDate",
+        "/data/canonicalOceanShipmentStatusHeader/transactionReferenceInformation/transactionReferenceIdentifier",
+        "/data/canonicalOceanShipmentStatusHeader/transactionReferenceInformation/transactionReferenceType",
+        "/data/canonicalOceanShipmentStatusHeader/transactionStatusCode",
+        "/data/canonicalOceanShipmentStatusHeader/vesselDetails/carrierCode",
+        "/data/canonicalOceanShipmentStatusHeader/vesselDetails/countryCode",
+        "/data/canonicalOceanShipmentStatusHeader/vesselDetails/departureDate",
+        "/data/canonicalOceanShipmentStatusHeader/vesselDetails/ladingQuantity",
+        "/data/canonicalOceanShipmentStatusHeader/vesselDetails/pierdate",
+        "/data/canonicalOceanShipmentStatusHeader/vesselDetails/transactionReferenceIdentifier",
+        "/data/canonicalOceanShipmentStatusHeader/vesselDetails/transactionReferenceType",
+        "/data/canonicalOceanShipmentStatusHeader/vesselDetails/unloadingDate",
+        "/data/canonicalOceanShipmentStatusHeader/vesselDetails/vesselCodeType",
+        "/data/canonicalOceanShipmentStatusHeader/vesselDetails/vesselIdentifier",
+        "/data/canonicalOceanShipmentStatusHeader/vesselDetails/vesselName",
+        "/data/canonicalOceanShipmentStatusHeader/vesselDetails/volumeType",
+        "/data/canonicalOceanShipmentStatusHeader/vesselDetails/volumeValue",
+        "/data/canonicalOceanShipmentStatusHeader/vesselDetails/voyageIdentifier",
+        "/data/canonicalOceanShipmentStatusHeader/vesselDetails/weightType",
+        "/data/canonicalOceanShipmentStatusHeader/vesselDetails/weightUnitType",
+        "/data/canonicalOceanShipmentStatusHeader/vesselDetails/weightValue",
+        "/data/controlFileHeader/b2bTransactionTypeName",
+        "/data/controlFileHeader/fileControlNumber",
+        "/data/controlFileHeader/fileDateTime",
+        "/data/controlFileHeader/fileReceiverNumber",
+        "/data/controlFileHeader/fileSenderNumber",
+        "/data/controlFileHeader/linkIdentifier",
+        "/data/controlFileHeader/x12ControlFileHeader/x12FunctionalGroupControlEnvelope/ediMessageVersionCode",
+        "/data/controlFileHeader/x12ControlFileHeader/x12FunctionalGroupControlEnvelope/groupControlNumber",
+        "/data/controlFileHeader/x12ControlFileHeader/x12FunctionalGroupControlEnvelope/groupDate",
+        "/data/controlFileHeader/x12ControlFileHeader/x12FunctionalGroupControlEnvelope/groupReceiverNumber",
+        "/data/controlFileHeader/x12ControlFileHeader/x12FunctionalGroupControlEnvelope/groupSenderNumber",
+        "/data/controlFileHeader/x12ControlFileHeader/x12FunctionalGroupControlEnvelope/groupTime",
+        "/data/controlFileHeader/x12ControlFileHeader/x12FunctionalGroupControlEnvelope/x12AgencyCode",
+        "/data/controlFileHeader/x12ControlFileHeader/x12InterchangeControlEnvelope/authorizationInformationType",
+        "/data/controlFileHeader/x12ControlFileHeader/x12InterchangeControlEnvelope/authorizationInformationValue",
+        "/data/controlFileHeader/x12ControlFileHeader/x12InterchangeControlEnvelope/componentSeparator",
+        "/data/controlFileHeader/x12ControlFileHeader/x12InterchangeControlEnvelope/fileReceiverType/ediEnvelopePartyType",
+        "/data/controlFileHeader/x12ControlFileHeader/x12InterchangeControlEnvelope/fileReceiverType/ediInterchangePartyValue",
+        "/data/controlFileHeader/x12ControlFileHeader/x12InterchangeControlEnvelope/fileSenderType/ediEnvelopePartyType",
+        "/data/controlFileHeader/x12ControlFileHeader/x12InterchangeControlEnvelope/fileSenderType/ediInterchangePartyValue",
+        "/data/controlFileHeader/x12ControlFileHeader/x12InterchangeControlEnvelope/interchangeControlIdentifier",
+        "/data/controlFileHeader/x12ControlFileHeader/x12InterchangeControlEnvelope/interchangeControlVersion",
+        "/data/controlFileHeader/x12ControlFileHeader/x12InterchangeControlEnvelope/isAcknowledgmentRequired",
+        "/data/controlFileHeader/x12ControlFileHeader/x12InterchangeControlEnvelope/repetitionSeparator",
+        "/data/controlFileHeader/x12ControlFileHeader/x12InterchangeControlEnvelope/securityInformationType",
+        "/data/controlFileHeader/x12ControlFileHeader/x12InterchangeControlEnvelope/securityInformationValue",
+        "/data/controlFileHeader/x12ControlFileHeader/x12InterchangeControlEnvelope/usageIndicator",
+        "/data/controlFileHeader/x12ControlFileHeader/x12TrailerSegments/trailerSegmentCount",
+        "/data/controlFileHeader/x12ControlFileHeader/x12TrailerSegments/trailerSegmentIdentifier",
+        "/data/controlFileHeader/x12ControlFileHeader/x12TrailerSegments/trailerSegmentType",
+        "/data/controlFileHeader/x12ControlFileHeader/x12TransactionSetEnvelope/transactionSetControlNumber",
+        "/data/id",
+        "/data/objectType",
+        "/data/schemaId",
+        "/data/schemaVersion"
+      ]
+    }
+  }
+}

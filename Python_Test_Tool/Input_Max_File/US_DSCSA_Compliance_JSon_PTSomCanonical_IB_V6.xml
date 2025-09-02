@@ -1,0 +1,714 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<can:CanonicalSOMEventType xmlns:can="urn:tracelink:mapper:sl:canonical:serialized_operations_manager" xmlns:cmn="urn:tracelink:mapper:sl:canonical:commontypes">
+<can:ControlFileHeader>
+<cmn:FileSenderNumber>0854888008005</cmn:FileSenderNumber>
+<cmn:FileReceiverNumber>0854888008005</cmn:FileReceiverNumber>
+<cmn:FileControlNumber>69695RG5t</cmn:FileControlNumber>
+<cmn:FileDate>2022-05-03</cmn:FileDate>
+<cmn:FileTime>17:17:33</cmn:FileTime>
+<cmn:FileTransactionType>SOM_SHIPMENT_EVENT</cmn:FileTransactionType>
+<cmn:ServiceLinkId>SOM.0069999999993.0069999999993</cmn:ServiceLinkId>
+</can:ControlFileHeader>
+<can:MessageBody>
+<cmn:MessageSender type="EU_SPOR_ORG_ID">0863772000001</cmn:MessageSender>
+<cmn:MessageRecipient type="EU_SPOR_LOC_ID">0854888008005</cmn:MessageRecipient>
+<cmn:TransactionStatement>
+<cmn:TransactionStatementIndicator statement="ReceivedFromDSCSAAuthorizedParty" statementText="My company conforms with Transaction Statement requirements for products in this shipment.">true</cmn:TransactionStatementIndicator>
+<cmn:TransactionStatementIndicator statement="MeetSection852Reqts" statementText="Company conforms with Transaction Statement requirements.">false</cmn:TransactionStatementIndicator>
+</cmn:TransactionStatement>
+<can:CommissionEvent>
+<can:CommissionEventDetail>
+<cmn:EventDateTime>2021-12-13T20:03:40.429Z</cmn:EventDateTime>
+<cmn:EventTimeZoneOffset>+00:00</cmn:EventTimeZoneOffset>
+<cmn:NumberList>
+<cmn:Serial companyPrefix="0193631" filterValue="5" format="AI(00)" purchaseQualifier="NA" barcodeContent="00501936310002572169">00501936310002572169</cmn:Serial>
+<cmn:Serial companyPrefix="0193631" filterValue="5" format="AI(00)" purchaseQualifier="IDPS" barcodeContent="00501936310002572169">00501936310002572170</cmn:Serial>
+<cmn:Serial companyPrefix="0193631" filterValue="5" format="AI(00)" purchaseQualifier="RDPS" barcodeContent="00501936310002572169">00501936310002572181</cmn:Serial>
+</cmn:NumberList>
+<cmn:FilterValue>1</cmn:FilterValue>
+<cmn:PackagingLevel>CA</cmn:PackagingLevel>
+</can:CommissionEventDetail>
+<can:CommissionCommonAttributes>
+<cmn:EventLocation type="PHARMACY_PROCESSOR_NUMBER">426016104.000.01</cmn:EventLocation>
+<cmn:PlantLocationId type="US_340B_ID">426016104.000.01</cmn:PlantLocationId>
+<cmn:ProductionLineId>ProductionLineId</cmn:ProductionLineId>
+<cmn:LineManagerName>LineManagerName</cmn:LineManagerName>
+<cmn:CompanyPrefix>CompanyPrefix</cmn:CompanyPrefix>
+<can:ItemDetail>
+<cmn:InternalMaterialCode>F000204216</cmn:InternalMaterialCode>
+<cmn:ItemCode type="GTIN-14">07891268148725</cmn:ItemCode>
+<cmn:CountryDrugCode type="US_NDC542">12345-0000-21</cmn:CountryDrugCode>
+<cmn:LotNumber>BRDHLT14</cmn:LotNumber>
+<cmn:ExpirationDate>2022-12-31</cmn:ExpirationDate>
+<cmn:ManufacturingDate>2030-12-31</cmn:ManufacturingDate>
+<cmn:MarketCountryCode>BR</cmn:MarketCountryCode>
+<cmn:ExtensionField>
+<cmn:FieldName>FieldName1</cmn:FieldName>
+<cmn:FieldValue>FieldValue1</cmn:FieldValue>
+</cmn:ExtensionField>
+<cmn:ExtensionField>
+<cmn:FieldName>traceabilityRequired</cmn:FieldName>
+<cmn:FieldValue>true</cmn:FieldValue>
+</cmn:ExtensionField>
+<cmn:ExtensionField>
+<cmn:FieldName>FieldName2</cmn:FieldName>
+<cmn:FieldValue>FieldValue2</cmn:FieldValue>
+</cmn:ExtensionField>
+</can:ItemDetail>
+<cmn:ReferenceDocuments>
+<cmn:PONumber>PONumber</cmn:PONumber>
+<cmn:POLine>POLine</cmn:POLine>
+<cmn:WorkOrderNumber>WorkOrderNumber</cmn:WorkOrderNumber>
+<cmn:ReferenceIdentifier>ReferenceIdentifier</cmn:ReferenceIdentifier>
+</cmn:ReferenceDocuments>
+</can:CommissionCommonAttributes>
+</can:CommissionEvent>
+<can:CommissionEvent>
+<can:CommissionEventDetail>
+<cmn:EventDateTime>2021-12-13T20:01:57.853Z</cmn:EventDateTime>
+<cmn:EventTimeZoneOffset>+00:00</cmn:EventTimeZoneOffset>
+<cmn:NumberList>
+<cmn:Serial companyPrefix="7891268" filterValue="1" format="AI(01)+AI(21)" orderItemNumber="100" packLevel="EA" packedStatus="PARTIAL_MIXED" barcodeContent="0107891268148725213027789879255">0107891268148725213027789879255</cmn:Serial>
+<cmn:Serial companyPrefix="7891268" filterValue="1" format="AI(01)+AI(21)" barcodeContent="0107891268148725217683425752471">0107891268148725217683425752471</cmn:Serial>
+<cmn:Serial companyPrefix="7891268" filterValue="1" format="AI(01)+AI(21)" orderItemNumber="100" packLevel="EA" packedStatus="PARTIAL_MIXED" purchaseQualifier="DPS" barcodeContent="0107891268148725213027789879255">0107891268148725213027789879255</cmn:Serial>
+</cmn:NumberList>
+<cmn:PackagingLevel>EA</cmn:PackagingLevel>
+</can:CommissionEventDetail>
+
+<can:CommissionEventDetail>
+<cmn:EventDateTime>2021-12-13T20:01:57.853Z</cmn:EventDateTime>
+<cmn:EventTimeZoneOffset>+00:00</cmn:EventTimeZoneOffset>
+<cmn:NumberList>
+<cmn:Serial companyPrefix="7891268" filterValue="1" format="AI(01)+AI(21)" orderItemNumber="100" packLevel="EA" packedStatus="PARTIAL_MIXED" barcodeContent="0107891268148725213027789879255">0101111268148725213027789879255</cmn:Serial>
+<cmn:Serial companyPrefix="7891268" filterValue="1" format="AI(01)+AI(21)" barcodeContent="0107891268148725217683425752471">0107891268148725217683425752471</cmn:Serial>
+<cmn:Serial companyPrefix="7891268" filterValue="1" format="AI(01)+AI(21)" orderItemNumber="100" packLevel="EA" packedStatus="PARTIAL_MIXED" purchaseQualifier="DPS" barcodeContent="0107891268148725213027789879255">0107891268148725213027789879255</cmn:Serial>
+</cmn:NumberList>
+<cmn:PackagingLevel>EA</cmn:PackagingLevel>
+</can:CommissionEventDetail>
+
+<can:CommissionCommonAttributes>
+<cmn:EventLocation type="SGLN">426016104.000.01</cmn:EventLocation>
+<cmn:PlantLocationId type="AR_CUIT">426016104.000.01</cmn:PlantLocationId>
+<can:ItemDetail>
+<cmn:InternalMaterialCode>XX565787854</cmn:InternalMaterialCode>
+<cmn:ItemCode type="GTIN-14">02498573930204</cmn:ItemCode>
+<cmn:LotNumber>BRDHLT14-A</cmn:LotNumber>
+<cmn:ExpirationDate>2025-12-31</cmn:ExpirationDate>
+<cmn:MarketCountryCode>JP</cmn:MarketCountryCode>
+</can:ItemDetail>
+</can:CommissionCommonAttributes>
+</can:CommissionEvent>
+<can:CommissionEvent>
+<can:CommissionEventDetail>
+<cmn:EventDateTime>2021-12-13T20:01:57.853Z</cmn:EventDateTime>
+<cmn:EventTimeZoneOffset>+00:00</cmn:EventTimeZoneOffset>
+<cmn:NumberList>
+<cmn:Serial companyPrefix="7891268" filterValue="1" format="AI(01)+AI(21)" orderItemNumber="100" packLevel="EA" packedStatus="PARTIAL_MIXED" barcodeContent="0107891268148725213027789879255">0107891268148725213027789879300</cmn:Serial>
+<cmn:Serial companyPrefix="7891268" filterValue="1" format="AI(01)+AI(21)" barcodeContent="0107891268148725217683425752471">0107891268148725217683425752310</cmn:Serial>
+<cmn:Serial companyPrefix="7891268" filterValue="1" format="AI(01)+AI(21)" orderItemNumber="100" packLevel="EA" packedStatus="PARTIAL_MIXED" purchaseQualifier="DPS" barcodeContent="0107891268148725213027789879255">0107891268148725213027789879320</cmn:Serial>
+</cmn:NumberList>
+<cmn:PackagingLevel>EA</cmn:PackagingLevel>
+</can:CommissionEventDetail>
+<can:CommissionCommonAttributes>
+<cmn:EventLocation type="SGLN">426016104.000.01</cmn:EventLocation>
+<cmn:PlantLocationId type="AR_CUIT">426016104.000.01</cmn:PlantLocationId>
+<can:ItemDetail>
+<cmn:InternalMaterialCode>XX565787854</cmn:InternalMaterialCode>
+<cmn:ItemCode type="GTIN-14">02498573930204</cmn:ItemCode>
+<cmn:LotNumber>BRDHLT14-A</cmn:LotNumber>
+<cmn:ExpirationDate>2025-12-31</cmn:ExpirationDate>
+<cmn:MarketCountryCode>JP</cmn:MarketCountryCode>
+</can:ItemDetail>
+</can:CommissionCommonAttributes>
+</can:CommissionEvent>
+<can:CommissionEvent>
+<can:CommissionEventDetail>
+<cmn:EventDateTime>2021-12-13T20:03:40.429Z</cmn:EventDateTime>
+<cmn:EventTimeZoneOffset>+00:00</cmn:EventTimeZoneOffset>
+<cmn:NumberList>
+<cmn:Serial companyPrefix="0193631" filterValue="5" format="AI(00)" purchaseQualifier="NA" barcodeContent="00501936310002572169">00502222310002572169</cmn:Serial>
+<cmn:Serial companyPrefix="0193631" filterValue="5" format="AI(00)" purchaseQualifier="IDPS" barcodeContent="00501936310002572169">00502222310002572170</cmn:Serial>
+<cmn:Serial companyPrefix="0193631" filterValue="5" format="AI(00)" purchaseQualifier="RDPS" barcodeContent="00501936310002572169">00502222310002572181</cmn:Serial>
+</cmn:NumberList>
+<cmn:FilterValue>1</cmn:FilterValue>
+<cmn:PackagingLevel>CA</cmn:PackagingLevel>
+</can:CommissionEventDetail>
+<can:CommissionCommonAttributes>
+<cmn:EventLocation type="PHARMACY_PROCESSOR_NUMBER">426016104.000.01</cmn:EventLocation>
+<cmn:PlantLocationId type="US_340B_ID">426016104.000.01</cmn:PlantLocationId>
+<cmn:ProductionLineId>ProductionLineId</cmn:ProductionLineId>
+<cmn:LineManagerName>LineManagerName</cmn:LineManagerName>
+<cmn:CompanyPrefix>CompanyPrefix</cmn:CompanyPrefix>
+<can:ItemDetail>
+<cmn:InternalMaterialCode>F000204216</cmn:InternalMaterialCode>
+<cmn:ItemCode type="GTIN-14">07891268148725</cmn:ItemCode>
+<cmn:CountryDrugCode type="US_NDC542">12345-0000-21</cmn:CountryDrugCode>
+<cmn:LotNumber>BRDHLT14</cmn:LotNumber>
+<cmn:ExpirationDate>2022-12-31</cmn:ExpirationDate>
+<cmn:ManufacturingDate>2030-12-31</cmn:ManufacturingDate>
+<cmn:MarketCountryCode>BR</cmn:MarketCountryCode>
+<cmn:ExtensionField>
+<cmn:FieldName>FieldName1</cmn:FieldName>
+<cmn:FieldValue>FieldValue1</cmn:FieldValue>
+</cmn:ExtensionField>
+<cmn:ExtensionField>
+<cmn:FieldName>traceabilityRequired</cmn:FieldName>
+<cmn:FieldValue>true</cmn:FieldValue>
+</cmn:ExtensionField>
+<cmn:ExtensionField>
+<cmn:FieldName>FieldName2</cmn:FieldName>
+<cmn:FieldValue>FieldValue2</cmn:FieldValue>
+</cmn:ExtensionField>
+</can:ItemDetail>
+<cmn:ReferenceDocuments>
+<cmn:PONumber>PONumber</cmn:PONumber>
+<cmn:POLine>POLine</cmn:POLine>
+<cmn:WorkOrderNumber>WorkOrderNumber</cmn:WorkOrderNumber>
+<cmn:ReferenceIdentifier>ReferenceIdentifier</cmn:ReferenceIdentifier>
+</cmn:ReferenceDocuments>
+</can:CommissionCommonAttributes>
+</can:CommissionEvent>
+<can:CommissionEvent>
+<can:CommissionEventDetail>
+<cmn:EventDateTime>2021-12-13T20:01:57.853Z</cmn:EventDateTime>
+<cmn:EventTimeZoneOffset>+00:00</cmn:EventTimeZoneOffset>
+<cmn:NumberList>
+<cmn:Serial companyPrefix="7891268" filterValue="1" format="AI(01)+AI(21)" orderItemNumber="100" packLevel="EA" packedStatus="PARTIAL_MIXED" barcodeContent="0107891268148725213027789879255">0107891268148725213027789879255</cmn:Serial>
+<cmn:Serial companyPrefix="7891268" filterValue="1" format="AI(01)+AI(21)" barcodeContent="0107891268148725217683425752471">0107891268148725217683425752471</cmn:Serial>
+<cmn:Serial companyPrefix="7891268" filterValue="1" format="AI(01)+AI(21)" orderItemNumber="100" packLevel="EA" packedStatus="PARTIAL_MIXED" purchaseQualifier="DPS" barcodeContent="0107891268148725213027789879255">0107891268148725213027789879255</cmn:Serial>
+</cmn:NumberList>
+<cmn:PackagingLevel>EA</cmn:PackagingLevel>
+</can:CommissionEventDetail>
+
+<can:CommissionEventDetail>
+<cmn:EventDateTime>2021-12-13T20:01:57.853Z</cmn:EventDateTime>
+<cmn:EventTimeZoneOffset>+00:00</cmn:EventTimeZoneOffset>
+<cmn:NumberList>
+<cmn:Serial companyPrefix="7891268" filterValue="1" format="AI(01)+AI(21)" orderItemNumber="100" packLevel="EA" packedStatus="PARTIAL_MIXED" barcodeContent="0107891268148725213027789879255">0107891268148725213027789879275</cmn:Serial>
+<cmn:Serial companyPrefix="7891268" filterValue="1" format="AI(01)+AI(21)" barcodeContent="0107891268148725217683425752471">0103333268148725213027789879255</cmn:Serial>
+<cmn:Serial companyPrefix="7891268" filterValue="1" format="AI(01)+AI(21)" orderItemNumber="100" packLevel="EA" packedStatus="PARTIAL_MIXED" purchaseQualifier="DPS" barcodeContent="0107891268148725213027789879255">0107891268148725213027789879255</cmn:Serial>
+</cmn:NumberList>
+<cmn:PackagingLevel>EA</cmn:PackagingLevel>
+</can:CommissionEventDetail>
+
+<can:CommissionCommonAttributes>
+<cmn:EventLocation type="SGLN">426016104.000.01</cmn:EventLocation>
+<cmn:PlantLocationId type="AR_CUIT">426016104.000.01</cmn:PlantLocationId>
+<can:ItemDetail>
+<cmn:InternalMaterialCode>XX565787854</cmn:InternalMaterialCode>
+<cmn:ItemCode type="GTIN-14">02498573930204</cmn:ItemCode>
+<cmn:LotNumber>BRDHLT14-A</cmn:LotNumber>
+<cmn:ExpirationDate>2025-12-31</cmn:ExpirationDate>
+<cmn:MarketCountryCode>JP</cmn:MarketCountryCode>
+</can:ItemDetail>
+</can:CommissionCommonAttributes>
+</can:CommissionEvent>
+
+<can:AggregationEvent>
+<cmn:EventDateTime>2022-04-26T06:33:43.261Z</cmn:EventDateTime>
+<cmn:EventTimeZoneOffset>+00:00</cmn:EventTimeZoneOffset>
+<cmn:EventLocation type="US_340B_ID">0863772000001</cmn:EventLocation>
+<cmn:ParentSerial companyPrefix="0193631" filterValue="5" format="AI(00)" barcodeContent="00501936310002572169">00501936310002572169</cmn:ParentSerial>
+<cmn:Quantity>2</cmn:Quantity>
+<cmn:NumberList>
+<cmn:Serial companyPrefix="7891268" filterValue="1" format="AI(01)+AI(21)" barcodeContent="0107891268148725217683425752471">0107891268148725217683425752471</cmn:Serial>
+<cmn:Serial companyPrefix="7891268" filterValue="1" format="AI(01)+AI(21)" barcodeContent="0107891268148725213027789879255">0107891268148725213027789879255</cmn:Serial>
+</cmn:NumberList>
+</can:AggregationEvent>
+<can:AggregationEvent>
+<cmn:EventDateTime>2022-04-26T06:33:43.261Z</cmn:EventDateTime>
+<cmn:EventTimeZoneOffset>+00:00</cmn:EventTimeZoneOffset>
+<cmn:EventLocation type="">0863772.00000.1</cmn:EventLocation>
+<cmn:ParentSerial companyPrefix="0193631" filterValue="5" format="AI(00)" barcodeContent="00501936310002572169">00501936310002572169</cmn:ParentSerial>
+<cmn:Quantity>2</cmn:Quantity>
+<cmn:NumberList>
+<cmn:Serial companyPrefix="7891268" filterValue="1" format="AI(01)+AI(21)" barcodeContent="0107891268148725217683425752471">0107891268148725217683425752471</cmn:Serial>
+<cmn:Serial companyPrefix="7891268" filterValue="1" format="AI(01)+AI(21)" barcodeContent="0107891268148725213027789879255">0107891268148725213027789879255</cmn:Serial>
+</cmn:NumberList>
+</can:AggregationEvent>
+<can:ShippingEvent>
+<cmn:DeliveryNumber>0180953640</cmn:DeliveryNumber>
+<cmn:DeliveryCompleteFlag>true</cmn:DeliveryCompleteFlag>
+<cmn:EventDateTime>2022-04-26T06:33:43.262Z</cmn:EventDateTime>
+<cmn:EventTimeZoneOffset>+00:00</cmn:EventTimeZoneOffset>
+<cmn:ShipmentType>Transfer</cmn:ShipmentType>
+<cmn:NumberList>
+<cmn:Serial companyPrefix="0193631" filterValue="5" format="AI(00)" barcodeContent="00501936310002572169">00501936310002572169</cmn:Serial>
+<cmn:Serial companyPrefix="0193631" filterValue="5" format="AI(00)" barcodeContent="00501936310002572169">00501936310002572170</cmn:Serial>
+<cmn:Serial companyPrefix="0193631" filterValue="5" format="AI(00)" barcodeContent="00501936310002572169">00501936310002572181</cmn:Serial>
+</cmn:NumberList>
+<cmn:EventLocation type="SGLN">7891045.00002.0</cmn:EventLocation>
+<cmn:PlantLocationId type="SGLN">7891045.00002.0</cmn:PlantLocationId>
+<cmn:WarehouseOperatorName>Jay Ship</cmn:WarehouseOperatorName>
+<cmn:TransactionIdentifier type="BOL" date="2022-04-25">BOL</cmn:TransactionIdentifier>
+<cmn:TransactionIdentifier type="NOTAFISCAL" date="2022-04-25">NOTAFISCAL</cmn:TransactionIdentifier>
+<cmn:TransactionIdentifier type="PO" date="2022-04-25">4502656824</cmn:TransactionIdentifier>
+<cmn:TransactionIdentifier type="NOTAFISCALELETRONICA" date="2022-04-25">828384851</cmn:TransactionIdentifier>
+<cmn:TransactionIdentifier type="ASN" date="2022-04-25">0180953640</cmn:TransactionIdentifier>
+<cmn:TransactionDate>2022-04-25</cmn:TransactionDate>
+<cmn:TransactionTime>09:45:35.000</cmn:TransactionTime>
+<cmn:ShipToCountryCode>BR</cmn:ShipToCountryCode>
+<cmn:ShipFromCountryCode>BR</cmn:ShipFromCountryCode>
+<cmn:SalesDistributionType>INCOUNTRYSALE</cmn:SalesDistributionType>
+<cmn:SupplyType>AgencyOrderedDestructionDistribution</cmn:SupplyType>
+<cmn:ContractType>ConsignmentAgreement</cmn:ContractType>
+<cmn:FundingSource>ExtraBudgetFunds</cmn:FundingSource>
+<cmn:DeliveryInspection>PASSED</cmn:DeliveryInspection>
+<cmn:DeliveryInspectionDate>2023-01-02</cmn:DeliveryInspectionDate>
+<cmn:DeliveryInspectionNote>DeliveryInspectionNote</cmn:DeliveryInspectionNote>
+<cmn:RemovalFromCirculation>COUNTERFEIT</cmn:RemovalFromCirculation>
+<cmn:AggregationInspection>VERIFIED</cmn:AggregationInspection>
+<cmn:OrderItemList>
+<cmn:OrderItem>
+<cmn:OrderItemNumber>256599</cmn:OrderItemNumber>
+<cmn:InternalMaterialCode>F000204216</cmn:InternalMaterialCode>
+<cmn:PackagingItemCode type="GTIN-14">07891268148725</cmn:PackagingItemCode>
+<cmn:CountryDrugCode type="CH_SWISSMEDIC">25989222</cmn:CountryDrugCode>
+<cmn:LotNumber>BRDHLT14</cmn:LotNumber>
+<cmn:ExpirationDate>2025-10-25</cmn:ExpirationDate>
+<cmn:Quantity>200</cmn:Quantity>
+<cmn:UnitPrice currencyCode="CAD">25.6</cmn:UnitPrice>
+<cmn:VAT currencyCode="USD">20.0</cmn:VAT>
+<cmn:GrossPrice currencyCode="XXX">25.6</cmn:GrossPrice>
+<cmn:IsSerialized>true</cmn:IsSerialized>
+<cmn:TransactionIdentifier type="EWAY" date="2022-04-25">0005555</cmn:TransactionIdentifier>
+<cmn:TransactionIdentifier type="OTHER" date="2022-01-25">5477878</cmn:TransactionIdentifier>
+</cmn:OrderItem>
+<cmn:OrderItem>
+<cmn:InternalMaterialCode>F000204216</cmn:InternalMaterialCode>
+<cmn:PackagingItemCode type="GTIN-14">07891268148725</cmn:PackagingItemCode>
+<cmn:LotNumber>BRDHLT14</cmn:LotNumber>
+<cmn:Quantity>2</cmn:Quantity>
+<cmn:IsSerialized>true</cmn:IsSerialized>
+<cmn:TransactionIdentifier type="EWAY" date="2022-04-25">0005555</cmn:TransactionIdentifier>
+<cmn:TransactionIdentifier type="OTHER" date="2022-01-25">5477878</cmn:TransactionIdentifier>
+</cmn:OrderItem>
+</cmn:OrderItemList>
+<cmn:SenderInfo>
+<cmn:FromBusinessPartyLookupId type="PHARMACY_PROCESSOR_NUMBER">7891045.00002.00</cmn:FromBusinessPartyLookupId>
+<cmn:FromBusinessPartyInfo>
+<cmn:BusinessId type="">78910.4500002.4</cmn:BusinessId>
+<cmn:BusinessId type="US_340B_ID">7891045.00002.0</cmn:BusinessId>
+<cmn:BusinessId type="PHARMACY_PROCESSOR_NUMBER">PHARMACYPROCESSORNUMBER</cmn:BusinessId>
+<cmn:BusinessId type="EU_SPOR_ORG_ID">EUSPORORGID</cmn:BusinessId>
+<cmn:BusinessId type="EU_SPOR_LOC_ID">EUSPORLOCID</cmn:BusinessId>
+<cmn:BusinessId type="SCAC">SCAC1</cmn:BusinessId>
+<cmn:BusinessClassification>RETURNSPROCESSOR</cmn:BusinessClassification>
+<cmn:BusTransactionRole>SoldFrom</cmn:BusTransactionRole>
+<cmn:BusinessInfo>
+<cmn:BusinessName>WYETH INDUSTRIA FARMACEUTICA LTDA</cmn:BusinessName>
+<cmn:Street1>Rod Castelo Branco KM 32,5 S/N</cmn:Street1>
+<cmn:Street2>FB Street2</cmn:Street2>
+<cmn:City>ITAPEVI</cmn:City>
+<cmn:Village>FB Village</cmn:Village>
+<cmn:HouseNumber>FB House</cmn:HouseNumber>
+<cmn:Township>FB Town</cmn:Township>
+<cmn:District>FB Dist</cmn:District>
+<cmn:StateOrRegion>SP</cmn:StateOrRegion>
+<cmn:PostalCode>06696-000</cmn:PostalCode>
+<cmn:Country>BR</cmn:Country>
+<cmn:CorporateFax>FB Fax</cmn:CorporateFax>
+<cmn:PremisesCode>FB Prem</cmn:PremisesCode>
+</cmn:BusinessInfo>
+</cmn:FromBusinessPartyInfo>
+<cmn:ShipFromLocationLookupId type="US_340B_ID">7891045.11002.00</cmn:ShipFromLocationLookupId>
+<cmn:ShipFromLocationInfo>
+<cmn:FacilityId type="">7891045.00002.0</cmn:FacilityId>
+<cmn:FacilityId type="EU_SPOR_LOC_ID">78910451000025</cmn:FacilityId>
+<cmn:FacilityId type="">78910.4500002.4</cmn:FacilityId>
+<cmn:FacilityId type="US_340B_ID">SF-7891045.00002.0</cmn:FacilityId>
+<cmn:FacilityId type="PHARMACY_PROCESSOR_NUMBER">SF-PHARMACYPROCESSORNUMBER</cmn:FacilityId>
+<cmn:FacilityId type="EU_SPOR_ORG_ID">SF-EUSPORORGID</cmn:FacilityId>
+<cmn:FacilityId type="EU_SPOR_LOC_ID">SF-EUSPORLOCID</cmn:FacilityId>
+<cmn:FacilityId type="SCAC">SCAC1</cmn:FacilityId>
+<cmn:LocationInfo>
+<cmn:BusinessName>WYETH INDUSTRIA FARMACEUTICA</cmn:BusinessName>
+<cmn:Street1>ROD CASTELO BRANCO KM 32,5 S/N</cmn:Street1>
+<cmn:Street2>SF Street2</cmn:Street2>
+<cmn:City>ITAPEVI</cmn:City>
+<cmn:Village>SF Village</cmn:Village>
+<cmn:HouseNumber>SF House</cmn:HouseNumber>
+<cmn:Township>SF Town</cmn:Township>
+<cmn:District>SF Dist</cmn:District>
+<cmn:StateOrRegion>SP</cmn:StateOrRegion>
+<cmn:PostalCode>06696-000</cmn:PostalCode>
+<cmn:Country>BR</cmn:Country>
+<cmn:CorporateFax>SF Fax</cmn:CorporateFax>
+<cmn:PremisesCode>SF Prem</cmn:PremisesCode>
+</cmn:LocationInfo>
+<cmn:LicenseNumber state="MA" agency="DMV">license1</cmn:LicenseNumber>
+<cmn:LicenseNumber state="WA" agency="RMV">license2</cmn:LicenseNumber>
+<cmn:ContactInfo>
+<cmn:Name>Name</cmn:Name>
+<cmn:Title>Title</cmn:Title>
+<cmn:Telephone>Telephone</cmn:Telephone>
+<cmn:Email>Email</cmn:Email>
+</cmn:ContactInfo>
+</cmn:ShipFromLocationInfo>
+</cmn:SenderInfo>
+<cmn:ReceiverInfo>
+<cmn:ToBusinessPartyLookupId type="EU_SPOR_ORG_ID">789104.51111102.4</cmn:ToBusinessPartyLookupId>
+<cmn:ToBusinessPartyInfo>
+<cmn:BusinessId type="EU_SPOR_LOC_ID">BT-7891045000024</cmn:BusinessId>
+<cmn:BusinessId type="">BT-7898958021.01.1</cmn:BusinessId>
+<cmn:BusinessId type="US_340B_ID">BT-7891045.00002.0</cmn:BusinessId>
+<cmn:BusinessId type="PHARMACY_PROCESSOR_NUMBER">BT-PHARMACYPROCESSORNUMBER</cmn:BusinessId>
+<cmn:BusinessId type="EU_SPOR_ORG_ID">BT-EUSPORORGID</cmn:BusinessId>
+<cmn:BusinessId type="SCAC">BT-SCAC</cmn:BusinessId>
+<cmn:BusinessClassification>DISTRIBUTOR</cmn:BusinessClassification>
+<cmn:BusTransactionRole>SoldTo</cmn:BusTransactionRole>
+<cmn:BusinessInfo>
+<cmn:BusinessName>WYETH INDUSTRIA FARMACEUTICA LTDA</cmn:BusinessName>
+<cmn:Street1>Rodovia Castelo Branco- KM 32.5 S/N</cmn:Street1>
+<cmn:Street2>TB Street2</cmn:Street2>
+<cmn:City>ITAPEVI</cmn:City>
+<cmn:Village>TB Village</cmn:Village>
+<cmn:HouseNumber>TB House</cmn:HouseNumber>
+<cmn:Township>TB Town</cmn:Township>
+<cmn:District>TB Dist</cmn:District>
+<cmn:StateOrRegion>SP</cmn:StateOrRegion>
+<cmn:PostalCode>06696-000</cmn:PostalCode>
+<cmn:Country>BR</cmn:Country>
+<cmn:CorporateFax>TB Fax</cmn:CorporateFax>
+<cmn:PremisesCode>TB Prem</cmn:PremisesCode>
+</cmn:BusinessInfo>
+</cmn:ToBusinessPartyInfo>
+<cmn:ShipToLocationLookupId type="EU_SPOR_LOC_ID">65820353.2254.4</cmn:ShipToLocationLookupId>
+<cmn:ShipToLocationInfo>
+<cmn:FacilityId type="EU_SPOR_ORG_ID">7898958021.01.1</cmn:FacilityId>
+<cmn:FacilityId type="">555958021.01.1</cmn:FacilityId>
+<cmn:FacilityId type="EU_SPOR_LOC_ID">ST-78910451000025</cmn:FacilityId>
+<cmn:FacilityId type="US_340B_ID">ST-7891045.00002.0</cmn:FacilityId>
+<cmn:FacilityId type="PHARMACY_PROCESSOR_NUMBER">ST-PHARMACYPROCESSORNUMBER</cmn:FacilityId>
+<cmn:FacilityId type="EU_SPOR_LOC_ID">ST-EUSPORLOCID</cmn:FacilityId>
+<cmn:FacilityId type="SCAC">ST-SCAC1</cmn:FacilityId>
+<cmn:LocationInfo>
+<cmn:BusinessName>WYETH INDUSTRIA FARMACEUTICA LTDA</cmn:BusinessName>
+<cmn:Street1>AVENIDA CECI, BLOCO III PARTE 58 1900</cmn:Street1>
+<cmn:Street2>ST Street2</cmn:Street2>
+<cmn:City>BARUERI</cmn:City>
+<cmn:Village>ST Village</cmn:Village>
+<cmn:HouseNumber>ST House</cmn:HouseNumber>
+<cmn:Township>ST Town</cmn:Township>
+<cmn:District>ST Dist</cmn:District>
+<cmn:StateOrRegion>SP</cmn:StateOrRegion>
+<cmn:PostalCode>06460-120</cmn:PostalCode>
+<cmn:Country>BR</cmn:Country>
+<cmn:CorporateFax>ST Fax</cmn:CorporateFax>
+<cmn:PremisesCode>ST Prem</cmn:PremisesCode>
+</cmn:LocationInfo>
+<cmn:LicenseNumber state="TX" agency="XXX">license10</cmn:LicenseNumber>
+<cmn:LicenseNumber state="MI" agency="JJJ">license20</cmn:LicenseNumber>
+<cmn:ContactInfo>
+<cmn:Name>Name2</cmn:Name>
+<cmn:Title>Title2</cmn:Title>
+<cmn:Telephone>Telephone2</cmn:Telephone>
+<cmn:Email>Email2</cmn:Email>
+</cmn:ContactInfo>
+</cmn:ShipToLocationInfo>
+</cmn:ReceiverInfo>
+<cmn:CarrierInfo>
+<cmn:CarrierBusinessPartyLookupId type="SCAC">481566872.225.1</cmn:CarrierBusinessPartyLookupId>
+<cmn:CarrierBusinessPartyInfo>
+<cmn:BusinessId type="EU_SPOR_ORG_ID">CA-0854888008388</cmn:BusinessId>
+<cmn:BusinessId type="SCAC">CA-UNID01</cmn:BusinessId>
+<cmn:BusinessId type="">CA-78910.4500002.4</cmn:BusinessId>
+<cmn:BusinessId type="US_340B_ID">CA-7891045.00002.0</cmn:BusinessId>
+<cmn:BusinessId type="PHARMACY_PROCESSOR_NUMBER">CA-PHARMACYPROCESSORNUMBER</cmn:BusinessId>
+<cmn:BusinessId type="EU_SPOR_ORG_ID">CA-EUSPORORGID</cmn:BusinessId>
+<cmn:BusinessId type="EU_SPOR_LOC_ID">CA-EUSPORLOCID</cmn:BusinessId>
+<cmn:BusinessId type="CNPJ">00.233.065/0001-87</cmn:BusinessId>
+<cmn:BusinessClassification>CARRYING_FORWARDING_AGENT</cmn:BusinessClassification>
+<cmn:BusTransactionRole>ForwardAgent</cmn:BusTransactionRole>
+<cmn:BusinessInfo>
+<cmn:BusinessName>UNIDOCKS ASSES E LOGIST DE</cmn:BusinessName>
+<cmn:Street1>AVENIDA CECI 1900</cmn:Street1>
+<cmn:Street2>Carr Street2</cmn:Street2>
+<cmn:City>BARUERI</cmn:City>
+<cmn:Village>Carr Village</cmn:Village>
+<cmn:HouseNumber>Carr House</cmn:HouseNumber>
+<cmn:Township>Carr Town</cmn:Township>
+<cmn:District>Carr Dist</cmn:District>
+<cmn:StateOrRegion>SP</cmn:StateOrRegion>
+<cmn:PostalCode>06460-000</cmn:PostalCode>
+<cmn:Country>BR</cmn:Country>
+<cmn:CorporateFax>Carr Fax</cmn:CorporateFax>
+<cmn:PremisesCode>Carr Prem</cmn:PremisesCode>
+</cmn:BusinessInfo>
+</cmn:CarrierBusinessPartyInfo>
+</cmn:CarrierInfo>
+<cmn:CarrierInfo>
+<cmn:CarrierBusinessPartyLookupId type="DEA">88888872.225.1</cmn:CarrierBusinessPartyLookupId>
+<cmn:CarrierBusinessPartyInfo>
+<cmn:BusinessId type="COMPANYSITEID">88885522220</cmn:BusinessId>
+<cmn:BusinessId type="SGLN">111447777888555</cmn:BusinessId>
+<cmn:BusinessClassification>CARRYING_FORWARDING_AGENT</cmn:BusinessClassification>
+<cmn:BusTransactionRole>DropShip</cmn:BusTransactionRole>
+<cmn:BusinessInfo>
+<cmn:BusinessName>UNIDOCKS ASSES E LOGIST DE</cmn:BusinessName>
+<cmn:Street1>AVENIDA CECI 1900</cmn:Street1>
+<cmn:Street2>Carr Street2</cmn:Street2>
+<cmn:City>BARUERI</cmn:City>
+<cmn:Village>Carr Village</cmn:Village>
+<cmn:HouseNumber>Carr House</cmn:HouseNumber>
+<cmn:Township>Carr Town</cmn:Township>
+<cmn:District>Carr Dist</cmn:District>
+<cmn:StateOrRegion>SP</cmn:StateOrRegion>
+<cmn:PostalCode>06460-000</cmn:PostalCode>
+<cmn:Country>BR</cmn:Country>
+<cmn:CorporateFax>Carr Fax</cmn:CorporateFax>
+<cmn:PremisesCode>Carr Prem</cmn:PremisesCode>
+</cmn:BusinessInfo>
+</cmn:CarrierBusinessPartyInfo>
+</cmn:CarrierInfo>
+<cmn:DirectPurchase isEnabled="true">
+<cmn:DirectPurchaseNumberlist>
+<cmn:Serial companyPrefix="7891268" filterValue="1" format="AI(01)+AI(21)" barcodeContent="0107891268148725217683425752471">0107891268148725217683425752471</cmn:Serial>
+<cmn:Serial companyPrefix="7891268" filterValue="1" format="AI(01)+AI(21)" barcodeContent="0107891268148725217683425752472">0107891268148725217683425752472</cmn:Serial>
+</cmn:DirectPurchaseNumberlist>
+<cmn:IndirectPurchaseNumberlist>
+<cmn:Serial companyPrefix="7891268" filterValue="1" format="AI(01)+AI(21)" barcodeContent="0107891268148725217683425752480">0107891268148725217683425752480</cmn:Serial>
+<cmn:Serial companyPrefix="7891268" filterValue="1" format="AI(01)+AI(21)" barcodeContent="0107891268148725217683425752481">0107891268148725217683425752481</cmn:Serial>
+</cmn:IndirectPurchaseNumberlist>
+<cmn:DirectPurchaseStatement/>
+</cmn:DirectPurchase>
+<cmn:ReceivedDirectPurchaseFromPreviousWholesaleDistributor isEnabled="false">
+<cmn:PreviousReceivedIndirectPurchaseNumberlist>
+<cmn:Serial companyPrefix="7891268" filterValue="1" format="AI(01)+AI(21)" barcodeContent="0107891268148725217683425752490">0107891268148725217683425752490</cmn:Serial>
+<cmn:Serial companyPrefix="7891268" filterValue="1" format="AI(01)+AI(21)" barcodeContent="0107891268148725217683425752491">0107891268148725217683425752491</cmn:Serial>
+</cmn:PreviousReceivedIndirectPurchaseNumberlist>
+<cmn:ReceivedDirectPurchaseFromPreviousWholesaleDistributorStatement>ReceivedDirectPurchasedFromPrevious</cmn:ReceivedDirectPurchaseFromPreviousWholesaleDistributorStatement>
+</cmn:ReceivedDirectPurchaseFromPreviousWholesaleDistributor>
+</can:ShippingEvent>
+<can:ShippingEvent>
+<cmn:DeliveryNumber>0180953640</cmn:DeliveryNumber>
+<cmn:DeliveryCompleteFlag>true</cmn:DeliveryCompleteFlag>
+<cmn:EventDateTime>2022-04-26T06:33:43.262Z</cmn:EventDateTime>
+<cmn:EventTimeZoneOffset>+00:00</cmn:EventTimeZoneOffset>
+<cmn:ShipmentType>Transfer</cmn:ShipmentType>
+<cmn:NumberList>
+<cmn:Serial companyPrefix="0193631" filterValue="5" format="AI(00)" barcodeContent="00501936310002572169">00501936310002572169</cmn:Serial>
+<cmn:Serial companyPrefix="0193631" filterValue="5" format="AI(00)" barcodeContent="00501936310002572169">00501936310002572170</cmn:Serial>
+<cmn:Serial companyPrefix="0193631" filterValue="5" format="AI(00)" barcodeContent="00501936310002572169">00501936310002572181</cmn:Serial>
+</cmn:NumberList>
+<cmn:EventLocation type="SGLN">7891045.00002.0</cmn:EventLocation>
+<cmn:PlantLocationId type="SGLN">7891045.00002.0</cmn:PlantLocationId>
+<cmn:WarehouseOperatorName>Jay Ship</cmn:WarehouseOperatorName>
+<cmn:TransactionIdentifier type="BOL" date="2022-04-25">BOL</cmn:TransactionIdentifier>
+<cmn:TransactionIdentifier type="NOTAFISCAL" date="2022-04-25">NOTAFISCAL</cmn:TransactionIdentifier>
+<cmn:TransactionIdentifier type="PO" date="2022-04-25">4502656824</cmn:TransactionIdentifier>
+<cmn:TransactionIdentifier type="NOTAFISCALELETRONICA" date="2022-04-25">828384851</cmn:TransactionIdentifier>
+<cmn:TransactionIdentifier type="ASN" date="2022-04-25">0180953640</cmn:TransactionIdentifier>
+<cmn:TransactionDate>2022-04-25</cmn:TransactionDate>
+<cmn:TransactionTime>09:45:35.000</cmn:TransactionTime>
+<cmn:ShipToCountryCode>BR</cmn:ShipToCountryCode>
+<cmn:ShipFromCountryCode>BR</cmn:ShipFromCountryCode>
+<cmn:SalesDistributionType>INCOUNTRYTRANSFER</cmn:SalesDistributionType>
+<cmn:SupplyType>AgencyOrderedDestructionDistribution</cmn:SupplyType>
+<cmn:ContractType>ConsignmentAgreement</cmn:ContractType>
+<cmn:FundingSource>ExtraBudgetFunds</cmn:FundingSource>
+<cmn:DeliveryInspection>PASSED</cmn:DeliveryInspection>
+<cmn:DeliveryInspectionDate>2023-01-02</cmn:DeliveryInspectionDate>
+<cmn:DeliveryInspectionNote>DeliveryInspectionNote</cmn:DeliveryInspectionNote>
+<cmn:RemovalFromCirculation>COUNTERFEIT</cmn:RemovalFromCirculation>
+<cmn:AggregationInspection>VERIFIED</cmn:AggregationInspection>
+<cmn:OrderItemList>
+<cmn:OrderItem>
+<cmn:OrderItemNumber>256599</cmn:OrderItemNumber>
+<cmn:InternalMaterialCode>F000204216</cmn:InternalMaterialCode>
+<cmn:PackagingItemCode type="GTIN-14">07891268148725</cmn:PackagingItemCode>
+<cmn:CountryDrugCode type="CH_SWISSMEDIC">25989222</cmn:CountryDrugCode>
+<cmn:LotNumber>BRDHLT14</cmn:LotNumber>
+<cmn:ExpirationDate>2025-10-25</cmn:ExpirationDate>
+<cmn:Quantity>200</cmn:Quantity>
+<cmn:UnitPrice currencyCode="CAD">25.6</cmn:UnitPrice>
+<cmn:VAT currencyCode="USD">20.0</cmn:VAT>
+<cmn:GrossPrice currencyCode="AUD">25.6</cmn:GrossPrice>
+<cmn:IsSerialized>true</cmn:IsSerialized>
+<cmn:TransactionIdentifier type="EWAY" date="2022-04-25">0005555</cmn:TransactionIdentifier>
+<cmn:TransactionIdentifier type="OTHER" date="2022-01-25">5477878</cmn:TransactionIdentifier>
+</cmn:OrderItem>
+<cmn:OrderItem>
+<cmn:InternalMaterialCode>F000204216</cmn:InternalMaterialCode>
+<cmn:PackagingItemCode type="GTIN-14">07891268148725</cmn:PackagingItemCode>
+<cmn:LotNumber>BRDHLT14</cmn:LotNumber>
+<cmn:Quantity>2</cmn:Quantity>
+<cmn:IsSerialized>true</cmn:IsSerialized>
+<cmn:TransactionIdentifier type="EWAY" date="2022-04-25">0005555</cmn:TransactionIdentifier>
+<cmn:TransactionIdentifier type="OTHER" date="2022-01-25">5477878</cmn:TransactionIdentifier>
+</cmn:OrderItem>
+</cmn:OrderItemList>
+<cmn:SenderInfo>
+<cmn:FromBusinessPartyLookupId type="COMPANYID">7891045.00002.00</cmn:FromBusinessPartyLookupId>
+<cmn:FromBusinessPartyInfo>
+<cmn:BusinessId type="GLN">7891045000024</cmn:BusinessId>
+<cmn:BusinessId type="SGLN">7891045.00002.0</cmn:BusinessId>
+<cmn:BusinessClassification>RETURNSPROCESSOR</cmn:BusinessClassification>
+<cmn:BusTransactionRole>SoldFrom</cmn:BusTransactionRole>
+<cmn:BusinessInfo>
+<cmn:BusinessName>WYETH INDUSTRIA FARMACEUTICA LTDA</cmn:BusinessName>
+<cmn:Street1>Rod Castelo Branco KM 32,5 S/N</cmn:Street1>
+<cmn:Street2>FB Street2</cmn:Street2>
+<cmn:City>ITAPEVI</cmn:City>
+<cmn:Village>FB Village</cmn:Village>
+<cmn:HouseNumber>FB House</cmn:HouseNumber>
+<cmn:Township>FB Town</cmn:Township>
+<cmn:District>FB Dist</cmn:District>
+<cmn:StateOrRegion>SP</cmn:StateOrRegion>
+<cmn:PostalCode>06696-000</cmn:PostalCode>
+<cmn:Country>BR</cmn:Country>
+<cmn:CorporateFax>FB Fax</cmn:CorporateFax>
+<cmn:PremisesCode>FB Prem</cmn:PremisesCode>
+</cmn:BusinessInfo>
+</cmn:FromBusinessPartyInfo>
+<cmn:ShipFromLocationLookupId type="COMPANYSITEID">7891045.11002.00</cmn:ShipFromLocationLookupId>
+<cmn:ShipFromLocationInfo>
+<cmn:FacilityId type="SGLN">7891045.00002.0</cmn:FacilityId>
+<cmn:FacilityId type="GLN">78910451000025</cmn:FacilityId>
+<cmn:LocationInfo>
+<cmn:BusinessName>WYETH INDUSTRIA FARMACEUTICA</cmn:BusinessName>
+<cmn:Street1>ROD CASTELO BRANCO KM 32,5 S/N</cmn:Street1>
+<cmn:Street2>SF Street2</cmn:Street2>
+<cmn:City>ITAPEVI</cmn:City>
+<cmn:Village>SF Village</cmn:Village>
+<cmn:HouseNumber>SF House</cmn:HouseNumber>
+<cmn:Township>SF Town</cmn:Township>
+<cmn:District>SF Dist</cmn:District>
+<cmn:StateOrRegion>SP</cmn:StateOrRegion>
+<cmn:PostalCode>06696-000</cmn:PostalCode>
+<cmn:Country>BR</cmn:Country>
+<cmn:CorporateFax>SF Fax</cmn:CorporateFax>
+<cmn:PremisesCode>SF Prem</cmn:PremisesCode>
+</cmn:LocationInfo>
+<cmn:LicenseNumber state="MA" agency="DMV">license1</cmn:LicenseNumber>
+<cmn:LicenseNumber state="WA" agency="RMV">license2</cmn:LicenseNumber>
+<cmn:ContactInfo>
+<cmn:Name>Name</cmn:Name>
+<cmn:Title>Title</cmn:Title>
+<cmn:Telephone>Telephone</cmn:Telephone>
+<cmn:Email>Email</cmn:Email>
+</cmn:ContactInfo>
+</cmn:ShipFromLocationInfo>
+</cmn:SenderInfo>
+<cmn:ReceiverInfo>
+<cmn:ToBusinessPartyLookupId type="DUNS4">789104511111024</cmn:ToBusinessPartyLookupId>
+<cmn:ToBusinessPartyInfo>
+<cmn:BusinessId type="GLN">7891045000024</cmn:BusinessId>
+<cmn:BusinessId type="SGLN">7898958021.01.1</cmn:BusinessId>
+<cmn:BusinessClassification>DISTRIBUTOR</cmn:BusinessClassification>
+<cmn:BusTransactionRole>SoldTo</cmn:BusTransactionRole>
+<cmn:BusinessInfo>
+<cmn:BusinessName>WYETH INDUSTRIA FARMACEUTICA LTDA</cmn:BusinessName>
+<cmn:Street1>Rodovia Castelo Branco- KM 32.5 S/N</cmn:Street1>
+<cmn:Street2>TB Street2</cmn:Street2>
+<cmn:City>ITAPEVI</cmn:City>
+<cmn:Village>TB Village</cmn:Village>
+<cmn:HouseNumber>TB House</cmn:HouseNumber>
+<cmn:Township>TB Town</cmn:Township>
+<cmn:District>TB Dist</cmn:District>
+<cmn:StateOrRegion>SP</cmn:StateOrRegion>
+<cmn:PostalCode>06696-000</cmn:PostalCode>
+<cmn:Country>BR</cmn:Country>
+<cmn:CorporateFax>TB Fax</cmn:CorporateFax>
+<cmn:PremisesCode>TB Prem</cmn:PremisesCode>
+</cmn:BusinessInfo>
+</cmn:ToBusinessPartyInfo>
+<cmn:ShipToLocationLookupId type="CNES">65820353.2254.4</cmn:ShipToLocationLookupId>
+<cmn:ShipToLocationInfo>
+<cmn:FacilityId type="SGLN">7898958021.01.1</cmn:FacilityId>
+<cmn:FacilityId type="CNPJ">555958021.01.1</cmn:FacilityId>
+<cmn:LocationInfo>
+<cmn:BusinessName>WYETH INDUSTRIA FARMACEUTICA LTDA</cmn:BusinessName>
+<cmn:Street1>AVENIDA CECI, BLOCO III PARTE 58 1900</cmn:Street1>
+<cmn:Street2>ST Street2</cmn:Street2>
+<cmn:City>BARUERI</cmn:City>
+<cmn:Village>ST Village</cmn:Village>
+<cmn:HouseNumber>ST House</cmn:HouseNumber>
+<cmn:Township>ST Town</cmn:Township>
+<cmn:District>ST Dist</cmn:District>
+<cmn:StateOrRegion>SP</cmn:StateOrRegion>
+<cmn:PostalCode>06460-120</cmn:PostalCode>
+<cmn:Country>BR</cmn:Country>
+<cmn:CorporateFax>ST Fax</cmn:CorporateFax>
+<cmn:PremisesCode>ST Prem</cmn:PremisesCode>
+</cmn:LocationInfo>
+<cmn:LicenseNumber state="TX" agency="XXX">license10</cmn:LicenseNumber>
+<cmn:LicenseNumber state="MI" agency="JJJ">license20</cmn:LicenseNumber>
+<cmn:ContactInfo>
+<cmn:Name>Name2</cmn:Name>
+<cmn:Title>Title2</cmn:Title>
+<cmn:Telephone>Telephone2</cmn:Telephone>
+<cmn:Email>Email2</cmn:Email>
+</cmn:ContactInfo>
+</cmn:ShipToLocationInfo>
+</cmn:ReceiverInfo>
+<cmn:CarrierInfo>
+<cmn:CarrierBusinessPartyLookupId type="BY_TIN">481566872.225.1</cmn:CarrierBusinessPartyLookupId>
+<cmn:CarrierBusinessPartyInfo>
+<cmn:BusinessId type="GLN">0854888008388</cmn:BusinessId>
+<cmn:BusinessId type="COMPANYSITEID">1UNID01</cmn:BusinessId>
+<cmn:BusinessId type="SGLN">0854888008.38.0</cmn:BusinessId>
+<cmn:BusinessId type="CNPJ">00.233.065/0001-87</cmn:BusinessId>
+<cmn:BusinessClassification>CARRYING_FORWARDING_AGENT</cmn:BusinessClassification>
+<cmn:BusTransactionRole>ForwardAgent</cmn:BusTransactionRole>
+<cmn:BusinessInfo>
+<cmn:BusinessName>UNIDOCKS ASSES E LOGIST DE</cmn:BusinessName>
+<cmn:Street1>AVENIDA CECI 1900</cmn:Street1>
+<cmn:Street2>Carr Street2</cmn:Street2>
+<cmn:City>BARUERI</cmn:City>
+<cmn:Village>Carr Village</cmn:Village>
+<cmn:HouseNumber>Carr House</cmn:HouseNumber>
+<cmn:Township>Carr Town</cmn:Township>
+<cmn:District>Carr Dist</cmn:District>
+<cmn:StateOrRegion>SP</cmn:StateOrRegion>
+<cmn:PostalCode>06460-000</cmn:PostalCode>
+<cmn:Country>BR</cmn:Country>
+<cmn:CorporateFax>Carr Fax</cmn:CorporateFax>
+<cmn:PremisesCode>Carr Prem</cmn:PremisesCode>
+</cmn:BusinessInfo>
+</cmn:CarrierBusinessPartyInfo>
+</cmn:CarrierInfo>
+<cmn:CarrierInfo>
+<cmn:CarrierBusinessPartyLookupId type="DEA">88888872.225.1</cmn:CarrierBusinessPartyLookupId>
+<cmn:CarrierBusinessPartyInfo>
+<cmn:BusinessId type="COMPANYSITEID">88885522220</cmn:BusinessId>
+<cmn:BusinessId type="SGLN">111447777888555</cmn:BusinessId>
+<cmn:BusinessClassification>CARRYING_FORWARDING_AGENT</cmn:BusinessClassification>
+<cmn:BusTransactionRole>DropShip</cmn:BusTransactionRole>
+<cmn:BusinessInfo>
+<cmn:BusinessName>UNIDOCKS ASSES E LOGIST DE</cmn:BusinessName>
+<cmn:Street1>AVENIDA CECI 1900</cmn:Street1>
+<cmn:Street2>Carr Street2</cmn:Street2>
+<cmn:City>BARUERI</cmn:City>
+<cmn:Village>Carr Village</cmn:Village>
+<cmn:HouseNumber>Carr House</cmn:HouseNumber>
+<cmn:Township>Carr Town</cmn:Township>
+<cmn:District>Carr Dist</cmn:District>
+<cmn:StateOrRegion>SP</cmn:StateOrRegion>
+<cmn:PostalCode>06460-000</cmn:PostalCode>
+<cmn:Country>BR</cmn:Country>
+<cmn:CorporateFax>Carr Fax</cmn:CorporateFax>
+<cmn:PremisesCode>Carr Prem</cmn:PremisesCode>
+</cmn:BusinessInfo>
+</cmn:CarrierBusinessPartyInfo>
+</cmn:CarrierInfo>
+<cmn:DirectPurchase>
+<cmn:DirectPurchaseNumberlist>
+<cmn:Serial companyPrefix="0193631" filterValue="5" format="AI(01)+AI(21)" barcodeContent="00501936310002572169">0107891268148725217683425752410</cmn:Serial>
+<cmn:Serial companyPrefix="0193631" filterValue="5" format="AI(01)+AI(21)" barcodeContent="00501936310002572169">0107891268148725217683425752411</cmn:Serial>
+</cmn:DirectPurchaseNumberlist>
+<cmn:IndirectPurchaseNumberlist>
+<cmn:Serial companyPrefix="0193631" filterValue="5" format="AI(01)+AI(21)" barcodeContent="00501936310002572169">0107891268148725217683425752420</cmn:Serial>
+<cmn:Serial companyPrefix="0193631" filterValue="5" format="AI(01)+AI(21)" barcodeContent="00501936310002572169">0107891268148725217683425752421</cmn:Serial>
+</cmn:IndirectPurchaseNumberlist>
+<cmn:DirectPurchaseStatement>DirectPurchased</cmn:DirectPurchaseStatement>
+</cmn:DirectPurchase>
+<cmn:ReceivedDirectPurchaseFromPreviousWholesaleDistributor>
+<cmn:PreviousReceivedIndirectPurchaseNumberlist>
+<cmn:Serial companyPrefix="0193631" filterValue="5" format="AI(01)+AI(21)" barcodeContent="00501936310002572169">0107891268148725217683425752430</cmn:Serial>
+<cmn:Serial companyPrefix="0193631" filterValue="5" format="AI(01)+AI(21)" barcodeContent="00501936310002572169">0107891268148725217683425752431</cmn:Serial>
+</cmn:PreviousReceivedIndirectPurchaseNumberlist>
+</cmn:ReceivedDirectPurchaseFromPreviousWholesaleDistributor>
+</can:ShippingEvent>
+</can:MessageBody>
+</can:CanonicalSOMEventType>

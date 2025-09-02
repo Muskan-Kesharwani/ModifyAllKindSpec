@@ -1,0 +1,1979 @@
+{
+    "format": "JSON",
+    "JSON": {
+        "Source Occurs": "1...1"
+    },
+    "schemaId": {
+        "Source Occurs": "1...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Schema identification: name",
+        "Sample Input Data/Codes": "masterSchema",
+        "Mapping Notes/Rules": "Do not map."
+    },
+    "schemaVersion": {
+        "Source Occurs": "1...1",
+        "Source Format": "number",
+        "Source Length": "0/*",
+        "Description": "Schema version",
+        "Sample Input Data/Codes": "1",
+        "Mapping Notes/Rules": "Do not map."
+    },
+    "objectType": {
+        "Source Occurs": "1...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Data object type",
+        "Sample Input Data/Codes": "multienterprise-process-connect_canonicalForecastPlan_v1",
+        "Mapping Notes/Rules": "Do not map."
+    },
+    "id": {
+        "Source Occurs": "1...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "File identifier",
+        "Sample Input Data/Codes": "2f0dc9a1-63b9-1f9d-a0a3-1239436e1705",
+        "Mapping Notes/Rules": "Do not map."
+    },
+    "data": {
+        "Source Occurs": "1...1"
+    },
+    "controlFileHeader": {
+        "Source Occurs": "0...1",
+        "Description": "Control File Header"
+    },
+    "fileSenderNumber": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Sending party identifier. Will not be mapped outbound.",
+        "Sample Input Data/Codes": "GLN:6278032738213",
+        "Mapping Notes/Rules": "Do not map."
+    },
+    "fileReceiverNumber": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Receiving party identifier. Will not be mapped outbound.",
+        "Sample Input Data/Codes": "DUNS:3520075644994",
+        "Mapping Notes/Rules": "Do not map."
+    },
+    "fileControlNumber": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Message identifier.\n\nWill not be mapped outbound.",
+        "Sample Input Data/Codes": "000000086",
+        "Mapping Notes/Rules": "Do not map."
+    },
+    "fileDateTime(1)": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Instance 1 fileDateTime mapping to ISA09 CREDAT in  date format YYMMDD, no hyphens.",
+        "Sample Input Data/Codes": "2024-04-18T16:10:10.000",
+        "Output Path": "812/ISA",
+        "Output Element": "ISA09",
+        "Target Occurs": "1...1",
+        "Target Format": "date",
+        "Target Length": "6/6",
+        "Sample Output Data/Codes": "240418",
+        "Mapping Notes/Rules": "Parse date from left to T character. Store parsed value in X12 date YYMMDD."
+    },
+    "fileDateTime(2)": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Instance 2 fileDateTime mapping to ISA10 in time format HHMMSS, no colons.",
+        "Sample Input Data/Codes": "2024-04-18T16:10:10.000",
+        "Output Path": "812/ISA",
+        "Output Element": "ISA10",
+        "Target Occurs": "1...1",
+        "Target Format": "time",
+        "Target Length": "4/4",
+        "Sample Output Data/Codes": "1610",
+        "Mapping Notes/Rules": "Parse time from right of T character to end of string. Store parsed time value in X12 time format HHMM."
+    },
+    "b2bTransactionTypeName": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "TL B2B transaction type name",
+        "Sample Input Data/Codes": "MPL_CARRIER_SHIPMENT_STATUS",
+        "Mapping Notes/Rules": "Do not map."
+    },
+    "linkIdentifier": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "TL link identifier",
+        "Sample Input Data/Codes": "MPC.0010136941923.0030135941894",
+        "Mapping Notes/Rules": "Do not map."
+    },
+    "x12ControlFileHeader": {
+        "Source Occurs": "1...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "X12 envelope segments"
+    },
+    "x12InterchangeControlEnvelope": {
+        "Source Occurs": "0...1",
+        "Description": "X12 ISA interchange control envelope"
+    },
+    "fileSenderType": {
+        "Source Occurs": "0...1",
+        "Description": "X12 file sender type"
+    },
+    "ediEnvelopePartyType": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Source Code List": "X12_EnvelopePartyType:CanonicalCode",
+        "Description": "X12 envelope party identifier type. This is the identifier type for controlFileHeader/fileSenderNumber. Valid values include:\n\n01 - DUNS\n02 - SCAC\n07 -GLN\n11 - DEA\n16 - DUNS+4\n20 - HIN\n30 - US Federal TAX ID number\nZZ - Mutually defined",
+        "Sample Input Data/Codes": "GLN",
+        "Output Path": "812/ISA",
+        "Output Element": "ISA05",
+        "Target Occurs": "1...1",
+        "Target Format": "string",
+        "Target Length": "2/2",
+        "Target Code List": "X12_EnvelopePartyType:ExternalCode",
+        "Sample Output Data/Codes": "07",
+        "Mapping Notes/Rules": "Convert from canonical source to X12 target value. Use the X12 envelope party identifier type lookup table to convert and validate that source type is correct.\n \nCALL \"com.tracelink.contivo.LookUp.XRefCodeLists\" for lookup file CL_X12EnvelopePartyType.txt with java. \n \nIf source is missing, parse the data before the colon in fileSenderNumber, convert the the same using lookup table, and map converted value.\n\nif it is not included in list of valid qualifiers, throw error:\n \n\"Valid X12 interchange party identifier type in ISA05 is required !!!\"\n\nExample:  fileSenderNumbe\": \"GLN:6278032738213\"\nConvert GLN to 07 and map 07."
+    },
+    "ediInterchangePartyValue": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "File Receiver Number",
+        "Sample Input Data/Codes": "3520075644994",
+        "Output Path": "812/ISA",
+        "Output Element": "ISA08",
+        "Target Occurs": "1...1",
+        "Target Format": "string",
+        "Target Length": "15/15",
+        "Sample Output Data/Codes": "3520075644994",
+        "Mapping Notes/Rules": "Map literal value from source to target data element. \n\nIf source not prsent parse the data after the colon in fileReceiverNumber and map.\n\nData should be left justified and padded with spaces to be 15 characters long."
+    },
+    "fileReceiverType": {
+        "Source Occurs": "0...1",
+        "Description": "X12 file sender type"
+    },
+    "ediEnvelopePartyType": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Source Code List": "X12_EnvelopePartyType:CanonicalCode",
+        "Description": "X12 envelope party identifier type. This is the identifier type for controlFileHeader/fileReceiverNumber. Valid values include:\n\n01 - DUNS\n02 - SCAC\n07 -GLN\n11 - DEA\n16 - DUNS+4\n20 - HIN\n30 - US Federal TAX ID number\nZZ - Mutually defined",
+        "Sample Input Data/Codes": "DUNS",
+        "Output Path": "812/ISA",
+        "Output Element": "ISA07",
+        "Target Occurs": "1...1",
+        "Target Format": "string",
+        "Target Length": "2/2",
+        "Target Code List": "X12_EnvelopePartyType:ExternalCode",
+        "Sample Output Data/Codes": "01",
+        "Mapping Notes/Rules": "Convert from canonical source to X12 target value. Use the X12 envelope party identifier type lookup table to convert and validate that source type is correct.\n \nCALL \"com.tracelink.contivo.LookUp.XRefCodeLists\" for lookup file CL_X12EnvelopePartyType.txt with java. \n \nIf source value is missing, parse the data before the colon in fileReceiverNumber, convert the the same using lookup table, and map converted value.\n\nif it is not included in list of valid qualifiers, throw error:\n \n\"Valid X12 interchange party identifier type in ISA07 is required !!!\"\n\nExample: fileReceiverNumber: \"DUNS:3520075644994\"\nConvert DUNS to 01 and map 01."
+    },
+    "interchangeControlIdentifier": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Interchange control identifier number. This is the EDI counter at the ISA level. The system will maintain EDI counters for partner pairs and pass to canonical before OB X12 map is called.",
+        "Sample Input Data/Codes": "'000000086",
+        "Output Path": "812/ISA",
+        "Output Element": "ISA13",
+        "Target Occurs": "1...1",
+        "Target Format": "string",
+        "Target Length": "9/9",
+        "Sample Output Data/Codes": "000000086",
+        "Mapping Notes/Rules": "Store literal value if present. If source length less than 9, pad target to 9 characters with 0's left.\nIf source not present, hard code \"000000001\"."
+    },
+    "CONSTANT[00]": {
+        "Description": "Security information type defining the type of security information mapped. Hard coding '00\".",
+        "Output Path": "812/ISA",
+        "Output Element": "ISA03",
+        "Target Occurs": "1...1",
+        "Target Format": "string",
+        "Target Length": "2/2",
+        "Sample Output Data/Codes": "00",
+        "Mapping Notes/Rules": "Hard code \"00\""
+    },
+    "CONSTANT[          ]": {
+        "Description": "Security information value. Hard code ten spaces.",
+        "Output Path": "812/ISA",
+        "Output Element": "ISA04",
+        "Target Occurs": "1...1",
+        "Target Format": "string",
+        "Target Length": "10/10",
+        "Mapping Notes/Rules": "Hard code ten spaces to target \"          \""
+    },
+    "CONSTANT[0]": {
+        "Description": "Flag that indicates whether an acknowledgment has been requested by the sender. Hard code \"0\".",
+        "Output Path": "812/ISA",
+        "Output Element": "ISA14",
+        "Target Occurs": "1...1",
+        "Target Format": "string",
+        "Target Length": "1/1",
+        "Sample Output Data/Codes": "0",
+        "Mapping Notes/Rules": "Hard code \"0\" to target."
+    },
+    "interchangeControlVersion(1)": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Instance 1 interchangeCongrolVersion mapping to ISA11 to identify repetition separator. V4020 and greater hard code \"<\", less than 4020 (4012 and earlier) hard code \"U\".\n\n< defines the delimiter used to separate repeated occurrences Inof a simple data element or composite data structure.\n\nU (US EDI standard ASC X12) defines agency responsible for interchange control standard",
+        "Sample Input Data/Codes": "005010",
+        "Output Path": "812/ISA",
+        "Output Element": "ISA11",
+        "Target Occurs": "1...1",
+        "Target Format": "string",
+        "Target Length": "1/1",
+        "Sample Output Data/Codes": "<",
+        "Mapping Notes/Rules": "If source = \"004012\" or less, hard code \"U\"\nIf source = \"004020\" or greater, hard code \"<\"\nelse if source not present, hard code 'U' to target.\n\nThere are no versions between 4012 and 4020."
+    },
+    "interchangeControlVersion(2)": {
+        "Description": "Instance 2 Interchange control version number mapping to ISA12. Code specifying the version number of the interchange control segments.\n\nName tentative Pulling from X12 configuration.",
+        "Sample Input Data/Codes": "005010",
+        "Output Path": "812/ISA",
+        "Output Element": "ISA12",
+        "Target Occurs": "1...1",
+        "Target Format": "string",
+        "Target Length": "5/5",
+        "Sample Output Data/Codes": "00501",
+        "Mapping Notes/Rules": "if source present, Parse left(5) and map to target, else\nhard code \u201c00501\u201d to target."
+    },
+    "interchangeControlVersion(3)": {
+        "Description": "Instance 3 Interchange control version number mapping to GS08. Code specifying the version number of the interchange control segments.\n\nName tentative Pulling from X12 configuration.",
+        "Sample Input Data/Codes": "005010",
+        "Output Path": "812/ISA/GS",
+        "Output Element": "GS08",
+        "Target Occurs": "1...1",
+        "Target Format": "string",
+        "Target Length": "1/12",
+        "Sample Output Data/Codes": "005010",
+        "Mapping Notes/Rules": "Store literal value if present, else\nhard code \u201c005010\u201d to target."
+    },
+    "CONSTANT[P]": {
+        "Description": "Usage indicator. Identifies file as test, production or information. Hard code \"P\" fior Production.",
+        "Output Path": "812/ISA",
+        "Output Element": "ISA15",
+        "Target Occurs": "1...1",
+        "Target Format": "string",
+        "Target Length": "1/1",
+        "Sample Output Data/Codes": "P",
+        "Mapping Notes/Rules": "Hard code \"P\" to target."
+    },
+    "CONSTANT[>]": {
+        "Description": "Component element separator defines the delimiter used to separate component data elements within a composite data structure. Hard code \">\".",
+        "Output Path": "812/ISA",
+        "Output Element": "ISA16",
+        "Target Occurs": "1...1",
+        "Target Format": "string",
+        "Target Length": "1/1",
+        "Sample Output Data/Codes": ">",
+        "Mapping Notes/Rules": "Hard code \">\" to target."
+    },
+    "x12FunctionalGroupControlEnvelope": {
+        "Source Occurs": "0...1",
+        "Description": "X12 GS functional group control envelope"
+    },
+    "CONSTANT[CD]": {
+        "Description": "Functional group identifier constant for carrier shipment status",
+        "Sample Input Data/Codes": "CD",
+        "Output Path": "812/ISA/GS",
+        "Output Element": "GS01",
+        "Target Occurs": "1...1",
+        "Target Format": "string",
+        "Target Length": "2/2",
+        "Sample Output Data/Codes": "CD",
+        "Mapping Notes/Rules": "Hard code \"CD\" to target."
+    },
+    "groupSenderNumber": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Group sender identifier. Identifies party sending functional group.",
+        "Sample Input Data/Codes": "3520075644994",
+        "Output Path": "812/ISA/GS",
+        "Output Element": "GS02",
+        "Target Occurs": "1...1",
+        "Target Format": "string",
+        "Target Length": "2/15",
+        "Sample Output Data/Codes": "6278032738213",
+        "Mapping Notes/Rules": "Store literal value if present.  If source is missing, map ISA06 or parse the data after the colon in fileSenderNumber and map."
+    },
+    "groupReceiverNumber": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Group receiver identifier. Identifies party receiving functional group.",
+        "Sample Input Data/Codes": "006932842",
+        "Output Path": "812/ISA/GS",
+        "Output Element": "GS03",
+        "Target Occurs": "1...1",
+        "Target Format": "string",
+        "Target Length": "2/15",
+        "Sample Output Data/Codes": "3520075644994",
+        "Mapping Notes/Rules": "Store literal value if present.  If source is missing, map ISA08 or parse the data after the colon in fileReceiverNumber and map."
+    },
+    "groupDate": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Functional group date in date format YYYY-MM-DD.",
+        "Sample Input Data/Codes": "2023-10-18",
+        "Output Path": "812/ISA/GS",
+        "Output Element": "GS04",
+        "Target Occurs": "1...1",
+        "Target Format": "date",
+        "Target Length": "8/8",
+        "Sample Output Data/Codes": "20231008",
+        "Mapping Notes/Rules": "If source present, store value in X12 date format YYYYMMDD. Else map value from ISA09 in X12 date format YYYYMMDD."
+    },
+    "groupTime": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Functional group time in canonical time format HH:MM:SS:nnn.",
+        "Sample Input Data/Codes": "16:10:10.000",
+        "Output Path": "812/ISA/GS",
+        "Output Element": "GS05",
+        "Target Occurs": "1...1",
+        "Target Format": "time",
+        "Target Length": "4/8",
+        "Sample Output Data/Codes": "161010",
+        "Mapping Notes/Rules": "If source present, store value in X12 time format HHMMSS. Else map value from ISA10 in X12 tim format HHMMSS."
+    },
+    "groupControlNumber": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Functional group control identifier. Usually the same as the ISA control number but can be different.",
+        "Sample Input Data/Codes": "86",
+        "Output Path": "812/ISA/GS",
+        "Output Element": "GS06",
+        "Target Occurs": "1...1",
+        "Target Format": "string",
+        "Target Length": "1/9",
+        "Sample Output Data/Codes": "86",
+        "Mapping Notes/Rules": "Store literal value if present Else map value from ISA13.\n\nDoes not need to be padded."
+    },
+    "CONSTANT[X]": {
+        "Description": "Code identifying the agency responsible for the X12 standard. Hard code \"X\".",
+        "Output Path": "812/ISA/GS",
+        "Output Element": "GS07",
+        "Target Occurs": "1...1",
+        "Target Format": "string",
+        "Target Length": "1/1",
+        "Sample Output Data/Codes": "X",
+        "Mapping Notes/Rules": "Hard code \"X\" to target."
+    },
+    "x12TransactionSetEnvelope": {
+        "Source Occurs": "0...*",
+        "Description": "X12 ST transaction set control envelope",
+        "Mapping Notes/Rules": "Looping element. There could be more than one ST segment per file. But before map is called a splitting routing will split files with multiple functional group and/or transaction sets into individual groups and transactions. There should be only one transaction set per file"
+    },
+    "CONSTANT[812]": {
+        "Description": "Transaction set constant identifying price sales catalog transaction set.",
+        "Output Path": "812/ISA/GS/ST Loop/ST",
+        "Output Element": "ST01",
+        "Target Occurs": "1...1",
+        "Target Format": "string",
+        "Target Length": "3/3",
+        "Sample Output Data/Codes": "812",
+        "Mapping Notes/Rules": "Hard code \"812\" to target."
+    },
+    "transactionSetControlNumber": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Transaction Set Control Number",
+        "Output Path": "812/ISA/GS/ST Loop/ST",
+        "Output Element": "ST02",
+        "Target Occurs": "1...1",
+        "Target Format": "string",
+        "Target Length": "4/9",
+        "Sample Output Data/Codes": "0001",
+        "Required": "X",
+        "Mapping Notes/Rules": "Hard code '0001' to target."
+    },
+    "x12TrailerSegments (1)": {
+        "Source Occurs": "0...*",
+        "Description": "X12 Trailer Segments Type Definition\n\nX12TrailerSegments instance where trailerSegmentType = TRANSACTION",
+        "Mapping Notes/Rules": "SE segment will be populated by creating a counter and hard coding 1 for new outbound EDI.    There should only be a single transaction within a outbound price sales catalog.\n\ntrailerSegmentType = TRANSACTION."
+    },
+    "trailerSegmentType": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Trailer Segment Type",
+        "Sample Input Data/Codes": "INTERCHANGE",
+        "Mapping Notes/Rules": "Do not map"
+    },
+    "trailerSegmentIdentifier": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Trailer Segment Identifier",
+        "Sample Input Data/Codes": "0000000000619827",
+        "Mapping Notes/Rules": "If source populated, store literal value. Else copy from ISA13..",
+        "Output Path": "812/ISA/IEA",
+        "Output Element": "IEA02",
+        "Target Occurs": "1...1",
+        "Target Format": "string",
+        "Target Length": "4/9",
+        "Sample Output Data/Codes": "000619827",
+        "Required": "X"
+    },
+    "trailerSegmentCount": {
+        "Source Occurs": "0...1",
+        "Source Format": "number",
+        "Source Length": "0/*",
+        "Description": "Trailer Segment Count",
+        "Sample Input Data/Codes": "10",
+        "Mapping Notes/Rules": "Do not map"
+    },
+    "COUNT [Count Segments in ST-SE]": {
+        "Description": "Count each segment written in transaction",
+        "Sample Input Data/Codes": "10",
+        "Output Path": "812/ISA/GS/ST Loop/SE",
+        "Output Element": "SE01",
+        "Target Occurs": "1...1",
+        "Target Format": "integer",
+        "Target Length": "1/10",
+        "Sample Output Data/Codes": "10",
+        "Required": "X",
+        "Mapping Notes/Rules": "Count all segments in transaction (ST-SE, inclusive) and populate count."
+    },
+    "CONSTANT [0001]": {
+        "Description": "Constant Value \"0001\" ... Will only ever be one transactioin per functional group in OB files.",
+        "Sample Input Data/Codes": "0001",
+        "Output Path": "812/ISA/GS/ST Loop/SE",
+        "Output Element": "SE02",
+        "Target Occurs": "1...1",
+        "Target Format": "string",
+        "Target Length": "4/9",
+        "Sample Output Data/Codes": "0001",
+        "Required": "X",
+        "Mapping Notes/Rules": "Hard code \"0001\""
+    },
+    "x12TrailerSegments (2)": {
+        "Source Occurs": "0...*",
+        "Description": "X12 Trailer Segments Type Definition\n\nX12TrailerSegments instance where trailerSegmentType = GROUP",
+        "Mapping Notes/Rules": "Create GE Segment from X12TrailerSegments instance where trailerSegmentType = GROUP"
+    },
+    "CONSTANT[1]": {
+        "Description": "Begin new segment flag.",
+        "Output Path": "812/ISA/IEA",
+        "Output Element": "IEA01",
+        "Target Occurs": "1...1",
+        "Target Format": "integer",
+        "Target Length": "1/10",
+        "Sample Output Data/Codes": "1",
+        "Required": "X",
+        "Mapping Notes/Rules": "Do not map."
+    },
+    "x12TrailerSegments (3)": {
+        "Source Occurs": "0...*",
+        "Description": "X12 Trailer Segments Type Definition\n\nX12TrailerSegments instance where trailerSegmentType = INTERCHANGE",
+        "Mapping Notes/Rules": "Create IEA Segment from X12TrailerSegments instance where trailerSegmentType = INTERCHANGE"
+    },
+    "canonicalCreditDebitAdjustmentHeader": {
+        "Source Occurs": "1...1",
+        "Description": "Header data for credit or debit adjustment",
+        "Mapping Notes/Rules": "Message body is required, even if optional is schema."
+    },
+    "dateOfAdjustment": {
+        "Source Occurs": "0...1",
+        "Source Format": "date",
+        "Source Length": "0/*",
+        "Description": "Date Of Adjustment",
+        "Sample Input Data/Codes": "2025-05-28",
+        "Output Path": "812/ISA/GS/ST Loop/BCD",
+        "Output Element": "BCD01",
+        "Target Occurs": "1...1",
+        "Target Format": "date",
+        "Target Length": "8/8",
+        "Sample Output Data/Codes": "20250528",
+        "Mapping Notes/Rules": "Map source date to target in date format YYYYMMDD. If source missing, throw error:\n\n\"Date of credit or debit adjustment is required !!!\""
+    },
+    "creditDebitAdjustmentIdentifier": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Reference document identifier for the credit or debit adjustment transaction.",
+        "Sample Input Data/Codes": "0000000632",
+        "Output Path": "812/ISA/GS/ST Loop/BCD",
+        "Output Element": "BCD02",
+        "Target Occurs": "1...1",
+        "Target Format": "string",
+        "Target Length": "1/22",
+        "Sample Output Data/Codes": "'0000000632",
+        "Mapping Notes/Rules": "Store literal value. Required value. If source missing, throw error:\n\n\"Credit or debit identifier is required !!!\""
+    },
+    "processingFunctionTypeCode": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Processing function type code. Valid values include:\n\n- ORIGINAL = 00\n- CANCEL = 01\n- DUPLICATE = 07",
+        "Sample Input Data/Codes": "ORIGINAL",
+        "Output Path": "812/ISA/GS/ST Loop/BCD",
+        "Output Element": "BCD11",
+        "Target Occurs": "0...1",
+        "Target Format": "string",
+        "Target Length": "2/2",
+        "Sample Output Data/Codes": "00",
+        "Mapping Notes/Rules": "If source present.\n\nIf source =:ORIGINAL\", hard code \"00\" to target\nIf source = \"CANCEL\", hard code  \"01\" to target\nIf source = \"DUPLICATE\", hard code \"07\" to target\n\nElse do not map."
+    },
+    "documentReferenceConfirmationLevel": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Confirmation level for referenced document. Identifies if confirmation is required for referenced document.",
+        "Sample Input Data/Codes": "001",
+        "Mapping Notes/Rules": "Do not map"
+    },
+    "documentName": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Document or message name.",
+        "Sample Input Data/Codes": "Credit Memo",
+        "Mapping Notes/Rules": "Do not map"
+    },
+    "isCreditFlag": {
+        "Source Occurs": "0...1",
+        "Source Format": "boolean",
+        "Description": "Credit or debit boolean. Valid values:\n\n- true = credit\n- false = debit",
+        "Sample Input Data/Codes": "true",
+        "Output Path": "812/ST Loop/CDD Loop/CDD",
+        "Output Element": "CDD02",
+        "Target Occurs": "1...1",
+        "Target Format": "string",
+        "Target Length": "1/1",
+        "Sample Output Data/Codes": "C",
+        "Mapping Notes/Rules": "If source = true, map \"C\" to target\nIf source = false, map \"D\" to target\nIf source missing, throw error:\n\n\"Credit or debit indicator is required !!!\""
+    },
+    "creditDebitAmount": {
+        "Source Occurs": "0...1",
+        "Source Format": "number",
+        "Source Length": "0/*",
+        "Description": "Total amount of the credit or debit adjustment for the complete transaction.\nNote: source amount includes two decimals(24589.23 and target is mapped with implicit decimals as 2458923 )",
+        "Sample Input Data/Codes": "24589.23",
+        "Output Path": "812/ISA/GS/ST Loop/BCD",
+        "Output Element": "BCD04",
+        "Target Occurs": "1...1",
+        "Target Format": "number",
+        "Target Length": "1/15",
+        "Sample Output Data/Codes": "'2458923",
+        "Mapping Notes/Rules": "Store literal value. If source missing, throw error:\n\n\"Amount of credit or debit adjustment is required !!!\"\n\nNote: target amount includes two digits implicit decimals"
+    },
+    "currencyCode": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Currency for payment or remittance",
+        "Sample Input Data/Codes": "USD",
+        "Mapping Notes/Rules": "Do not map."
+    },
+    "creditDebitHandlingCode": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Source Code List": "CL_CreditDebitHandlingCode:CanonicalFormat",
+        "Description": "Code identifying action to be taken by all parties, concerning the credit or debit recorded in the message. \n\nNote: Required X12 field.",
+        "Sample Input Data/Codes": "OFFINVOICE",
+        "Output Path": "812/ISA/GS/ST Loop/BCD",
+        "Output Element": "BCD03",
+        "Target Occurs": "1...1",
+        "Target Format": "string",
+        "Target Length": "1/2",
+        "Target Code List": "CL_CreditDebitHandlingCode:ExternalFormat",
+        "Sample Output Data/Codes": "A",
+        "Mapping Notes/Rules": "Convert from source to X12 format using enum mapping worksheet. Required value. If source missing or invalid value throw error:\n\n\"Handling code for credit or debit adjustment is required !!!\""
+    },
+    "documentTypeCode": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Source Code List": "CL_DocumentTypeCode:CanonicalCode",
+        "Description": "Code specifying the type of transaction document supporting the message.",
+        "Sample Input Data/Codes": "NORMAL",
+        "Output Path": "812/ISA/GS/ST Loop/BCD",
+        "Output Element": "BCD12",
+        "Target Occurs": "0...1",
+        "Target Format": "string",
+        "Target Length": "2/2",
+        "Target Code List": "CL_DocumentTypeCode:ExternalCode",
+        "Sample Output Data/Codes": "33",
+        "Mapping Notes/Rules": "If source present.\n\nIf source = \"SUPPLEMENTAL\", hard code \"6S\", to target\nIf source =  \"AMENDMENT\", hard code \"74\" to target\nIf source =  \"CONSOLIDATEDCREDITMEMO\", hard code  \"CG\" to target\nIf source =  \"DROPSHIPINVOICE\", hard code  \"DO\" to target\nIf source =  \"NORMAL\", hard code \"33\" to target\nIf source = \"DEBITMEMO\", hard code \"DR\" to target\nIf source = \"CREDITMEMO\", hard code \"CR\" to target\nIf source = \"CASH\", hard code \"CA\" to target\nIf source = \"PREPAIDINVOICE\", hard code \"PP\" to target\n\nElse do not map."
+    },
+    "transactionReferenceIdentifierList(1)": {
+        "Source Occurs": "0...*",
+        "Mapping Notes/Rules": "Mapping for CREDITMEMO"
+    },
+    "b2bTransactionIdentifierType": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Source Code List": "CL_b2bTransactionIdentifierType:CanonicalCode",
+        "Description": "Referenced document type. Valid values:\n\n- CREDITMEMO\n- INVOICE\n- PAYMENT\n- REMITTANCEADVICE\n- CREDITADVICE\n- CREDITDEBITADJUSTMENT\n- PURCHASEORDER\n- SUPPLIERORDER\n- CHECK (HDA)\n- BATCH\n- CONTRACT\n- THIRDPARTYREFERENCE\n- RETURNAUTHORIZATION",
+        "Sample Input Data/Codes": "INVOICE",
+        "Target Code List": "CL_b2bTransactionIdentifierType:ExternalCode",
+        "Mapping Notes/Rules": "Do not map.",
+        "Output Path": "812/ISA/GS/ST Loop/N9",
+        "Output Element": "N901",
+        "Target Occurs": "1...1",
+        "Target Format": "string",
+        "Target Length": "2/3",
+        "Sample Output Data/Codes": "DL"
+    },
+    "b2bTransactionIdentifierValue": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Identifier for transaction referenced by b2bTransactionIdentifierType",
+        "Sample Input Data/Codes": "0000458795",
+        "Output Path": "812/ISA/GS/ST Loop/N9",
+        "Output Element": "N902",
+        "Target Occurs": "0...1",
+        "Target Format": "string",
+        "Target Length": "1/80",
+        "Sample Output Data/Codes": "2222222222",
+        "Mapping Notes/Rules": "Do not map."
+    },
+    "transactionDate": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Transaction date mapping to IDoc data field DATUM in date format YYYYMMDD",
+        "Sample Input Data/Codes": "2025-05-28T12:13:41.000Z",
+        "Output Path": "812/ISA/GS/ST Loop/N1_Loop/N10",
+        "Output Element": "N904",
+        "Target Occurs": "0...1",
+        "Target Format": "date",
+        "Target Length": "8/8",
+        "Sample Output Data/Codes": "20250528",
+        "Mapping Notes/Rules": "Store source value if present in date format YYYYMMDD."
+    },
+    "epochTransactionDate": {
+        "Source Occurs": "0...1",
+        "Source Format": "integer",
+        "Source Length": "0/*",
+        "Description": "Date transaction created in epoch integer date format. Each string date recorded will have an epoch date format generated by a java exit.",
+        "Mapping Notes/Rules": "Do not map."
+    },
+    "lineItemNumber": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Line item number in customer purchase order. Line item level only.",
+        "Mapping Notes/Rules": "Do not map.",
+        "Sample Input Data/Codes": "000010",
+        "Output Path": "812/ST Loop/CDD Loop/CDD",
+        "Output Element": "CDD03",
+        "Target Occurs": "0...1",
+        "Target Format": "string",
+        "Target Length": "1/20",
+        "Sample Output Data/Codes": "'000010"
+    },
+    "transactionReferenceIdentifierList (2)": {
+        "Source Occurs": "0...*",
+        "Mapping Notes/Rules": "Mapping for PURCHASEORDER"
+    },
+    "transactionReferenceIdentifierList (3)": {
+        "Source Occurs": "0...*",
+        "Mapping Notes/Rules": "Maping for SUPPLIERORDER"
+    },
+    "transactionReferenceIdentifierList (4)": {
+        "Source Occurs": "0...*",
+        "Mapping Notes/Rules": "Mapping for  CHECK"
+    },
+    "transactionReferenceIdentifierList (5)": {
+        "Source Occurs": "0...*",
+        "Mapping Notes/Rules": "Mapping for BATCH  Note:  If both CHECK and BATCH are present in source, only map BATCH."
+    },
+    "transactionReferenceIdentifierList (6)": {
+        "Source Occurs": "0...*"
+    },
+    "mpcDates": {
+        "Source Occurs": "0...*",
+        "Description": "Reference information for identifiers that are not related to transaction documents. Mostly relevant for X12 segments REF and N9 and EDIFACT RFF.",
+        "Mapping Notes/Rules": "Create one instance of DTM for each enum found"
+    },
+    "dateType": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Date type at header level relevant for credit or debit adjustment Valid values include (HDA):\n\n- EXPIRATION (Lot number expiration) = 011\n- SHIPPED = 036",
+        "Sample Input Data/Codes": "SHIPPED",
+        "Output Path": "812/ST Loop/CDD Loop/DTM",
+        "Output Element": "DTM01",
+        "Target Occurs": "1...1",
+        "Target Format": "string",
+        "Target Length": "3/3",
+        "Sample Output Data/Codes": "036",
+        "Mapping Notes/Rules": "If source present\n\nCALL \"com.tracelink.contivo.LookUp.XRefCodeLists\" for lookup file CL_DateType with java\nElse Do not map."
+    },
+    "dateValue(1)": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Instance 1 dateValue for payment date in date format YYYY-MM-DD or dateTime format YYYY-MM-DDTHH:MM:SS.nnnZ.",
+        "Sample Input Data/Codes": "2024-10-28T12:13:41.000Z",
+        "Output Path": "812/ST Loop/CDD Loop/DTM",
+        "Output Element": "DTM02",
+        "Target Occurs": "0...1",
+        "Target Format": "date",
+        "Target Length": "8/8",
+        "Sample Output Data/Codes": "20241028",
+        "Mapping Notes/Rules": "If dateType = one of the above values and source dateValue is present,store in date format YYYYMMDD\n\nElse do not map."
+    },
+    "dateValue(2)": {
+        "Description": "Instance 2 dateValue for payment time in dateTime format YYYY-MM-DDTHH:MM:SS.nnnZ.",
+        "Sample Input Data/Codes": "2024-10-28T12:13:41.000Z",
+        "Output Path": "812/ST Loop/CDD Loop/DTM",
+        "Output Element": "DTM03",
+        "Target Occurs": "0...1",
+        "Target Format": "time",
+        "Target Length": "4/8",
+        "Mapping Notes/Rules": "If date format in source dateValue YYYY-MM-DDTHH:MM:SS.nnnZ, parse time from right of T char and map to target in time format HHMMSS\n\nElse do not map.",
+        "Sample Output Data/Codes": "121341"
+    },
+    "epochDateValue": {
+        "Source Occurs": "0...1",
+        "Source Format": "integer",
+        "Description": "Epoch date for dateValue field. For future use.",
+        "Mapping Notes/Rules": "Do not map."
+    },
+    "timeZone": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Time zone",
+        "Mapping Notes/Rules": "Do not map."
+    },
+    "mpcCurrency": {
+        "Source Occurs": "0...1",
+        "Description": "Currency for payment or remittance"
+    },
+    "exchangeRateCurrencyCode": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "To currency code for exchange",
+        "Mapping Notes/Rules": "Do not map."
+    },
+    "exchangeRate": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Exchange rate at which the currency code will convert to the exchangeRateCurrencyCode.",
+        "Mapping Notes/Rules": "Do not map."
+    },
+    "validityDate": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Date that the exchange rate is valid for the currency exchange in date format YYYY-MM-DD.",
+        "Mapping Notes/Rules": "Do not map."
+    },
+    "epochValidityDate": {
+        "Source Occurs": "0...1",
+        "Source Format": "integer",
+        "Description": "Validity date for exchange rate in epoch integer date format. Each string date recorded will have an epoch date format generated by a java exit.",
+        "Mapping Notes/Rules": "Do not map."
+    },
+    "currencyEntityCode": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Currency entity code pass-thru for X12.",
+        "Mapping Notes/Rules": "Do not map."
+    },
+    "termsOfPayment": {
+        "Source Occurs": "0...*",
+        "Description": "Terms of payment looping group"
+    },
+    "termsOfPaymentTypeCode": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Code identifying type of payment terms.  Valid values:\n\n- BASIC = 01\n- ENDOFMONTH = 02\n- FIXEDDATE = 03\n- DEFERRED =04\n- DISCOUNTNOTAPPLICABLE = 05\n- EXTENDED = 07\n- BASICDISCOUNT = 08\n- PROXIMO = 09",
+        "Sample Input Data/Codes": "BASIC",
+        "Output Path": "812/ISA/GS/ST Loop/ITD",
+        "Output Element": "ITD01",
+        "Target Occurs": "0...1",
+        "Target Format": "string",
+        "Target Length": "2/2",
+        "Sample Output Data/Codes": "01",
+        "Mapping Notes/Rules": "If source present\n\nIf source ITD01 =  \"BASIC\", hard code \"01\" to target\nIf source  ITD01 =  \"ENDOFMONTH\", hard code \"02\" to target\nIf source  ITD01 =  \"FIXEDDATE\", hard code 03\" to target\nIf source  ITD01 = \"DEFERRED\", hard code \"04\" to target\nIf source  ITD01 = \"DISCOUNTNOTAPPLICABLE\", hard code \"05\" to target\nIf source  ITD01 =  \"EXTENDED\", hard code \"07\" to target\nIf source  ITD01 = \"BASICDISCOUNT, hard code \"08\" to target\nIf source  ITD01 = \"PROXIMO\", hard code \"09\" to target\n\nElse do not map."
+    },
+    "termsOfPaymentKey": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Terms of payment",
+        "Mapping Notes/Rules": "Do not map."
+    },
+    "termsOfPaymentDateBasis": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Code identifying the beginning of the terms period. Valid values:\n\n- SHIPDATE = 1\n- DELIVERYDATE = 2\n- INVOICEDATE =3\n- INVOICERECEIPTDATE = 5",
+        "Sample Input Data/Codes": "SHIPDATE",
+        "Output Path": "812/ISA/GS/ST Loop/ITD",
+        "Output Element": "ITD02",
+        "Target Occurs": "0...1",
+        "Target Format": "string",
+        "Target Length": "1/2",
+        "Sample Output Data/Codes": "1",
+        "Mapping Notes/Rules": "If source present\n\nIf source ITD02 =\"SHIPDATE\", hard code \"1\" to target\nIf source ITD02 =  \"DELIVERYDATE\", hard code \"2\" to target\nIf source ITD02 =\"INVOICEDATE\", hard code 3\" to target\nIf source ITD02 =  \"INVOICERECEIPTDATE\", hard code \"5\" to target\n\nElse do not map."
+    },
+    "numberOfDays": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Terms of payment: number of days until total invoice amount is due (discount not applicable).",
+        "Sample Input Data/Codes": "5",
+        "Output Path": "812/ISA/GS/ST Loop/ITD",
+        "Output Element": "ITD07",
+        "Target Occurs": "0...1",
+        "Target Format": "number",
+        "Target Length": "1/3",
+        "Sample Output Data/Codes": "5",
+        "Mapping Notes/Rules": "Store literal value if present. Else do not map."
+    },
+    "discountDueNumberOfDays": {
+        "Source Occurs": "0...1",
+        "Source Format": "number",
+        "Source Length": "0/*",
+        "Description": "Terms Discount Days Due. Number of days in the terms discount period by which payment is due if terms discount is earned.",
+        "Sample Input Data/Codes": "15",
+        "Output Path": "812/ISA/GS/ST Loop/ITD",
+        "Output Element": "ITD05",
+        "Target Occurs": "0...1",
+        "Target Format": "number",
+        "Target Length": "1/3",
+        "Sample Output Data/Codes": "15",
+        "Mapping Notes/Rules": "Store literal value if present. Else do not map."
+    },
+    "termsOfPaymentPercent": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Terms of payment: percentage",
+        "Sample Input Data/Codes": "'10.00",
+        "Output Path": "812/ISA/GS/ST Loop/ITD",
+        "Output Element": "ITD03",
+        "Target Occurs": "0...1",
+        "Target Format": "number",
+        "Target Length": "1/6",
+        "Sample Output Data/Codes": "10",
+        "Mapping Notes/Rules": "Store literal value if present. Else do not map."
+    },
+    "invoicePayablePercent": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Percentage of invoice payable",
+        "Sample Input Data/Codes": "5",
+        "Output Path": "812/ISA/GS/ST Loop/ITD",
+        "Output Element": "ITD11",
+        "Target Occurs": "0...1",
+        "Target Format": "number",
+        "Target Length": "1/5",
+        "Sample Output Data/Codes": "5",
+        "Mapping Notes/Rules": "Store literal value if present. Else do not map."
+    },
+    "discountDueDate": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Discount due date in string date format YYYY-MM-DD",
+        "Sample Input Data/Codes": "2024-11-28",
+        "Output Path": "812/ISA/GS/ST Loop/ITD",
+        "Output Element": "ITD04",
+        "Target Occurs": "0...1",
+        "Target Format": "date",
+        "Target Length": "8/8",
+        "Sample Output Data/Codes": "20241128",
+        "Mapping Notes/Rules": "Store source date to date format YYYYMMDD if present. Else do not map."
+    },
+    "epochDiscountDueDate": {
+        "Source Occurs": "0...1",
+        "Source Format": "integer",
+        "Description": "Discount due date in epoch integer date format. Each string date recorded will have an epoch date format generated by a java exit.",
+        "Mapping Notes/Rules": "Do not map."
+    },
+    "paymentDueDate": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Date when total invoice amount becomes due in string date format YYYY-MM-DD",
+        "Sample Input Data/Codes": "2024-11-28",
+        "Output Path": "812/ISA/GS/ST Loop/ITD",
+        "Output Element": "ITD06",
+        "Target Occurs": "0...1",
+        "Target Format": "date",
+        "Target Length": "8/8",
+        "Sample Output Data/Codes": "20241128",
+        "Mapping Notes/Rules": "Store source date to date format YYYYMMDD if present. Else do not map."
+    },
+    "epochPaymentDueDate": {
+        "Source Occurs": "0...1",
+        "Source Format": "integer",
+        "Description": "Payment due date in epoch integer date format. Each string date recorded will have an epoch date format generated by a java exit.",
+        "Mapping Notes/Rules": "Do not map."
+    },
+    "paymentDeferredToDate": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Depository Financial Instituion identifier value. Each string date recorded will have an epoch date format generated by a java exit.",
+        "Output Path": "812/ISA/GS/ST Loop/ITD",
+        "Output Element": "ITD09",
+        "Target Occurs": "0...1",
+        "Target Format": "date",
+        "Target Length": "8/8",
+        "Mapping Notes/Rules": "Store source date to date format YYYYMMDD if present. Else do not map."
+    },
+    "paymentDeferredDueAmount": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Deferred amount due for payment",
+        "Output Path": "812/ISA/GS/ST Loop/ITD",
+        "Output Element": "ITD10",
+        "Target Occurs": "0...1",
+        "Target Format": "number",
+        "Target Length": "1/10",
+        "Mapping Notes/Rules": "Store literal value if present. Else do not map."
+    },
+    "epochPaymentDeferredToDate": {
+        "Source Occurs": "0...1",
+        "Source Format": "integer",
+        "Description": "Bank name code",
+        "Mapping Notes/Rules": "Do not map."
+    },
+    "description": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Description for transaction reference.",
+        "Output Path": "812/ST Loop/CDD Loop/N9",
+        "Output Element": "N903",
+        "Target Occurs": "0...1",
+        "Target Format": "string",
+        "Target Length": "1/45",
+        "Mapping Notes/Rules": "Store literal value if present."
+    },
+    "totalTermDiscountAmount": {
+        "Source Occurs": "0...1",
+        "Source Format": "number",
+        "Source Length": "0/*",
+        "Description": "Terms of payment discount amount. Total amount of terms discount.",
+        "Output Path": "812/ISA/GS/ST Loop/ITD",
+        "Output Element": "ITD08",
+        "Target Occurs": "0...1",
+        "Target Format": "number",
+        "Target Length": "1/10",
+        "Mapping Notes/Rules": "Store literal value if present. Else do not map.\n\nNote: Target amount includes two digits implicit decimals"
+    },
+    "dayOfMonth": {
+        "Source Occurs": "0...1",
+        "Source Format": "integer",
+        "Description": "The numeric value of the day of the month between 1 and the maximum day of the month being referenced",
+        "Output Path": "812/ISA/GS/ST Loop/ITD",
+        "Output Element": "ITD13",
+        "Target Occurs": "0...1",
+        "Target Format": "number",
+        "Target Length": "1/2",
+        "Mapping Notes/Rules": "Store literal value if present. Else do not map."
+    },
+    "creditsAndCharges": {
+        "Source Occurs": "0...*",
+        "Description": "Credits and charges at line item detail including invoice total, discounts, allowances, promotions, services, and others",
+        "Mapping Notes/Rules": "Optional segment. Create one instance for each qualifier that matches the canonical enum, if present.."
+    },
+    "creditChargeKeyType": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Key identifies credit or charges as discounts or additional charges. Valid values include:\n\n- ALLOWANCE = A\n- CHARGE = C\n- NONE = N",
+        "Sample Input Data/Codes": "N",
+        "Output Path": "812/ST Loop/CDD Loop/SAC Loop/SAC",
+        "Output Element": "SAC01",
+        "Target Occurs": "1...1",
+        "Target Format": "string",
+        "Target Length": "1/1",
+        "Sample Output Data/Codes": "NONE",
+        "Mapping Notes/Rules": "If source present.\n\nIf source SAC01 = \"ALLOWANCE\", hard code \"A\" to target\nIf source SAC01 = \"CHARGE\" hard code \"C\" to target\nIf source SAC01 = \"NONE\", hard code \"N\" to target\n\nElse throw error:\n\n\"Allowance or charge indicator code is required !!!\""
+    },
+    "creditChargeType": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Source Code List": "CL_CreditChargeType:CanonicalCode",
+        "Description": "Code representing type of credit or charge. Valid values include (HDA) and other company guidelines):\n\n- ADJUSTMENT = A170\n- HANDLING = D500\n- PERITEM = F240\n- DISCOUNT = C310\n- FREIGHT = D240",
+        "Sample Input Data/Codes": "ADJUSTMENT",
+        "Output Path": "812/ST Loop/CDD Loop/SAC Loop/SAC",
+        "Output Element": "SAC02",
+        "Target Occurs": "0...1",
+        "Target Format": "string",
+        "Target Length": "4/4",
+        "Target Code List": "CL_CreditChargeType:ExternalCode",
+        "Sample Output Data/Codes": "A170",
+        "Mapping Notes/Rules": "If source present\n\nCALL \"com.tracelink.contivo.LookUp.XRefCodeLists\" for lookup file CL_CreditChargeType.txt  with java\n\nIf source missing or matching value not found, throw error: \n\n\"Credit or charge type code is required !!!\""
+    },
+    "creditChargeAmount": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Total amount for the service, promotion, allowance, or charge.\n\nNote: Target amount includes two digits implicit decimals(125.25 treated as 12525)",
+        "Sample Input Data/Codes": "24589.23",
+        "Output Path": "812/ST Loop/CDD Loop/SAC Loop/SAC",
+        "Output Element": "SAC05",
+        "Target Occurs": "0...1",
+        "Target Format": "number",
+        "Target Length": "1/15",
+        "Sample Output Data/Codes": "'2458923",
+        "Mapping Notes/Rules": "Store literal value if present.If source missing and SAC is present, throw error:\n\n\"If credit charge group is present, credit or debit adjustment amount is required !!!\"\n\nNote: Target amount includes two digits implicit decimals"
+    },
+    "creditChargeCurrencyCode": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Currency code for credit or charge",
+        "Mapping Notes/Rules": "Do not map.",
+        "Sample Input Data/Codes": "USD"
+    },
+    "qualifyingAmount": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Amount qualifying for cash discount, allowance, promotion, service or charge",
+        "Mapping Notes/Rules": "Do not map."
+    },
+    "creditChargePercentRate": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Percentage rate for cash discount, allowance, promotion, service or charge",
+        "Mapping Notes/Rules": "Do not map."
+    },
+    "percentRateBasisTypeCode": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Code indicating basis that allowance or charge percent is calculated",
+        "Mapping Notes/Rules": "Do not map."
+    },
+    "creditChargeHandlingCode": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Method of handling for discount or charge.",
+        "Mapping Notes/Rules": "Do not map."
+    },
+    "unitPriceAmount": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Unit price amount",
+        "Mapping Notes/Rules": "Do not map."
+    },
+    "unitPriceBasisQuantity": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Quantity basis for the unit price",
+        "Mapping Notes/Rules": "Do not map."
+    },
+    "itemQuantity": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Item quantity",
+        "Sample Input Data/Codes": "100",
+        "Output Path": "812/ISA/GS/ST Loop/SAC",
+        "Output Element": "SAC10",
+        "Target Occurs": "0...1",
+        "Target Format": "number",
+        "Target Length": "1/15",
+        "Sample Output Data/Codes": "100",
+        "Mapping Notes/Rules": "Store literal value. If unitOfMeasure is present and itemQuantity is missing, throw error:\n\n\"Quantity for credit or debit adjustment is required if unit of measure is present !!!\""
+    },
+    "unitOfMeasure": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Source Code List": "CL_UnitOfMeasureEnum:CanonicalCode",
+        "Description": "Unit or Basis for Measurement Code.",
+        "Sample Input Data/Codes": "EA",
+        "Output Path": "812/ST Loop/CDD Loop/SAC Loop/SAC",
+        "Output Element": "SAC09",
+        "Target Occurs": "0...1",
+        "Target Format": "string",
+        "Target Length": "2/2",
+        "Target Code List": "CL_UnitOfMeasureEnum:ExternalCode",
+        "Sample Output Data/Codes": "EA",
+        "Mapping Notes/Rules": "If source present\n\nCALL \"com.tracelink.contivo.LookUp.XRefCodeLists\" for lookup file UOM_TableLookup2.txt  with java\n\nIf itemQuantity is present and unitOfMeasure is missing, throw error:\n\n\"Unit of measure is required if quantity for credit or debit adjustment is present !!!\""
+    },
+    "baseValue": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Base value to which pricing condition refers. SAP pass thru.",
+        "Mapping Notes/Rules": "Do not map."
+    },
+    "creditChargeConditionType": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Credit or charge condition type",
+        "Mapping Notes/Rules": "Do not map."
+    },
+    "sendingBankInformation": {
+        "Source Occurs": "0...*",
+        "Description": "Bank info for sender or payer of remittance",
+        "Mapping Notes/Rules": "Map only if source group populated."
+    },
+    "bankFunctionCode": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Source Code List": "CL_BankFunctionCode:CanonicalCode",
+        "Description": "Bank function code qualifier identifying the party function of the bank. Valid canonical values include:\n\n- BANKSOLDTO\n- CORRESPONDENTSENDER\n- INTERMEDIARY\n- CORRESPONDENTRECIPIENT",
+        "Sample Input Data/Codes": "BANKBENEFICIARY",
+        "Mapping Notes/Rules": "Do not map."
+    },
+    "bankIdentifierValue": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Depository Financial Instituion identifier value.",
+        "Sample Input Data/Codes": "945681855",
+        "Mapping Notes/Rules": "Do not map."
+    },
+    "bankNameCode": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Bank name code",
+        "Mapping Notes/Rules": "Do not map."
+    },
+    "bankIdentifierType": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Source Code List": "CL_BankIdentifierType:CanonicalCode",
+        "Description": "Depository Financial Instituion identifier type. Valid values:\n\n- ABA\n- SWIFT\n- CHIPS\n- CANADIANBANK\n- CUSTOM",
+        "Sample Input Data/Codes": "SWIFT",
+        "Mapping Notes/Rules": "Do not map."
+    },
+    "bankName": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Name of bank",
+        "Sample Input Data/Codes": "Bank of America",
+        "Mapping Notes/Rules": "Do not map."
+    },
+    "bankBranchIdentifierType": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Bank branch identifier type",
+        "Mapping Notes/Rules": "Do not map."
+    },
+    "bankBranchIdentifier": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Bank branch identifier value",
+        "Sample Input Data/Codes": "945681855",
+        "Mapping Notes/Rules": "Do not map."
+    },
+    "bankBranchName": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Name of bank's city",
+        "Sample Input Data/Codes": "Philadelphia",
+        "Mapping Notes/Rules": "Do not map."
+    },
+    "country": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Country code",
+        "Sample Input Data/Codes": "US",
+        "Mapping Notes/Rules": "Store literal value if present.",
+        "Output Path": "812/ISA/GS/ST Loop/N1_Loop/N4",
+        "Output Element": "N404",
+        "Target Occurs": "0...1",
+        "Target Format": "string",
+        "Target Length": "2/3",
+        "Sample Output Data/Codes": "US"
+    },
+    "accountHolderInformation": {
+        "Source Occurs": "0...1",
+        "Description": "Account and account holder information"
+    },
+    "accountType": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Bank account type. X12 pass thru.",
+        "Mapping Notes/Rules": "Do not map."
+    },
+    "accountIdentifier": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Bank account identifier number",
+        "Sample Input Data/Codes": "30050020",
+        "Mapping Notes/Rules": "Do not map."
+    },
+    "accountHolderName": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Name of bank account holder",
+        "Sample Input Data/Codes": "Dyslexic Corp",
+        "Mapping Notes/Rules": "Do not map."
+    },
+    "accountHolderName2": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Name of bank account holder",
+        "Mapping Notes/Rules": "Do not map."
+    },
+    "companyIdentifier": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Company identifier for sending company. X12 pass-thru.",
+        "Mapping Notes/Rules": "Do not map."
+    },
+    "companyIdentifierSupplementalCode": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Sending company's identifier supplemental code. X12 pass-thru.",
+        "Mapping Notes/Rules": "Do not map."
+    },
+    "receivingBankInformation": {
+        "Source Occurs": "0...*",
+        "Description": "Bank info for receiver or payee of remittance"
+    },
+    "billToBusinessInformation": {
+        "Source Occurs": "0...1",
+        "Description": "Bill to customer party company identifiers and address information.",
+        "Mapping Notes/Rules": "Group is optional. Only throw errors if bill to party group is present. If group missing, do not map, do not throw any errors."
+    },
+    "CONSTANT[BT]": {
+        "Description": "Constant identifying party info for bill-to party",
+        "Output Path": "812/ISA/GS/ST Loop/N1_Loop/N1_Loop/N1",
+        "Output Element": "N101",
+        "Target Occurs": "1...1",
+        "Target Format": "string",
+        "Target Length": "2/3",
+        "Sample Output Data/Codes": "BT",
+        "Mapping Notes/Rules": "Hard code \"BT\" to target."
+    },
+    "businessName": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Business name for partner or location",
+        "Sample Input Data/Codes": "Pharma Wholesale Supplier",
+        "Output Path": "812/ISA/GS/ST Loop/N1_Loop/N1",
+        "Output Element": "N102",
+        "Target Occurs": "0...1",
+        "Target Format": "string",
+        "Target Length": "1/60",
+        "Sample Output Data/Codes": "Pharma Wholesale Supplier",
+        "Mapping Notes/Rules": "Store literal value if present. Else do not map."
+    },
+    "mpcCompanyLocationIdentifierList": {
+        "Source Occurs": "0...1",
+        "Description": "Identifier list for business party."
+    },
+    "isIdentifierPresentInEvent": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Is identifier present in event boolean",
+        "Mapping Notes/Rules": "Do not map."
+    },
+    "companyIdentifierType": {
+        "Source Occurs": "If source companyIdentifierValue is present, store literal value. Throw error if source is missing AND companyIdentifierType i+I348s present and valid:\n\n\"Head office+343:374party identifier is required !!!\"",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Source Code List": "CL_CompanyLocationIDType:CanonicalCode",
+        "Description": "Company identifier type for business partner",
+        "Sample Input Data/Codes": "COMPANYID",
+        "Output Path": "812/ISA/GS/ST Loop/N1_Loop/N1",
+        "Output Element": "N103",
+        "Target Occurs": "0...1",
+        "Target Format": "string",
+        "Target Length": "1/2",
+        "Target Code List": "CL_CompanyLocationIDType:ExternalCode",
+        "Sample Output Data/Codes": "91",
+        "Mapping Notes/Rules": "If companyIdentifierValue and companyIdentifierType are present, \nCALL \"com.tracelink.contivo.LookUp.XRefCodeLists\" for lookup fileCL_CompanyIdentifierType.txt with java\n\nElse if source is not a valid value, and companyIdentifierValue is populated and throw error:\nDistributor branch party identifier type is required !!!\""
+    },
+    "companyIdentifierValue": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Company identifier value for business partner",
+        "Sample Input Data/Codes": "0123456926034",
+        "Output Path": "812/ISA/GS/ST Loop/N1_Loop/N1",
+        "Output Element": "N104",
+        "Target Occurs": "0...1",
+        "Target Format": "string",
+        "Target Length": "2/80",
+        "Sample Output Data/Codes": "0123456926034",
+        "Mapping Notes/Rules": "If source companyIdentifierValue is present, store literal value. Throw error if source is missing AND companyIdentifierType is present and valid:\n\n\"Distributor branch party identifier is required !!!\""
+    },
+    "alternateCompanyLocationIdentifierValue": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Alternate company location identifier value",
+        "Mapping Notes/Rules": "Do not map."
+    },
+    "address": {
+        "Source Occurs": "0...1",
+        "Description": "Party address information",
+        "Mapping Notes/Rules": "Group is optional."
+    },
+    "address1": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Main street address",
+        "Sample Input Data/Codes": "2522 Bellisarios Drive",
+        "Output Path": "812/ISA/GS/ST Loop/N1_Loop/N3",
+        "Output Element": "N301",
+        "Target Occurs": "1...1",
+        "Target Format": "string",
+        "Target Length": "1/55",
+        "Sample Output Data/Codes": "2522 Bellisarios Drive",
+        "Mapping Notes/Rules": "Store literal value if present."
+    },
+    "address2": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Supplemental street address",
+        "Sample Input Data/Codes": "Suite 3231",
+        "Output Path": "812/ISA/GS/ST Loop/N1_Loop/N3",
+        "Output Element": "N302",
+        "Target Occurs": "0...1",
+        "Target Format": "string",
+        "Target Length": "1/55",
+        "Sample Output Data/Codes": "Suite 3231",
+        "Mapping Notes/Rules": "Store literal value if present."
+    },
+    "city": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "City",
+        "Sample Input Data/Codes": "South Miami",
+        "Output Path": "812/ISA/GS/ST Loop/N1_Loop/N4",
+        "Output Element": "N401",
+        "Target Occurs": "0...1",
+        "Target Format": "string",
+        "Target Length": "2/30",
+        "Sample Output Data/Codes": "South Miami",
+        "Mapping Notes/Rules": "Store literal value if present."
+    },
+    "district": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "District",
+        "Mapping Notes/Rules": "Do not map."
+    },
+    "state": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "State or region code",
+        "Sample Input Data/Codes": "FL",
+        "Output Path": "812/ISA/GS/ST Loop/N1_Loop/N4",
+        "Output Element": "N402",
+        "Target Occurs": "0...1",
+        "Target Format": "string",
+        "Target Length": "2/2",
+        "Sample Output Data/Codes": "FL",
+        "Mapping Notes/Rules": "Store literal value if present."
+    },
+    "postalCode": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Postal code",
+        "Sample Input Data/Codes": "33563",
+        "Output Path": "812/ISA/GS/ST Loop/N1_Loop/N4",
+        "Output Element": "N403",
+        "Target Occurs": "0...1",
+        "Target Format": "string",
+        "Target Length": "3/15",
+        "Sample Output Data/Codes": "33563",
+        "Mapping Notes/Rules": "Store literal value if present."
+    },
+    "telephone": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Telephone number",
+        "Sample Input Data/Codes": "+1 (786) 432-3621",
+        "Mapping Notes/Rules": "Do not map."
+    },
+    "fax": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Fax number",
+        "Sample Input Data/Codes": "+1 (786) 432-3622",
+        "Mapping Notes/Rules": "Do not map."
+    },
+    "url": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Website URL",
+        "Mapping Notes/Rules": "Do not map."
+    },
+    "buildingNumber": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Building number",
+        "Mapping Notes/Rules": "Do not map."
+    },
+    "plantNumber": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Plant number",
+        "Mapping Notes/Rules": "Do not map."
+    },
+    "floorNumber": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Floor number in building",
+        "Mapping Notes/Rules": "Do not map."
+    },
+    "lscAddressIdentifier": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "LSC address identifier",
+        "Mapping Notes/Rules": "Do not map."
+    },
+    "village": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Village name",
+        "Mapping Notes/Rules": "Do not map."
+    },
+    "houseNumber": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "House number",
+        "Mapping Notes/Rules": "Do not map."
+    },
+    "township": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Township",
+        "Mapping Notes/Rules": "Do not map."
+    },
+    "premisesCode": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Premises code",
+        "Mapping Notes/Rules": "Do not map."
+    },
+    "companyLocationContactInformation": {
+        "Source Occurs": "0...1",
+        "Description": "Party address information",
+        "Mapping Notes/Rules": "Do not map."
+    },
+    "CONSTANT[AJ]": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Contact function code identifying major duty or responsibility of person or group named as contact. Valid value:\n\n- AJ = Primary contact",
+        "Output Path": "812/ISA/GS/ST Loop/N1_Loop/PER",
+        "Output Element": "PER01",
+        "Target Occurs": "1...1",
+        "Target Format": "string",
+        "Target Length": "2/2",
+        "Sample Output Data/Codes": "AJ",
+        "Mapping Notes/Rules": "Hard code \"AJ\" to target."
+    },
+    "contactName": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Contact name",
+        "Sample Input Data/Codes": "John Smith",
+        "Output Path": "812/ISA/GS/ST Loop/N1_Loop/PER",
+        "Output Element": "PER02",
+        "Target Occurs": "0...1",
+        "Target Format": "string",
+        "Target Length": "1/60",
+        "Sample Output Data/Codes": "John Smith",
+        "Mapping Notes/Rules": "Store literal value if present."
+    },
+    "contactTitle": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Title of contact",
+        "Mapping Notes/Rules": "Do not map."
+    },
+    "CONSTANT[TE]": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Communication Number Qualifier identifying the contact person's telephone number or email address. Valid value:\n\nTE = Telephone number",
+        "Output Path": "812/ISA/GS/ST Loop/N1_Loop/PER",
+        "Output Element": "PER03",
+        "Target Occurs": "0...1",
+        "Target Format": "string",
+        "Target Length": "2/2",
+        "Sample Output Data/Codes": "TE",
+        "Mapping Notes/Rules": "If contactPhone is present, Hard code \"TE\" to target."
+    },
+    "contactPhone": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Contact phone number",
+        "Sample Input Data/Codes": "+1.516.747.6850",
+        "Output Path": "812/ISA/GS/ST Loop/N1_Loop/PER",
+        "Output Element": "PER04",
+        "Target Occurs": "0...1",
+        "Target Format": "string",
+        "Target Length": "1/2048",
+        "Sample Output Data/Codes": "+1.516.747.6850",
+        "Mapping Notes/Rules": "Store literal value if present."
+    },
+    "CONSTANT[EM]": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Communication Number Qualifier identifying the contact person's telephone number or email address. Valid value:\n\nEM = email address",
+        "Output Path": "812/ISA/GS/ST Loop/N1_Loop/PER",
+        "Output Element": "PER05",
+        "Target Occurs": "0...1",
+        "Target Format": "string",
+        "Target Length": "2/2",
+        "Sample Output Data/Codes": "EM",
+        "Mapping Notes/Rules": "If contactEmail is present, Hard code \"EM\" to target.\n\nNote:  If contactPhone is not present, map contactEmail to PER04 and hardcode \u201cEM\u201d to PER03."
+    },
+    "contactEmail": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Contact email address",
+        "Sample Input Data/Codes": "'jsmith@manufac.com",
+        "Output Path": "812/ISA/GS/ST Loop/N1_Loop/PER",
+        "Output Element": "PER06",
+        "Target Occurs": "0...1",
+        "Target Format": "string",
+        "Target Length": "1/2048",
+        "Sample Output Data/Codes": "'jsmith@manufac.com",
+        "Mapping Notes/Rules": "Store literal value if present."
+    },
+    "shipToLocationInformation": {
+        "Source Occurs": "0...1",
+        "Description": "Ship to location identifiers and address information.",
+        "Mapping Notes/Rules": "Group is optional. Only throw errors if ship to group is present. If group missing, do not map, do not throw any errors."
+    },
+    "CONSTANT[ST]": {
+        "Description": "Constant identifying party info for ship to party",
+        "Output Path": "812/ISA/GS/ST Loop/N1_Loop/N1",
+        "Output Element": "N101",
+        "Target Occurs": "1...1",
+        "Target Format": "string",
+        "Target Length": "2/3",
+        "Sample Output Data/Codes": "ST",
+        "Mapping Notes/Rules": "Hard code \"ST\" to target."
+    },
+    "supplierBusinessInformation": {
+        "Source Occurs": "0...1",
+        "Description": "Supplier party company identifiers and address information.",
+        "Mapping Notes/Rules": "Group is optional. Only throw errors if supplier group is present. If group missing, do not map, do not throw any errors."
+    },
+    "CONSTANTSU]": {
+        "Description": "Constant identifying party info for supplier",
+        "Output Path": "812/ISA/GS/ST Loop/N1_Loop/N1",
+        "Output Element": "N101",
+        "Target Occurs": "1...1",
+        "Target Format": "string",
+        "Target Length": "2/3",
+        "Sample Output Data/Codes": "SU",
+        "Mapping Notes/Rules": "Hard code \"SU\" to target."
+    },
+    "remitToBusinessInformation": {
+        "Source Occurs": "0...1",
+        "Description": "Remit to party ... The payee or beneficiary of remittance.",
+        "Mapping Notes/Rules": "Group is optional. Only throw errors if remit to party -- invoice payee -- group is present. If group missing, do not map, do not throw any errors."
+    },
+    "CONSTANT[RI]": {
+        "Description": "Constant identifying party info for remit to party",
+        "Output Path": "812/ISA/GS/ST Loop/N1_Loop/N1",
+        "Output Element": "N101",
+        "Target Occurs": "1...1",
+        "Target Format": "string",
+        "Target Length": "2/3",
+        "Sample Output Data/Codes": "RI",
+        "Mapping Notes/Rules": "Hard code \"RI\" to target."
+    },
+    "headOfficeBusinessInformation": {
+        "Source Occurs": "0...1",
+        "Description": "Head Office BusinessInformation",
+        "Mapping Notes/Rules": "Group is optional. Only throw errors if group is present. If group missing, do not map, do not throw any errors."
+    },
+    "CONSTANT[L8]": {
+        "Description": "Constant identifying party info for head office business",
+        "Output Path": "812/ISA/GS/ST Loop/N1_Loop/N1",
+        "Output Element": "N101",
+        "Target Occurs": "1...1",
+        "Target Format": "string",
+        "Target Length": "2/3",
+        "Sample Output Data/Codes": "L8",
+        "Mapping Notes/Rules": "Hard code \"L8\" to target."
+    },
+    "pharmacyBusinessInformation": {
+        "Source Occurs": "0...1",
+        "Description": "Pharmacy BusinessInformation",
+        "Mapping Notes/Rules": "Group is optional. Only throw errors group is present. If group missing, do not map, do not throw any errors."
+    },
+    "CONSTANT[QA]": {
+        "Description": "Constant identifying party info for pharmacy",
+        "Output Path": "812/ISA/GS/ST Loop/N1_Loop/N1",
+        "Output Element": "N101",
+        "Target Occurs": "1...1",
+        "Target Format": "string",
+        "Target Length": "2/3",
+        "Sample Output Data/Codes": "QA",
+        "Mapping Notes/Rules": "Hard code \"QA\" to target."
+    },
+    "thirdPartyLogisticsInformation": {
+        "Source Occurs": "0...1",
+        "Description": "Third Party Logistics Information",
+        "Mapping Notes/Rules": "Group is optional. Only throw errors if third party logistics group is present. If group missing, do not map, do not throw any errors."
+    },
+    "CONSTANT[YE]": {
+        "Description": "Constant identifying party info for third party logistics information",
+        "Output Path": "812/ISA/GS/ST Loop/N1_Loop/N1",
+        "Output Element": "N101",
+        "Target Occurs": "1...1",
+        "Target Format": "string",
+        "Target Length": "2/3",
+        "Sample Output Data/Codes": "YE",
+        "Mapping Notes/Rules": "Hard code \"YE\" to target."
+    },
+    "originalClaimantBusinessInformation": {
+        "Source Occurs": "0...1",
+        "Description": "Original Claimant Business Information",
+        "Mapping Notes/Rules": "Group is optional. Only throw errors if Original Claimant Business Information group is present. If group missing, do not map, do not throw any errors."
+    },
+    "CONSTANT[XI]": {
+        "Description": "Constant identifying party info for original Claimant Business Information",
+        "Output Path": "812/ISA/GS/ST Loop/N1_Loop/N1",
+        "Output Element": "N101",
+        "Target Occurs": "1...1",
+        "Target Format": "string",
+        "Target Length": "2/3",
+        "Sample Output Data/Codes": "XI",
+        "Mapping Notes/Rules": "Hard code \"XI\" to target."
+    },
+    "distributorBusinessInformation": {
+        "Source Occurs": "0...1",
+        "Description": "Dstributor Busines sInformation",
+        "Mapping Notes/Rules": "Group is optional. Only throw errors if Distributor Business Information group is present. If group missing, do not map, do not throw any errors."
+    },
+    "CONSTANT[DS]": {
+        "Description": "Constant identifying party info for Distributor Business Information",
+        "Output Path": "812/ISA/GS/ST Loop/N1_Loop/N1",
+        "Output Element": "N101",
+        "Target Occurs": "1...1",
+        "Target Format": "string",
+        "Target Length": "2/3",
+        "Sample Output Data/Codes": "DS",
+        "Mapping Notes/Rules": "Hard code \"DS\" to target."
+    },
+    "distributorBranchformation": {
+        "Source Occurs": "0...1",
+        "Description": "Dstributor Branch Busines sInformation",
+        "Mapping Notes/Rules": "Group is optional. Only throw errors if Distributor Branch Business Information group is present. If group missing, do not map, do not throw any errors."
+    },
+    "CONSTANT[DB]": {
+        "Description": "Constant identifying party info for Distributor Business Information",
+        "Output Path": "812/ISA/GS/ST Loop/N1_Loop/N1",
+        "Output Element": "N101",
+        "Target Occurs": "1...1",
+        "Target Format": "string",
+        "Target Length": "2/3",
+        "Sample Output Data/Codes": "DB",
+        "Mapping Notes/Rules": "Hard code \"DB\" to target."
+    },
+    "freeTextNote": {
+        "Source Occurs": "0...1",
+        "Description": "Free text, instructions, notes, descriptions and other free text elements"
+    },
+    "textReferenceCode": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Text reference or subject code. Will map whatever is found.",
+        "Mapping Notes/Rules": "Do not map."
+    },
+    "textFunctionCode": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Text function code. Will map whatever is found.",
+        "Mapping Notes/Rules": "Do not map."
+    },
+    "language": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Language of free text",
+        "Mapping Notes/Rules": "Do not map."
+    },
+    "textFormatCode": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Format code for free text",
+        "Mapping Notes/Rules": "Do not map."
+    },
+    "freeFormText": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Free text array",
+        "Mapping Notes/Rules": "Do not map."
+    },
+    "customFields": {
+        "Source Occurs": "0...1",
+        "Description": "Name value pairs for mapping pass through elements that will not be processed in TL system but may be passed outbound. Header level."
+    },
+    "name": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Name of mapped field.",
+        "Mapping Notes/Rules": "Do not map."
+    },
+    "value": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Value in named field.",
+        "Mapping Notes/Rules": "Do not map."
+    },
+    "canonicalCreditDebitAdjustmentItemDetails": {
+        "Source Occurs": "1...*",
+        "Description": "Line item details for credit or debit adjustments"
+    },
+    "creditDebitAdjustmentReasonCode": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Source Code List": "CL_CreditDebitAdjustmentReason:CanonicalCode",
+        "Description": "Code indicating reason for debit or credit memo or adjustment to invoice, debit or credit memo, or payment. Pass thru mapping with X12 adjustment code.",
+        "Sample Input Data/Codes": "ERROR_PRICING",
+        "Output Path": "812/ST Loop/CDD Loop/CDD",
+        "Output Element": "CDD01",
+        "Target Occurs": "1...1",
+        "Target Format": "string",
+        "Target Length": "2/2",
+        "Target Code List": "CL_CreditDebitAdjustmentReason:ExternalCode",
+        "Sample Output Data/Codes": "01",
+        "Mapping Notes/Rules": "Convert from source to target using enum mapping worksheet. Required. Throw error if source missing:\n\n\"Entity assignment number is required !!!\"\n\nPlease note: this will mostly appear only once. But it may also appear more than once. It is not a line item number.\nThis is required for HDA but does not map to the IDoc or EDIFACT messages. There is, however, an IDoc field with no qualifiers that it can be mapped to."
+    },
+    "adjustmentAmount": {
+        "Source Occurs": "0...1",
+        "Source Format": "number",
+        "Source Length": "0/*",
+        "Description": "Monetary amount for the credit or debit adjustment.",
+        "Sample Input Data/Codes": "125.25",
+        "Output Path": "812/ST Loop/CDD Loop/CDD",
+        "Output Element": "CDD04",
+        "Target Occurs": "0...1",
+        "Target Format": "number",
+        "Target Length": "1/15",
+        "Sample Output Data/Codes": "12525",
+        "Mapping Notes/Rules": "Store literal value if present. At least one of adjustmentAmount or creditDebitQuantity is required. If both adjustmentAmount ans creditDebitQuantity are missing, throw error:\n\n\"At least one of amount or item quantity for credit or debit adjustment is required !!!\"\n\nNote: source amount includes two digits implicit decimals(125.25 shown as 12525)"
+    },
+    "unitPrice": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Unit price. Price per unit of product, service, commodity, etc.",
+        "Sample Input Data/Codes": "1.25",
+        "Output Path": "812/ST Loop/CDD Loop/CDD",
+        "Output Element": "CDD11",
+        "Target Occurs": "0...1",
+        "Target Format": "number",
+        "Target Length": "1/17",
+        "Sample Output Data/Codes": "1.25",
+        "Mapping Notes/Rules": "Store literal value if present."
+    },
+    "creditDebitQuantity": {
+        "Source Occurs": "0...1",
+        "Source Format": "number",
+        "Source Length": "0/*",
+        "Description": "Number of supplier units credited or debited. HDA: May use a decimal to indicate a quantity variance, fractions or partials.",
+        "Sample Input Data/Codes": "100",
+        "Output Path": "812/ST Loop/CDD Loop/CDD",
+        "Output Element": "CDD07",
+        "Target Occurs": "0...1",
+        "Target Format": "number",
+        "Target Length": "1/10",
+        "Mapping Notes/Rules": "Store literal value if present. If unitOfMeasure is present and creditDebitQuantity is missing, throw error:\n\n\"Quantity for credit or debit adjustment is required if unit of measure is present !!!\""
+    },
+    "priceIdentifierCode": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Code identifying pricing specification. X12 mapping only.\n Qualifiers are from consulted HDA and company guidelines. Possible valid values:\n\n- UCP = Unit cost price (HDA)\n- CON = Contract price\n- OPP = Original PO",
+        "Sample Input Data/Codes": "UCP",
+        "Output Path": "812/ST Loop/CDD Loop/CDD",
+        "Output Element": "CDD10",
+        "Target Occurs": "0...1",
+        "Target Format": "string",
+        "Target Length": "3/3",
+        "Sample Output Data/Codes": "UCP",
+        "Mapping Notes/Rules": "Store literal value if present."
+    },
+    "transactionReferenceIdentifierList": {
+        "Source Occurs": "0...*",
+        "Description": "Transaction references"
+    },
+    "transactionDate(1)": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Instance 1 transaction date mapping to IDoc data field DATUM in date format YYYYMMDD",
+        "Sample Input Data/Codes": "2024-10-28T12:13:41.000Z",
+        "Mapping Notes/Rules": "Do not map."
+    },
+    "transactionDate(2)": {
+        "Description": "Instance 2 transaction date mapping to IDoc time field UZEIT in time format HHMMSS",
+        "Sample Input Data/Codes": "2024-10-28T12:13:41.000Z",
+        "Mapping Notes/Rules": "Do not map."
+    },
+    "productCodesIdentifiers(1)": {
+        "Source Occurs": "0...*",
+        "Description": "Product code types and identifiers. Not mapped to IDoc.",
+        "Mapping Notes/Rules": "At least one product code is required.  Error is thrown only if LIN02/03 are missing."
+    },
+    "productCodeType": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Code to specify product identifier type.",
+        "Sample Input Data/Codes": "UK",
+        "Output Path": "812/ST Loop/CDD Loop/LIN",
+        "Output Element": "LIN04",
+        "Target Occurs": "0...1",
+        "Target Format": "string",
+        "Target Length": "2/2",
+        "Sample Output Data/Codes": "GTIN14",
+        "Mapping Notes/Rules": "if source is present convert from source to target value and map. Use the X12 product code based on ISA12,  \n\nif version is <= 004010 use X12 4010 else use the code X12 5010 in table to convert and validate that source type code is correct.\n \nCALL \"com.tracelink.contivo.LookUp.XRefCodeLists\" for lookup file CL_ProductCodeType.txt with java. \n\nIf source missing or does not match any of the listed values, do not map.\n\nNote: For multiple  productCodesIdentifiers, map to additional LIN elements:  LIN06/07, LIN08/09 etc.. Only throw error if there is not at least one product code present in source.  Do not throw errors for additional product codes, just don't map."
+    },
+    "productCodeValue": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Product code identifier value",
+        "Sample Input Data/Codes": "00009999999999",
+        "Output Path": "812/ST Loop/CDD Loop/LIN",
+        "Output Element": "LIN05",
+        "Target Occurs": "0...1",
+        "Target Format": "string",
+        "Target Length": "1/80",
+        "Sample Output Data/Codes": "'00009999999999",
+        "Mapping Notes/Rules": "Store literal value. If source missing,do not map."
+    },
+    "productCodesIdentifiers (2)": {
+        "Source Occurs": "0...*",
+        "Description": "Product code types and identifiers. Not mapped to IDoc.",
+        "Mapping Notes/Rules": "Additional product codes are mapped to LIN, but no error is thrown if not present."
+    },
+    "transactionReferenceInformation": {
+        "Source Occurs": "0...*",
+        "Description": "Reference information for identifiers that are not related to transaction documents. Mostly relevant for X12 segments REF and N9 and EDIFACT RFF."
+    },
+    "transactionReferenceType": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Source Code List": "CL_TransactionReferenceType:CanonicalCode",
+        "Description": "Referenced document type. Valid values include:\n\n- LOTNUMBER = LT\n- LINEITEMNUMBER = LI\n-  VENDORNUMBER = VR\n- INTERNALVENDORNUMBER = IA\n- CHANGEREASON = TD\n- STORENUMBER =ST\n- PROMOTIONDEALNUMBER = PD\n- CUSTOM = ZZ",
+        "Sample Input Data/Codes": "LOTNUMBER",
+        "Output Path": "812/ST Loop/CDD Loop/N9",
+        "Output Element": "N901",
+        "Target Occurs": "1...1",
+        "Target Format": "string",
+        "Target Length": "2/3",
+        "Target Code List": "CL_TransactionReferenceType:ExternalCode",
+        "Sample Output Data/Codes": "LT",
+        "Mapping Notes/Rules": "If source present.\n\nCALL \"com.tracelink.contivo.LookUp.XRefCodeLists\" for lookup file CL_TransactionReferenceType.txt with java\n\n\nIf source missing or does not match any of the listed values, do not map, do not create instance of transactionReferenceInformation"
+    },
+    "transactionReferenceIdentifier": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Transaction reference identifier value as defined by enum in transactionReferenceType.",
+        "Sample Input Data/Codes": "4587PIB4",
+        "Output Path": "812/ST Loop/CDD Loop/N9",
+        "Output Element": "N902",
+        "Target Occurs": "0...1",
+        "Target Format": "string",
+        "Target Length": "1/80",
+        "Sample Output Data/Codes": "'4587PIB4",
+        "Mapping Notes/Rules": "Store literal value if present.\n\n If valid qualifier in transactionReferenceType is present and transactionReferenceIdentifier is missing, throw error:\n\n\"If a valid reference identifier qualifier is present a reference identifier value is required !!!\""
+    },
+    "transactionReferenceDate": {
+        "Source Occurs": "0...1",
+        "Source Format": "string",
+        "Source Length": "0/*",
+        "Description": "Transaction reference date and time, if time available, in date format YYYY-MM-DD or YYYY-MM-DDTHH:MM:SS.nnnZ if time available.",
+        "Sample Input Data/Codes": "2024-10-28T12:13:41.000Z",
+        "Output Path": "812/ST Loop/CDD Loop/N9",
+        "Output Element": "N904",
+        "Target Occurs": "0...1",
+        "Target Format": "date",
+        "Target Length": "8/8",
+        "Sample Output Data/Codes": "20241028",
+        "Mapping Notes/Rules": "Store source value if present in date format YYYYMMDD."
+    },
+    "epochTransactionReferenceDate": {
+        "Source Occurs": "0...1",
+        "Source Format": "integer",
+        "Description": "Transaction reference date and time in EPOCH date time format.",
+        "Mapping Notes/Rules": "Do not map."
+    }
+}

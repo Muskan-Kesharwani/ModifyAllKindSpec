@@ -1,0 +1,507 @@
+{
+    "format": "JSON",
+    "total_elements": 69,
+    "hierarchy": {
+        "JSON": {
+            "source_path": "/JSON",
+            "Source Occurs": "1...1",
+            "Description": "Root"
+        },
+        "JSON_occurrence_2": {
+            "source_path": "/JSON",
+            "Source Occurs": "1...*",
+            "Description": "LuceneQuery Root",
+            "Mapping Notes/Rules": "The Root Record will iterate for each Report Summary Record.\n\nCreate one CSV Line per each iteration of Root record."
+        },
+        "id": {
+            "source_path": "/id",
+            "Source Occurs": "1...1",
+            "Source Format": "string",
+            "Source Length": "0/*",
+            "Description": "Identifier",
+            "Sample Input Data/Codes": "57cd4683-2287-4b9e-9b13-29068be3a9e8",
+            "Mapping Notes/Rules": "Do not map"
+        },
+        "data": {
+            "source_path": "/data",
+            "Source Occurs": "1...1",
+            "Description": "Header fields",
+            "Testing Notes": "skip:true"
+        },
+        "complianceReportRecord": {
+            "source_path": "/complianceReportRecord",
+            "Source Occurs": "0...1",
+            "Description": "Common Compliance Report Record Type Definition",
+            "Mapping Notes/Rules": "Create One CSV Title per file."
+        },
+        "CONSTANT [Trigger Type]": {
+            "source_path": "/CONSTANT [Trigger Type]",
+            "Description": "Constant Value \"Trigger Type\"",
+            "Sample Input Data/Codes": "Trigger Type",
+            "Output Path": "TITLE",
+            "Output Element": "triggerType",
+            "Target Occurs": "1...1",
+            "Target Format": "string",
+            "Target Length": "0/*",
+            "Sample Output Data/Codes": "Trigger Type",
+            "Mapping Notes/Rules": "Hardcode \"Trigger Type\"."
+        },
+        "CONSTANT [Delivery number]": {
+            "source_path": "/CONSTANT [Delivery number]",
+            "Description": "Constant Value \"Delivery number\"",
+            "Sample Input Data/Codes": "Delivery number",
+            "Output Path": "TITLE",
+            "Output Element": "deliveryNumber",
+            "Target Occurs": "1...1",
+            "Target Format": "string",
+            "Target Length": "0/*",
+            "Sample Output Data/Codes": "Delivery number",
+            "Mapping Notes/Rules": "Hardcode \"Delivery number\"."
+        },
+        "reportSummary": {
+            "source_path": "/reportSummary",
+            "Source Occurs": "0...1",
+            "Description": "Common Compliance Report Summary Type Definition"
+        },
+        "reportDetailTransformationErrorS3FileIdentifierDisplayName": {
+            "source_path": "/reportDetailTransformationErrorS3FileIdentifierDisplayName",
+            "Source Occurs": "0...1",
+            "Source Format": "string",
+            "Source Length": "0/*",
+            "Description": "Report Detail Transformation Error S3 File Identifier Display Name",
+            "Mapping Notes/Rules": "Do not map"
+        },
+        "reportAggregationCsvTransformationS3FileIdentifier": {
+            "source_path": "/reportAggregationCsvTransformationS3FileIdentifier",
+            "Source Occurs": "0...1",
+            "Source Format": "string",
+            "Source Length": "0/*",
+            "Description": "Report Aggregation CSV Transformation S3 File Identifier",
+            "Mapping Notes/Rules": "Do not map"
+        },
+        "reporterInformation": {
+            "source_path": "/reporterInformation",
+            "Source Occurs": "0...1",
+            "Description": "Compliance Location Information Type Definition"
+        },
+        "companyLocationPartnerName": {
+            "source_path": "/companyLocationPartnerName",
+            "Source Occurs": "0...1",
+            "Source Format": "string",
+            "Source Length": "0/*",
+            "Description": "Company Location Partner Name",
+            "Mapping Notes/Rules": "Do not map"
+        },
+        "identifierList": {
+            "source_path": "/identifierList",
+            "Source Occurs": "0...1"
+        },
+        "isIdentifierPresentInEvent": {
+            "source_path": "/isIdentifierPresentInEvent",
+            "Source Occurs": "0...1",
+            "Source Format": "boolean",
+            "Source Length": "0/*",
+            "Description": "Is Identifier Present In Event\nValid values: \ntrue\nfalse",
+            "Mapping Notes/Rules": "Do not map"
+        },
+        "locationIdentifierType": {
+            "source_path": "/locationIdentifierType",
+            "Source Occurs": "0...1",
+            "Source Format": "string",
+            "Source Length": "0/*",
+            "Description": "Location Identifier Type\n\n***MANUALLY DELETE ENUM LIST IN MAP***",
+            "Mapping Notes/Rules": "Do not map\n\n***MANUALLY DELETE ENUM LIST IN MAP***"
+        },
+        "locationIdentifier": {
+            "source_path": "/locationIdentifier",
+            "Source Occurs": "0...1",
+            "Source Format": "string",
+            "Source Length": "0/*",
+            "Description": "Location Identifier",
+            "Mapping Notes/Rules": "Do not map"
+        },
+        "transactionIdentifierList": {
+            "source_path": "/transactionIdentifierList",
+            "Source Occurs": "0...*",
+            "Description": "Biz Transaction Type Definition"
+        },
+        "businessTransactionDate": {
+            "source_path": "/businessTransactionDate",
+            "Source Occurs": "0...1",
+            "Source Format": "string",
+            "Source Length": "0/*",
+            "Description": "Business Transaction Date",
+            "Mapping Notes/Rules": "Do not map"
+        },
+        "transactionIdentifierValue": {
+            "source_path": "/transactionIdentifierValue",
+            "Source Occurs": "0...1",
+            "Source Format": "string",
+            "Source Length": "0/*",
+            "Description": "transactionIdentifierValue",
+            "Mapping Notes/Rules": "Do not map"
+        },
+        "transactionIdentifierType": {
+            "source_path": "/transactionIdentifierType",
+            "Source Occurs": "0...1",
+            "Source Format": "string",
+            "Source Length": "0/*",
+            "Description": "transactionIdentifierType",
+            "Mapping Notes/Rules": "Do not map"
+        },
+        "headerReportSender": {
+            "source_path": "/headerReportSender",
+            "Source Occurs": "0...1",
+            "Description": "Identifier Type Definition"
+        },
+        "isIdentifierPresentInEvent_occurrence_2": {
+            "source_path": "/isIdentifierPresentInEvent",
+            "Source Occurs": "0...1",
+            "Source Format": "boolean",
+            "Source Length": "0/*",
+            "Description": "Is Identifier Present In Event\nValid values: \ntrue\nfalse",
+            "Mapping Notes/Rules": "Do not map"
+        },
+        "locationIdentifierType_occurrence_2": {
+            "source_path": "/locationIdentifierType",
+            "Source Occurs": "0...1",
+            "Source Format": "string",
+            "Source Length": "0/*",
+            "Source Code List": "BusinessAndLocationId",
+            "Description": "Regulatory Identifier type\n\n***MANUALLY DELETE ENUM LIST IN MAP***",
+            "Mapping Notes/Rules": "Do not map\n\n***MANUALLY DELETE ENUM LIST IN MAP***"
+        },
+        "locationIdentifier_occurrence_2": {
+            "source_path": "/locationIdentifier",
+            "Source Occurs": "0...1",
+            "Source Format": "string",
+            "Source Length": "0/*",
+            "Description": "Regulatory Identifier Value",
+            "Mapping Notes/Rules": "Do not map"
+        },
+        "headerReportReceiver": {
+            "source_path": "/headerReportReceiver",
+            "Source Occurs": "0...1",
+            "Description": "Identifier Type Definition"
+        },
+        "isIdentifierPresentInEvent_occurrence_3": {
+            "source_path": "/isIdentifierPresentInEvent",
+            "Source Occurs": "0...1",
+            "Source Format": "boolean",
+            "Source Length": "0/*",
+            "Description": "Is Identifier Present In Event\nValid values: \ntrue\nfalse",
+            "Mapping Notes/Rules": "Do not map"
+        },
+        "locationIdentifierType_occurrence_3": {
+            "source_path": "/locationIdentifierType",
+            "Source Occurs": "0...1",
+            "Source Format": "string",
+            "Source Length": "0/*",
+            "Source Code List": "BusinessAndLocationId",
+            "Description": "Regulatory Identifier type\n\n***MANUALLY DELETE ENUM LIST IN MAP***",
+            "Mapping Notes/Rules": "Do not map\n\n***MANUALLY DELETE ENUM LIST IN MAP***"
+        },
+        "locationIdentifier_occurrence_3": {
+            "source_path": "/locationIdentifier",
+            "Source Occurs": "0...1",
+            "Source Format": "string",
+            "Source Length": "0/*",
+            "Description": "Regulatory Identifier Value",
+            "Mapping Notes/Rules": "Do not map"
+        },
+        "reportedProductsSummary": {
+            "source_path": "/reportedProductsSummary",
+            "Source Occurs": "0...*",
+            "Description": "Reported Products Summary Information Type Definition",
+            "Mapping Notes/Rules": "Note: If multiple reportedProductsSummary iterations occur, create one csv line per iteration after the first iteration.   The first iteration would be included in the csv line creation that occurs at the luceneRequest Root."
+        },
+        "expirationDateDisplayText": {
+            "source_path": "/expirationDateDisplayText",
+            "Source Occurs": "0...1",
+            "Source Format": "string",
+            "Source Length": "0/*",
+            "Description": "Expiration Date Display Text",
+            "Mapping Notes/Rules": "Do not map"
+        },
+        "manufacturerIdentifierList": {
+            "source_path": "/manufacturerIdentifierList",
+            "Source Occurs": "0...*",
+            "Description": "Identifier Type Definition"
+        },
+        "isIdentifierPresentInEvent_occurrence_4": {
+            "source_path": "/isIdentifierPresentInEvent",
+            "Source Occurs": "0...1",
+            "Source Format": "boolean",
+            "Source Length": "0/*",
+            "Description": "Is Identifier Present In Event\nValid values: \ntrue\nfalse",
+            "Mapping Notes/Rules": "Do not map"
+        },
+        "locationIdentifierType_occurrence_4": {
+            "source_path": "/locationIdentifierType",
+            "Source Occurs": "0...1",
+            "Source Format": "string",
+            "Source Length": "0/*",
+            "Source Code List": "BusinessAndLocationId",
+            "Description": "Regulatory Identifier type\n\n***MANUALLY DELETE ENUM LIST IN MAP***",
+            "Mapping Notes/Rules": "Do not map\n\n***MANUALLY DELETE ENUM LIST IN MAP***"
+        },
+        "locationIdentifier_occurrence_4": {
+            "source_path": "/locationIdentifier",
+            "Source Occurs": "0...1",
+            "Source Format": "string",
+            "Source Length": "0/*",
+            "Description": "Regulatory Identifier Value",
+            "Mapping Notes/Rules": "Do not map"
+        },
+        "itemInformation": {
+            "source_path": "/itemInformation",
+            "Source Occurs": "0...*",
+            "Description": "Item Information Type Definition"
+        },
+        "packSize": {
+            "source_path": "/packSize",
+            "Source Occurs": "0...1",
+            "Source Format": "string",
+            "Source Length": "0/*",
+            "Description": "Pack Size",
+            "Mapping Notes/Rules": "Do not map"
+        },
+        "productLanguageCode": {
+            "source_path": "/productLanguageCode",
+            "Source Occurs": "0...1",
+            "Source Format": "string",
+            "Source Length": "0/*",
+            "Source Code List": "ProductLanguageCode",
+            "Description": "Product Language Code",
+            "Mapping Notes/Rules": "Do not map"
+        },
+        "strengthDescription": {
+            "source_path": "/strengthDescription",
+            "Source Occurs": "0...1",
+            "Source Format": "string",
+            "Source Length": "0/*",
+            "Description": "Strength Description",
+            "Mapping Notes/Rules": "Do not map"
+        },
+        "productName": {
+            "source_path": "/productName",
+            "Source Occurs": "0...1",
+            "Source Format": "string",
+            "Source Length": "0/*",
+            "Description": "Product Name",
+            "Mapping Notes/Rules": "Do not map"
+        },
+        "productDescription": {
+            "source_path": "/productDescription",
+            "Source Occurs": "0...1",
+            "Source Format": "string",
+            "Source Length": "0/*",
+            "Description": "Product Description",
+            "Mapping Notes/Rules": "Do not map"
+        },
+        "dosageFormType": {
+            "source_path": "/dosageFormType",
+            "Source Occurs": "0...1",
+            "Source Format": "string",
+            "Source Length": "0/*",
+            "Description": "Dosage Form Type",
+            "Mapping Notes/Rules": "Do not map"
+        },
+        "productItemCodes": {
+            "source_path": "/productItemCodes",
+            "Source Occurs": "0...*",
+            "Description": "Product Item Codes Type Definition"
+        },
+        "productItemCodeValue": {
+            "source_path": "/productItemCodeValue",
+            "Source Occurs": "0...1",
+            "Source Format": "string",
+            "Source Length": "0/*",
+            "Description": "Product Item Code Value",
+            "Mapping Notes/Rules": "Do not map"
+        },
+        "productItemCodeType": {
+            "source_path": "/productItemCodeType",
+            "Source Occurs": "0...1",
+            "Source Format": "string",
+            "Source Length": "0/*",
+            "Source Code List": "ProductItemCodeType",
+            "Description": "Product Item Code Type",
+            "Mapping Notes/Rules": "Do not map"
+        },
+        "reportSummaryAdditionalInformation": {
+            "source_path": "/reportSummaryAdditionalInformation",
+            "Source Occurs": "0...*",
+            "Description": "Key Value Type Definition"
+        },
+        "key": {
+            "source_path": "/key",
+            "Source Occurs": "1...1",
+            "Source Format": "string",
+            "Source Length": "1/126",
+            "Description": "Key",
+            "Mapping Notes/Rules": "Do not map"
+        },
+        "value": {
+            "source_path": "/value",
+            "Source Occurs": "1...1",
+            "Source Format": "string",
+            "Source Length": "0/*",
+            "Description": "Value",
+            "Mapping Notes/Rules": "Do not map"
+        },
+        "shipFromBusiness": {
+            "source_path": "/shipFromBusiness",
+            "Source Occurs": "0...1",
+            "Description": "Compliance Location Information Type Definition"
+        },
+        "companyLocationPartnerName_occurrence_2": {
+            "source_path": "/companyLocationPartnerName",
+            "Source Occurs": "0...1",
+            "Source Format": "string",
+            "Source Length": "0/*",
+            "Description": "Company Location Partner Name",
+            "Mapping Notes/Rules": "Do not map"
+        },
+        "identifierList_occurrence_2": {
+            "source_path": "/identifierList",
+            "Source Occurs": "0...1"
+        },
+        "isIdentifierPresentInEvent_occurrence_5": {
+            "source_path": "/isIdentifierPresentInEvent",
+            "Source Occurs": "0...1",
+            "Source Format": "boolean",
+            "Source Length": "0/*",
+            "Description": "Is Identifier Present In Event\nValid values: \ntrue\nfalse",
+            "Mapping Notes/Rules": "Do not map"
+        },
+        "locationIdentifierType_occurrence_5": {
+            "source_path": "/locationIdentifierType",
+            "Source Occurs": "0...1",
+            "Source Format": "string",
+            "Source Length": "0/*",
+            "Description": "Location Identifier Type     \n\n***MANUALLY DELETE ENUM LIST IN MAP***",
+            "Mapping Notes/Rules": "Do not map\n\n***MANUALLY DELETE ENUM LIST IN MAP***"
+        },
+        "locationIdentifier_occurrence_5": {
+            "source_path": "/locationIdentifier",
+            "Source Occurs": "0...1",
+            "Source Format": "string",
+            "Source Length": "0/*",
+            "Description": "Location Identifier",
+            "Mapping Notes/Rules": "Do not map"
+        },
+        "address": {
+            "source_path": "/address",
+            "Source Occurs": "0...1"
+        },
+        "country": {
+            "source_path": "/country",
+            "Source Occurs": "0...1",
+            "Source Format": "string",
+            "Source Length": "0/*",
+            "Description": "Country",
+            "Mapping Notes/Rules": "Do not map"
+        },
+        "address1": {
+            "source_path": "/address1",
+            "Source Occurs": "0...1",
+            "Source Format": "string",
+            "Source Length": "0/*",
+            "Description": "Address1",
+            "Mapping Notes/Rules": "Do not map"
+        },
+        "url": {
+            "source_path": "/url",
+            "Source Occurs": "0...1",
+            "Source Format": "string",
+            "Source Length": "0/*",
+            "Description": "Url",
+            "Mapping Notes/Rules": "Do not map"
+        },
+        "complianceReportsQueryStatusRequestResponse": {
+            "source_path": "/complianceReportsQueryStatusRequestResponse",
+            "Source Occurs": "0...1",
+            "Description": "Common Compliance Report Request Response Type Definition"
+        },
+        "reportResponseReceiptNumber": {
+            "source_path": "/reportResponseReceiptNumber",
+            "Source Occurs": "0...1",
+            "Source Format": "string",
+            "Source Length": "0/*",
+            "Description": "Report Response Receipt Number",
+            "Mapping Notes/Rules": "Do not map"
+        },
+        "reportRequestS3ErrorFileIdentifier": {
+            "source_path": "/reportRequestS3ErrorFileIdentifier",
+            "Source Occurs": "0...1",
+            "Source Format": "string",
+            "Source Length": "0/*",
+            "Description": "Report Request S3 Error File Identifier",
+            "Mapping Notes/Rules": "Do not map"
+        },
+        "reportResponseAdditionalInformation": {
+            "source_path": "/reportResponseAdditionalInformation",
+            "Source Occurs": "0...*",
+            "Description": "Key Value Type Definition"
+        },
+        "key_occurrence_2": {
+            "source_path": "/key",
+            "Source Occurs": "1...1",
+            "Source Format": "string",
+            "Source Length": "1/256",
+            "Description": "Key",
+            "Mapping Notes/Rules": "Do not map"
+        },
+        "value_occurrence_2": {
+            "source_path": "/value",
+            "Source Occurs": "1...1",
+            "Source Format": "string",
+            "Source Length": "0/*",
+            "Description": "Value",
+            "Mapping Notes/Rules": "Do not map"
+        },
+        "complianceReportsRequestResponse": {
+            "source_path": "/complianceReportsRequestResponse",
+            "Source Occurs": "0...1",
+            "Description": "Common Compliance Report Request Response Type Definition"
+        },
+        "reportResponseReceiptNumber_occurrence_2": {
+            "source_path": "/reportResponseReceiptNumber",
+            "Source Occurs": "0...1",
+            "Source Format": "string",
+            "Source Length": "0/*",
+            "Description": "Report Response Receipt Number",
+            "Mapping Notes/Rules": "Do not map"
+        },
+        "reportRequestS3ErrorFileIdentifier_occurrence_2": {
+            "source_path": "/reportRequestS3ErrorFileIdentifier",
+            "Source Occurs": "0...1",
+            "Source Format": "string",
+            "Source Length": "0/*",
+            "Description": "Report Request S3 Error File Identifier",
+            "Mapping Notes/Rules": "Do not map"
+        },
+        "reportResponseAdditionalInformation_occurrence_2": {
+            "source_path": "/reportResponseAdditionalInformation",
+            "Source Occurs": "0...*",
+            "Description": "Key Value Type Definition"
+        },
+        "key_occurrence_3": {
+            "source_path": "/key",
+            "Source Occurs": "1...1",
+            "Source Format": "string",
+            "Source Length": "1/256",
+            "Description": "Key",
+            "Mapping Notes/Rules": "Do not map"
+        },
+        "value_occurrence_3": {
+            "source_path": "/value",
+            "Source Occurs": "1...1",
+            "Source Format": "string",
+            "Source Length": "0/*",
+            "Description": "Value",
+            "Mapping Notes/Rules": "Do not map"
+        }
+    }
+}

@@ -1,0 +1,22 @@
+{
+  "_comment-Process_Excel":"the input file is spec which needs to convert to json and the output path is where the json generated will be stored",
+
+  "input_path": "/Users/mkesharwani/Desktop/Workspace3/maps-automation-framework/Python_Test_Tool/Input_Excel_Sheet/xmltojson.xlsx",
+  "output_path": "/Users/mkesharwani/Desktop/Workspace3/maps-automation-framework/Python_Test_Tool/input/",
+  "format_override": {
+    "file1": "",
+    "file2": ""
+  },
+
+
+  "_comment-Miss-RE": "These are inputs for required.py file, search where source_occurs is 1...1 will create miss-re files for it ",
+
+
+  "output_prefix": "TEST-",
+  "output_directory": "/Users/mkesharwani/Desktop/Workspace3/maps-automation-framework/Python_Test_Tool/output/",
+  "modification_mode": "comment",
+
+  "spec_file": "/Users/mkesharwani/Desktop/Workspace3/maps-automation-framework/Python_Test_Tool/input/JSON_structure.json",
+  "max_file": "/Users/mkesharwani/Desktop/Workspace3/maps-automation-framework/Python_Test_Tool/Input_Max_File/US_DSCSA_Compliance_JSon_PTSomCanonical_IB_V6.xml"
+
+}
